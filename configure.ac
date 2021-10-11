@@ -265,6 +265,50 @@ fi
 AC_MSG_RESULT([$have_hi3516cv300])
 AM_CONDITIONAL([ENABLE_HI3516CV300], [test x$have_hi3516cv300 = xyes])
 
+dnl check for hi3516cv500 mpp library
+AC_ARG_WITH(hi3516cv500,
+	[AS_HELP_STRING([--with-hi3516cv500=PATH],
+		[specify prefix directory for himpp-hi3516cv500 package.])],
+		[], [with_hi3516cv500=no])
+
+AC_MSG_CHECKING([for hi3516cv500 mpp library])
+case $with_hi3516cv500 in
+ yes)
+   hi3516cv500pfx="$ac_sysroot/usr" ;;
+ no|'')
+   ;;
+ /*)
+   hi3516cv500pfx=`echo "$with_hi3516cv500" | sed -e "$sed_quote_subst"` ;;
+ *)
+   AC_MSG_RESULT([$with_hi3516cv500])
+   AC_MSG_ERROR([hi3516cv500 must be an absolute path."])
+   ;;
+esac
+if test "x$with_hi3516cv500" != xno; then
+  hi3516cv500inc="-I$hi3516cv500pfx/include/hi3516cv500mpp"
+  hi3516cv500lib="-L$hi3516cv500pfx/lib \
+    -lmpi -ldnvqe -lhive_RES -lhive_AEC -lupvqe -lhive_ANR -lVoiceEngine \
+    -lisp -l_hiae -l_hiawb -l_hiaf -l_hidefog -lpthread"
+  AC_CHECK_LIBRARY([${hi3516cv500inc}], $[{hi3516cv500lib}],
+    [AC_LANG_PROGRAM(
+      [#include <hi_comm_sys.h>
+       #include <mpi_sys.h>],
+      [HI_MPI_SYS_Init();
+       HI_MPI_SYS_Exit();])
+    ], [have_hi3516cv500=yes], [have_hi3516cv500=no]
+  )
+  if test x$have_hi3516cv500 = xyes; then
+    hi3516cv500_CPPFLAGS=$hi3516cv500inc
+    hi3516cv500_LDFLAGS=$hi3516cv500lib
+    AC_DEFINE(HAVE_hi3516cv500_SUPPORT, 1, [support hi3516cv500 MPP])
+    AC_SUBST(hi3516cv500_CPPFLAGS)
+    AC_SUBST(hi3516cv500_LDFLAGS)
+  fi
+else
+  have_hi3516cv500=no
+fi
+AC_MSG_RESULT([$have_hi3516cv500])
+AM_CONDITIONAL([ENABLE_hi3516cv500], [test x$have_hi3516cv500 = xyes])
 
 dnl check for hi3516ev200 mpp library
 AC_ARG_WITH(hi3516ev200,

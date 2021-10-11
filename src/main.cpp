@@ -44,9 +44,7 @@
 
 #include <ipcam-runtime.h>
 
-#if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) \
-	|| defined(HAVE_HI3516CV300_SUPPORT) || defined(HAVE_HI3516EV200_SUPPORT) \
-	|| defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT)
+#if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) || defined(HAVE_HI3516CV300_SUPPORT) || defined(HAVE_HI3516EV200_SUPPORT) || defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT) || defined(HAVE_HI3516CV500_SUPPORT)
 #include <himpp-media.h>
 #endif
 
@@ -61,7 +59,7 @@ static DBusBusType bus_type = DBUS_BUS_SYSTEM;
 
 static void display_usage(char *cmd)
 {
-	const char *usage = \
+	const char *usage =
 		"RTSP/RTP stream server\n"
 		"Common Options:\n"
 		"  -h, --help                  Show help options\n"
@@ -77,9 +75,8 @@ static void display_usage(char *cmd)
 	std::cout << "Usage: " << cmd << " [options]...\n";
 	std::cout << usage;
 	std::cout << "Platform Options:\n";
-#if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) \
-	|| defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT)
-	const char *plat_options = \
+#if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) || defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT)
+	const char *plat_options =
 		"  -pipe PIPE-STRING           Add media pipe\n"
 		"  -vsrc VIDEOSOURCE           Add video source\n"
 		"  -venc VIDEOENCODER          Add video encoder\n"
@@ -98,42 +95,42 @@ static void display_usage(char *cmd)
 
 static const char *optstr = "Bh?c:p:S";
 static const struct option longopts[] = {
-	{ "help",        no_argument,        NULL,   'h' },
-	{ "buffer",      required_argument,  NULL,   'b' },
-	{ "background",  required_argument,  NULL,   'B' },
-	{ "version",     no_argument,        NULL,    0  },
-	{ "configure",   required_argument,  NULL,   'c' },
-	{ "system",      no_argument,        NULL,    0  },
-	{ "session",     no_argument,        NULL,    0  },
-	{ "port",        required_argument,  NULL,   'p' },
-	{ "syslog",      no_argument,        NULL,   'S' },
-#if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) \
-	|| defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3516EV200_SUPPORT) \
-	|| defined(HAVE_HI3520DV200_SUPPORT) || defined(HAVE_HI3516CV300_SUPPORT)
-	{ "pipe",        required_argument,  NULL,    0  },
-	{ "vsrc",        required_argument,  NULL,    0  },
-	{ "venc",        required_argument,  NULL,    0  },
-	{ "asrc",        required_argument,  NULL,    0  },
-	{ "aenc",        required_argument,  NULL,    0  },
-	{ "stream",      required_argument,  NULL,    0  },
-	{ "aout",        required_argument,  NULL,    0  },
+	{"help", no_argument, NULL, 'h'},
+	{"buffer", required_argument, NULL, 'b'},
+	{"background", required_argument, NULL, 'B'},
+	{"version", no_argument, NULL, 0},
+	{"configure", required_argument, NULL, 'c'},
+	{"system", no_argument, NULL, 0},
+	{"session", no_argument, NULL, 0},
+	{"port", required_argument, NULL, 'p'},
+	{"syslog", no_argument, NULL, 'S'},
+#if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) || defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3516EV200_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT) || defined(HAVE_HI3516CV300_SUPPORT) || defined(HAVE_HI3516CV500_SUPPORT)
+	{"pipe", required_argument, NULL, 0},
+	{"vsrc", required_argument, NULL, 0},
+	{"venc", required_argument, NULL, 0},
+	{"asrc", required_argument, NULL, 0},
+	{"aenc", required_argument, NULL, 0},
+	{"stream", required_argument, NULL, 0},
+	{"aout", required_argument, NULL, 0},
 #endif
-	{ NULL,          no_argument,        NULL,    0  }
-};
+	{NULL, no_argument, NULL, 0}};
 
 bool _terminated = false;
 
 static void redirect_io_to_syslog(FILE **pfp)
 {
 	cookie_io_functions_t io_funcs = {
-		.read = [](void*, char*, size_t) -> ssize_t { return 0; },
-		.write = [](void* cookie, const char* buf, size_t size) -> ssize_t {
+		.read = [](void *, char *, size_t) -> ssize_t
+		{ return 0; },
+		.write = [](void *cookie, const char *buf, size_t size) -> ssize_t
+		{
 			syslog(LOG_INFO, "%.*s", (int)size, buf);
 			return size;
 		},
-		.seek = [](void*, off64_t*, int) -> int { return 0; },
-		.close = [](void*) -> int { return 0; }
-	};
+		.seek = [](void *, off64_t *, int) -> int
+		{ return 0; },
+		.close = [](void *) -> int
+		{ return 0; }};
 	setvbuf(*pfp = fopencookie(NULL, "w", io_funcs), NULL, _IOLBF, 1024);
 }
 
@@ -154,8 +151,10 @@ int main(int argc, char *argv[])
 	setlocale(LC_ALL, "");
 
 	int c, loptind = 0;
-	while ((c = getopt_long_only(argc, argv, optstr, longopts, &loptind)) != -1) {
-		switch (c) {
+	while ((c = getopt_long_only(argc, argv, optstr, longopts, &loptind)) != -1)
+	{
+		switch (c)
+		{
 		case 'B':
 			if (fork() != 0)
 				return 0;
@@ -175,16 +174,23 @@ int main(int argc, char *argv[])
 			to_syslog = true;
 			break;
 		case 0:
-			if (strcmp(longopts[loptind].name, "version") == 0) {
+			if (strcmp(longopts[loptind].name, "version") == 0)
+			{
 				std::cout << PACKAGE_STRING << std::endl;
 				return 0;
-			} else if (strcmp(longopts[loptind].name, "system") == 0) {
+			}
+			else if (strcmp(longopts[loptind].name, "system") == 0)
+			{
 				bus_type = DBUS_BUS_SYSTEM;
-			} else if (strcmp(longopts[loptind].name, "session") == 0) {
+			}
+			else if (strcmp(longopts[loptind].name, "session") == 0)
+			{
 				bus_type = DBUS_BUS_SESSION;
-			} else {
+			}
+			else
+			{
 				plat_args.emplace_back(std::string(longopts[loptind].name),
-				                       std::string(optarg));
+									   std::string(optarg));
 			}
 			break;
 		default:
@@ -193,7 +199,8 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	if (to_syslog) {
+	if (to_syslog)
+	{
 		openlog(PACKAGE_NAME, LOG_CONS, LOG_USER);
 		redirect_io_to_syslog(&stdout);
 		redirect_io_to_syslog(&stderr);
@@ -220,8 +227,8 @@ int main(int argc, char *argv[])
 	sighupw.set(SIGHUP);
 	sighupw.start();
 
-	TaskScheduler* scheduler = EvTaskScheduler::createNew(mainloop);
-	UsageEnvironment* env = BasicUsageEnvironment::createNew(*scheduler);
+	TaskScheduler *scheduler = EvTaskScheduler::createNew(mainloop);
+	UsageEnvironment *env = BasicUsageEnvironment::createNew(*scheduler);
 
 	UserAuthenticationDatabase *authDB = NULL;
 #ifdef ACCESS_CONTROL
@@ -237,7 +244,8 @@ int main(int argc, char *argv[])
 	DynamicRTSPServer *rtspServer;
 	portNumBits rtspServerPortNum = rtsp_port;
 	rtspServer = DynamicRTSPServer::createNew(*env, rtspServerPortNum, authDB);
-	if (rtspServer == NULL) {
+	if (rtspServer == NULL)
+	{
 		*env << "Failed to create RTSP server:" << env->getResultMsg() << "\n";
 		exit(1);
 	}
@@ -245,21 +253,19 @@ int main(int argc, char *argv[])
 	DBus::default_dispatcher = &dispatcher;
 	dispatcher.attach(&mainloop);
 
-	DBus::Connection conn = (bus_type == DBUS_BUS_SYSTEM) ?
-		DBus::Connection::SystemBus() : DBus::Connection::SessionBus();
+	DBus::Connection conn = (bus_type == DBUS_BUS_SYSTEM) ? DBus::Connection::SystemBus() : DBus::Connection::SessionBus();
 	conn.request_name(IPCAM_SERVER_NAME);
 
 	FT_Library freetype;
-	if (FT_Init_FreeType(&freetype)) {
+	if (FT_Init_FreeType(&freetype))
+	{
 		fprintf(stderr, "FT_Init_FreeType failed\n");
 		return 1;
 	}
 
 	IpcamRuntime *runtime = new IpcamRuntime(config_file, mainloop, rtspServer, &conn);
 
-#if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) \
-	|| defined(HAVE_HI3516CV300_SUPPORT) || defined(HAVE_HI3516EV200_SUPPORT) \
-	|| defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT)
+#if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) || defined(HAVE_HI3516CV300_SUPPORT) || defined(HAVE_HI3516EV200_SUPPORT) || defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT) || defined(HAVE_HI3516CV500_SUPPORT)
 	HimppMedia himpp_media(runtime, plat_args);
 #endif
 
@@ -278,7 +284,8 @@ int main(int argc, char *argv[])
 	env->reclaim();
 	delete scheduler;
 
-	if (to_syslog) {
+	if (to_syslog)
+	{
 		closelog();
 	}
 
