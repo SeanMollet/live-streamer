@@ -75,7 +75,7 @@ static void display_usage(char *cmd)
 	std::cout << "Usage: " << cmd << " [options]...\n";
 	std::cout << usage;
 	std::cout << "Platform Options:\n";
-#if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) || defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT)
+#if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) || defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3516EV200_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT) || defined(HAVE_HI3516CV300_SUPPORT) || defined(HAVE_HI3516CV500_SUPPORT)
 	const char *plat_options =
 		"  -pipe PIPE-STRING           Add media pipe\n"
 		"  -vsrc VIDEOSOURCE           Add video source\n"

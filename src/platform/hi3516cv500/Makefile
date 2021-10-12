@@ -203,12 +203,12 @@ AUTOMAKE = ${SHELL} /tools/live-streamer/missing automake-1.15
 AWK = gawk
 CC = /buildroot/output/host/bin/arm-buildroot-linux-gnueabi-gcc
 CCDEPMODE = depmode=none
-CFLAGS = -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -Os -g2 
+CFLAGS = -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -g -g2 
 CPPFLAGS = -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
 CXX = /buildroot/output/host/bin/arm-buildroot-linux-gnueabi-g++
 CXXCPP = /buildroot/output/host/bin/arm-buildroot-linux-gnueabi-g++ -E
 CXXDEPMODE = depmode=none
-CXXFLAGS = -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -Os -g2 
+CXXFLAGS = -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -g -g2 
 CYGPATH_W = echo
 DBUSXX_CFLAGS = -I/buildroot/output/host/bin/../arm-buildroot-linux-gnueabi/sysroot/usr/include/dbus-c++-1 -DDBUS_API_SUBJECT_TO_CHANGE -I/buildroot/output/host/bin/../arm-buildroot-linux-gnueabi/sysroot/usr/include/dbus-1.0 -I/buildroot/output/host/bin/../arm-buildroot-linux-gnueabi/sysroot/usr/lib/dbus-1.0/include 
 DBUSXX_LIBS = -L/buildroot/output/host/bin/../arm-buildroot-linux-gnueabi/sysroot/usr/lib -ldbus-c++-1 -ldbus-1 

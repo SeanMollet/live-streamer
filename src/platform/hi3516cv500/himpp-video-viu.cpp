@@ -30,17 +30,16 @@
 #include <himpp-video-sensor.h>
 #include "himpp-video-viu.h"
 
-
 //////////////////////////////////////////////////////////////////////////////
 // HimppViDev
 //////////////////////////////////////////////////////////////////////////////
 
-HimppViDev::HimppViDev(HimppVideoElement* source, VI_DEV devid, std::string sensor)
-  : VideoElement(VIDEO_ELEMENT(source)),
-    HimppVideoElement(source), DefaultVideoSource(DEFAULT_VIDEO_SOURCE(source)),
-    _video_sensor(&himpp_video_sensor_map.at(sensor)),
-    _devid(devid), _online_mode(VI_ONLINE_VPSS_ONLINE),
-    _resolution(0, 0), _framerate(0), _crop_offset({0, 0})
+HimppViDev::HimppViDev(HimppVideoElement *source, VI_DEV devid, std::string sensor)
+	: VideoElement(VIDEO_ELEMENT(source)),
+	  HimppVideoElement(source), DefaultVideoSource(DEFAULT_VIDEO_SOURCE(source)),
+	  _video_sensor(&himpp_video_sensor_map.at(sensor)),
+	  _devid(devid), _online_mode(VI_ONLINE_VPSS_ONLINE),
+	  _resolution(0, 0), _framerate(0), _crop_offset({0, 0})
 {
 }
 
@@ -56,7 +55,8 @@ uint32_t HimppViDev::getFrameRate()
 
 void HimppViDev::setFrameRate(uint32_t value)
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		// TODO: implementation
 	}
 	_framerate = value;
@@ -73,7 +73,8 @@ Resolution HimppViDev::getResolution()
 
 void HimppViDev::setResolution(Resolution value)
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		// TODO: implementation
 	}
 	_resolution = value;
@@ -89,16 +90,18 @@ bool HimppViDev::initializeMipi()
 	combo_dev_attr_t *combo_dev_attr = *_video_sensor;
 
 	fd = open("/dev/hi_mipi", O_RDWR);
-	if (fd < 0) {
+	if (fd < 0)
+	{
 		fprintf(stderr, "open /dev/hi_mipi failed\n");
 		return false;
 	}
 
-#define MIPI_IOCTL(cmd, param) \
-	if (ioctl(fd, HI_##cmd, param)) { \
+#define MIPI_IOCTL(cmd, param)             \
+	if (ioctl(fd, HI_##cmd, param))        \
+	{                                      \
 		fprintf(stderr, #cmd " failed\n"); \
-		close(fd); \
-		return false; \
+		close(fd);                         \
+		return false;                      \
 	}
 
 	MIPI_IOCTL(MIPI_SET_HS_MODE, &lane_devide_mode);
@@ -124,16 +127,18 @@ void HimppViDev::cleanupMipi()
 	sns_rst_source_t snsrstdev = 0;
 
 	fd = open("/dev/hi_mipi", O_RDWR);
-	if (fd < 0) {
+	if (fd < 0)
+	{
 		fprintf(stderr, "open /dev/hi_mipi failed\n");
 		return;
 	}
 
-#define MIPI_IOCTL(cmd, param) \
-	if (ioctl(fd, HI_##cmd, param)) { \
+#define MIPI_IOCTL(cmd, param)             \
+	if (ioctl(fd, HI_##cmd, param))        \
+	{                                      \
 		fprintf(stderr, #cmd " failed\n"); \
-		close(fd); \
-		return; \
+		close(fd);                         \
+		return;                            \
 	}
 
 	MIPI_IOCTL(MIPI_RESET_SENSOR, &snsrstdev);
@@ -152,39 +157,49 @@ void HimppViDev::doEnableElement()
 	VI_DEV_ATTR_S *dev_attr;
 
 	VI_MOD_PARAM_S param;
-	if ((s32Ret = HI_MPI_VI_GetModParam(&param)) == HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VI_GetModParam(&param)) == HI_SUCCESS)
+	{
 		param.s32DetectErrFrame = 0;
 		param.u32DropErrFrame = 0;
 		param.enViVbSource = VB_SOURCE_COMMON;
-		if ((s32Ret = HI_MPI_VI_SetModParam(&param)) != HI_SUCCESS) {
+		if ((s32Ret = HI_MPI_VI_SetModParam(&param)) != HI_SUCCESS)
+		{
 			HIMPP_PRINT("HI_MPI_VI_SetModParam failed [%#x]\n", s32Ret);
 		}
 	}
-	else {
+	else
+	{
 		HIMPP_PRINT("HI_MPI_VI_GetModParam failed [%#x]\n", s32Ret);
 	}
 
 	VI_VPSS_MODE_S online_mode;
-	if ((s32Ret = HI_MPI_SYS_GetVIVPSSMode(&online_mode)) == HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_SYS_GetVIVPSSMode(&online_mode)) == HI_SUCCESS)
+	{
 		online_mode.aenMode[0] = _online_mode;
-		if ((s32Ret = HI_MPI_SYS_SetVIVPSSMode(&online_mode)) != HI_SUCCESS) {
+		if ((s32Ret = HI_MPI_SYS_SetVIVPSSMode(&online_mode)) != HI_SUCCESS)
+		{
 			HIMPP_PRINT("HI_MPI_SYS_SetVIVPSSMode failed [%#x]\n", s32Ret);
 		}
-	} else {
+	}
+	else
+	{
 		HIMPP_PRINT("HI_MPI_SYS_GetVIVPSSMode failed [%#x]\n", s32Ret);
 	}
 
-	if (!initializeMipi()) {
+	if (!initializeMipi())
+	{
 		throw IpcamError("Failed to initialize MIPI");
 	}
 
 	dev_attr = *_video_sensor;
-	if ((s32Ret = HI_MPI_VI_SetDevAttr(_devid, dev_attr)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VI_SetDevAttr(_devid, dev_attr)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_VI_SetDevAttr %d failed [%#x]\n", _devid, s32Ret);
 		throw IpcamError("Failed to enable vi dev");
 	}
 
-	if ((s32Ret = HI_MPI_VI_EnableDev(_devid)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VI_EnableDev(_devid)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_VI_EnableDev %d failed [%#x]\n", _devid, s32Ret);
 		throw IpcamError("Failed to enable vi dev");
 	}
@@ -192,25 +207,28 @@ void HimppViDev::doEnableElement()
 	// bind vi dev pipe
 	VI_DEV_BIND_PIPE_S dev_bind_pipe = {
 		.u32Num = 1,
-		.PipeId = { 0 }
-	};
-	if ((s32Ret = HI_MPI_VI_SetDevBindPipe(0, &dev_bind_pipe)) != HI_SUCCESS) {
+		.PipeId = {0}};
+	if ((s32Ret = HI_MPI_VI_SetDevBindPipe(0, &dev_bind_pipe)) != HI_SUCCESS)
+	{
 		HI_MPI_VI_DisableDev(_devid);
 		HIMPP_PRINT("HI_MPI_VI_SetDevBindPipe %d failed [%#x]\n", _devid, s32Ret);
 		throw IpcamError("Failed to bind pipe");
 	}
 	// create pipe
-	VI_PIPE_ATTR_S pipe_attr = *(VI_PIPE_ATTR_S*)*_video_sensor;
-	if (_resolution.valid()) {
+	VI_PIPE_ATTR_S pipe_attr = *(VI_PIPE_ATTR_S *)*_video_sensor;
+	if (_resolution.valid())
+	{
 		pipe_attr.u32MaxW = _resolution.width();
 		pipe_attr.u32MaxH = _resolution.height();
 	}
-	if ((s32Ret = HI_MPI_VI_CreatePipe(0, &pipe_attr)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VI_CreatePipe(0, &pipe_attr)) != HI_SUCCESS)
+	{
 		HI_MPI_VI_DisableDev(_devid);
 		HIMPP_PRINT("HI_MPI_VI_CreatePipe %d failed [%#x]\n", _devid, s32Ret);
 		throw IpcamError("Failed to create pipe");
 	}
-	if ((s32Ret = HI_MPI_VI_StartPipe(0)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VI_StartPipe(0)) != HI_SUCCESS)
+	{
 		HI_MPI_VI_DisableDev(_devid);
 		HIMPP_PRINT("HI_MPI_VI_StartPipe %d failed [%#x]\n", _devid, s32Ret);
 		throw IpcamError("Failed to start pipe");
@@ -226,14 +244,13 @@ void HimppViDev::doDisableElement()
 	cleanupMipi();
 }
 
-
 //////////////////////////////////////////////////////////////////////////////
 // HimppViChan::Imaging::LDC
 //////////////////////////////////////////////////////////////////////////////
 
-HimppViChan::Imaging::LDC::LDC(Imaging& imaging)
-  : DefaultVideoSource::Imaging::LDC(dynamic_cast<DefaultVideoSource::Imaging&>(imaging)),
-    _ldc_mode(LDC_OFF), _ldc_ratio(0)
+HimppViChan::Imaging::LDC::LDC(Imaging &imaging)
+	: DefaultVideoSource::Imaging::LDC(dynamic_cast<DefaultVideoSource::Imaging &>(imaging)),
+	  _ldc_mode(LDC_OFF), _ldc_ratio(0)
 {
 }
 
@@ -248,8 +265,9 @@ LDCMode HimppViChan::Imaging::LDC::getMode()
 
 void HimppViChan::Imaging::LDC::setMode(LDCMode value)
 {
-	HimppViChan& vichan = dynamic_cast<HimppViChan&>(imaging().videoSource());
-	if (vichan.is_enabled()) {
+	HimppViChan &vichan = dynamic_cast<HimppViChan &>(imaging().videoSource());
+	if (vichan.is_enabled())
+	{
 		HI_S32 s32Ret;
 		VI_LDCV3_ATTR_S ldc_attr;
 		if ((s32Ret = HI_MPI_VI_GetChnLDCV3Attr(vichan.channelId(), 0, &ldc_attr)) != HI_SUCCESS)
@@ -271,8 +289,9 @@ int32_t HimppViChan::Imaging::LDC::getRatio()
 
 void HimppViChan::Imaging::LDC::setRatio(int32_t value)
 {
-	HimppViChan& vichan = dynamic_cast<HimppViChan&>(imaging().videoSource());
-	if (vichan.is_enabled()) {
+	HimppViChan &vichan = dynamic_cast<HimppViChan &>(imaging().videoSource());
+	if (vichan.is_enabled())
+	{
 		HI_S32 s32Ret;
 		VI_LDCV3_ATTR_S ldc_attr;
 		if ((s32Ret = HI_MPI_VI_GetChnLDCV3Attr(0, vichan.channelId(), &ldc_attr)) != HI_SUCCESS)
@@ -291,9 +310,9 @@ void HimppViChan::Imaging::LDC::setRatio(int32_t value)
 // HimppViChan::Imaging
 //////////////////////////////////////////////////////////////////////////////
 
-HimppViChan::Imaging::Imaging(HimppViChan& vichan)
-  : DefaultVideoSource::Imaging(dynamic_cast<DefaultVideoSource&>(vichan)),
-    _ldc(*this), _mirror(false), _flip(false), _rotate(ROTATION_0)
+HimppViChan::Imaging::Imaging(HimppViChan &vichan)
+	: DefaultVideoSource::Imaging(dynamic_cast<DefaultVideoSource &>(vichan)),
+	  _ldc(*this), _mirror(false), _flip(false), _rotate(ROTATION_0)
 {
 }
 
@@ -308,15 +327,18 @@ bool HimppViChan::Imaging::getMirror()
 
 void HimppViChan::Imaging::setMirror(bool value)
 {
-	HimppViChan& vichan = dynamic_cast<HimppViChan&>(videoSource());
-	if (vichan.is_enabled()) {
+	HimppViChan &vichan = dynamic_cast<HimppViChan &>(videoSource());
+	if (vichan.is_enabled())
+	{
 		HI_U32 s32Ret;
 		VI_CHN_ATTR_S attr;
-		if ((s32Ret = HI_MPI_VI_GetChnAttr(0, vichan.channelId(), &attr)) != HI_SUCCESS) {
+		if ((s32Ret = HI_MPI_VI_GetChnAttr(0, vichan.channelId(), &attr)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed to get property");
 		}
 		attr.bMirror = (HI_BOOL)value;
-		if ((s32Ret = HI_MPI_VI_SetChnAttr(0, vichan.channelId(), &attr)) != HI_SUCCESS) {
+		if ((s32Ret = HI_MPI_VI_SetChnAttr(0, vichan.channelId(), &attr)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed to set property");
 		}
 	}
@@ -331,15 +353,18 @@ bool HimppViChan::Imaging::getFlip()
 
 void HimppViChan::Imaging::setFlip(bool value)
 {
-	HimppViChan& vichan = dynamic_cast<HimppViChan&>(videoSource());
-	if (vichan.is_enabled()) {
+	HimppViChan &vichan = dynamic_cast<HimppViChan &>(videoSource());
+	if (vichan.is_enabled())
+	{
 		HI_U32 s32Ret;
-		VI_CHN_ATTR_S   attr;
-		if ((s32Ret = HI_MPI_VI_GetChnAttr(0, vichan.channelId(), &attr)) != HI_SUCCESS) {
+		VI_CHN_ATTR_S attr;
+		if ((s32Ret = HI_MPI_VI_GetChnAttr(0, vichan.channelId(), &attr)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed to get property");
 		}
 		attr.bFlip = (HI_BOOL)value;
-		if ((s32Ret = HI_MPI_VI_SetChnAttr(0, vichan.channelId(), &attr)) != HI_SUCCESS) {
+		if ((s32Ret = HI_MPI_VI_SetChnAttr(0, vichan.channelId(), &attr)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed to set property");
 		}
 	}
@@ -349,7 +374,8 @@ void HimppViChan::Imaging::setFlip(bool value)
 
 uint32_t HimppViChan::Imaging::getRotateAngle()
 {
-	switch (_rotate) {
+	switch (_rotate)
+	{
 	case ROTATION_0:
 		return 0;
 	case ROTATION_90:
@@ -367,7 +393,8 @@ uint32_t HimppViChan::Imaging::getRotateAngle()
 void HimppViChan::Imaging::setRotateAngle(uint32_t value)
 {
 	ROTATION_E rotate;
-	switch (value) {
+	switch (value)
+	{
 	case 0:
 		rotate = ROTATION_0;
 		break;
@@ -384,14 +411,18 @@ void HimppViChan::Imaging::setRotateAngle(uint32_t value)
 		throw IpcamError("Only support rotate 0/90/180/270 degree");
 	}
 
-	HimppViChan& vichan = dynamic_cast<HimppViChan&>(videoSource());
-	if (vichan.is_enabled()) {
+	HimppViChan &vichan = dynamic_cast<HimppViChan &>(videoSource());
+	if (vichan.is_enabled())
+	{
 		ROTATION_E old_val = _rotate;
 		vichan.doDisableElement();
-		try {
+		try
+		{
 			_rotate = rotate;
 			vichan.doEnableElement();
-		} catch (IpcamError& e) {
+		}
+		catch (IpcamError &e)
+		{
 			_rotate = old_val;
 			vichan.doEnableElement();
 			throw e;
@@ -400,23 +431,25 @@ void HimppViChan::Imaging::setRotateAngle(uint32_t value)
 	_rotate = rotate;
 }
 
-VideoSource::Imaging::LDC& HimppViChan::Imaging::ldc()
+VideoSource::Imaging::LDC &HimppViChan::Imaging::ldc()
 {
-	return dynamic_cast<VideoSource::Imaging::LDC&>(_ldc);
+	return dynamic_cast<VideoSource::Imaging::LDC &>(_ldc);
 }
 
 //////////////////////////////////////////////////////////////////////////////
 // HimppViChan
 //////////////////////////////////////////////////////////////////////////////
 
-HimppViChan::HimppViChan(HimppVideoElement* source, VI_CHN chnid)
-  : VideoElement(VIDEO_ELEMENT(source)), HimppVideoElement(source),
-    DefaultVideoSource(DEFAULT_VIDEO_SOURCE(source)),
-    _imaging(*this), _chnid(chnid), _resolution(0, 0), _framerate(0)
+HimppViChan::HimppViChan(HimppVideoElement *source, VI_CHN chnid)
+	: VideoElement(VIDEO_ELEMENT(source)), HimppVideoElement(source),
+	  DefaultVideoSource(DEFAULT_VIDEO_SOURCE(source)),
+	  _imaging(*this), _chnid(chnid), _resolution(0, 0), _framerate(0)
 {
-	for (MediaElement* p = source; p; p = p->source()) {
-		HimppViDev* videv = HIMPP_VI_DEV(p);
-		if (videv != nullptr) {
+	for (MediaElement *p = source; p; p = p->source())
+	{
+		HimppViDev *videv = HIMPP_VI_DEV(p);
+		if (videv != nullptr)
+		{
 			_mpp_chn.enModId = HI_ID_VI;
 			_mpp_chn.s32DevId = videv->deviceId();
 			_mpp_chn.s32ChnId = _chnid;
@@ -429,7 +462,7 @@ HimppViChan::~HimppViChan()
 {
 }
 
-MPP_CHN_S* HimppViChan::bindSource()
+MPP_CHN_S *HimppViChan::bindSource()
 {
 	return &_mpp_chn;
 }
@@ -444,7 +477,8 @@ uint32_t HimppViChan::getFrameRate()
 
 void HimppViChan::setFrameRate(uint32_t value)
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		// TODO: implementation
 	}
 	_framerate = value;
@@ -460,7 +494,8 @@ Resolution HimppViChan::getResolution()
 
 void HimppViChan::setResolution(Resolution value)
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		// TODO: implementation
 	}
 	_resolution = value;
@@ -471,12 +506,14 @@ void HimppViChan::doEnableElement()
 	HI_U32 s32Ret;
 	Resolution in_res = HIMPP_VIDEO_ELEMENT(source())->resolution();
 
-	VI_VPSS_MODE_S online_mode = { { 0, 0 } };
-	if ((s32Ret = HI_MPI_SYS_GetVIVPSSMode(&online_mode)) != HI_SUCCESS) {
+	VI_VPSS_MODE_S online_mode = {{0, 0}};
+	if ((s32Ret = HI_MPI_SYS_GetVIVPSSMode(&online_mode)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_SYS_GetViVpssMode failed [%#x]\n", s32Ret);
 	}
 
-	if (_chnid < VI_MAX_PHY_CHN_NUM) {
+	if (_chnid < VI_MAX_PHY_CHN_NUM)
+	{
 		// Physical channel
 		VI_CHN_ATTR_S attr;
 		attr.stSize.u32Width = in_res.width();
@@ -488,24 +525,30 @@ void HimppViChan::doEnableElement()
 		attr.bMirror = _imaging._mirror ? HI_TRUE : HI_FALSE;
 		attr.bFlip = _imaging._flip ? HI_TRUE : HI_FALSE;
 		attr.u32Depth = 0;
-		if (_framerate > 0) {
+		if (_framerate > 0)
+		{
 			attr.stFrameRate.s32SrcFrameRate = HIMPP_VIDEO_ELEMENT(source())->framerate();
 			attr.stFrameRate.s32DstFrameRate = _framerate;
-		} else {
+		}
+		else
+		{
 			attr.stFrameRate.s32SrcFrameRate = -1;
 			attr.stFrameRate.s32DstFrameRate = -1;
 		}
 
-		if ((s32Ret = HI_MPI_VI_SetChnAttr(0, _chnid, &attr)) != HI_SUCCESS) {
+		if ((s32Ret = HI_MPI_VI_SetChnAttr(0, _chnid, &attr)) != HI_SUCCESS)
+		{
 			HIMPP_PRINT("HI_MPI_VI_SetChnAttr %d failed [%#x]\n",
-			            _chnid, s32Ret);
+						_chnid, s32Ret);
 			throw IpcamError("Failed to enable vi chn");
 		}
 
 		// Rotate/LDC functionality in viu only available in offline mode
 		VI_VPSS_MODE_E mode = online_mode.aenMode[0];
-		if ((mode == VI_ONLINE_VPSS_OFFLINE) || (mode == VI_OFFLINE_VPSS_OFFLINE)) {
-			if (_resolution.valid() && _resolution != in_res) {
+		if ((mode == VI_ONLINE_VPSS_OFFLINE) || (mode == VI_OFFLINE_VPSS_OFFLINE))
+		{
+			if (_resolution.valid() && _resolution != in_res)
+			{
 				VI_CROP_INFO_S crop;
 				crop.bEnable = HI_TRUE;
 				crop.enCropCoordinate = VI_CROP_ABS_COOR;
@@ -513,31 +556,35 @@ void HimppViChan::doEnableElement()
 				crop.stCropRect.s32Y = (in_res.height() - _resolution.height()) / 2;
 				crop.stCropRect.u32Width = _resolution.width();
 				crop.stCropRect.u32Height = _resolution.height();
-				if ((s32Ret = HI_MPI_VI_SetChnCrop(0, _chnid, &crop)) != HI_SUCCESS) {
+				if ((s32Ret = HI_MPI_VI_SetChnCrop(0, _chnid, &crop)) != HI_SUCCESS)
+				{
 					HIMPP_PRINT("HI_MPI_VI_SetChnCrop %d failed [%#x]\n", _chnid, s32Ret);
 					throw IpcamError("Failed to set vi chn crop\n");
 				}
 			}
-			if ((s32Ret = HI_MPI_VI_SetChnRotation(0, _chnid, _imaging._rotate)) != HI_SUCCESS) {
+			if ((s32Ret = HI_MPI_VI_SetChnRotation(0, _chnid, _imaging._rotate)) != HI_SUCCESS)
+			{
 				HIMPP_PRINT("HI_MPI_VI_SetRotate %d failed [%#x]\n",
-				            _chnid, s32Ret);
+							_chnid, s32Ret);
 			}
 
-			VI_LDCV3_ATTR_S ldc_attr;
-			memset(&ldc_attr, 0, sizeof(ldc_attr));
-			ldc_attr.bEnable = (_imaging._ldc._ldc_mode == LDC_ON) ?
-				HI_TRUE : HI_FALSE;
-			ldc_attr.stAttr.s32CenterXOffset = 0;
-			ldc_attr.stAttr.s32CenterYOffset = 0;
-			ldc_attr.stAttr.s32DistortionRatio = _imaging._ldc._ldc_ratio;
-			if ((s32Ret = HI_MPI_VI_SetChnLDCV3Attr(0, _chnid, &ldc_attr)) != HI_SUCCESS) {
-				HIMPP_PRINT("HI_MPI_VI_SetLDCV3Attr %d failed [%#x]\n",
-				            _chnid, s32Ret);
-			}
+			//Only supported on Hi3516EV200
+			// VI_LDCV3_ATTR_S ldc_attr;
+			// memset(&ldc_attr, 0, sizeof(ldc_attr));
+			// ldc_attr.bEnable = (_imaging._ldc._ldc_mode == LDC_ON) ? HI_TRUE : HI_FALSE;
+			// ldc_attr.stAttr.s32CenterXOffset = 0;
+			// ldc_attr.stAttr.s32CenterYOffset = 0;
+			// ldc_attr.stAttr.s32DistortionRatio = _imaging._ldc._ldc_ratio;
+			// if ((s32Ret = HI_MPI_VI_SetChnLDCV3Attr(0, _chnid, &ldc_attr)) != HI_SUCCESS)
+			// {
+			// 	HIMPP_PRINT("HI_MPI_VI_SetLDCV3Attr %d failed [%#x]\n",
+			// 				_chnid, s32Ret);
+			// }
 		}
 	}
-	else {	// Extended channel
-		HimppViChan* phychan = HIMPP_VI_CHAN(source());
+	else
+	{ // Extended channel
+		HimppViChan *phychan = HIMPP_VI_CHAN(source());
 		if (!phychan)
 			throw IpcamError("EXTCHN must bind to PHYCHN");
 
@@ -546,10 +593,13 @@ void HimppViChan::doEnableElement()
 		extattr.s32BindChn = phychan->channelId();
 		extattr.stSize.u32Width = _resolution.width();
 		extattr.stSize.u32Height = _resolution.height();
-		if (_framerate > 0) {
+		if (_framerate > 0)
+		{
 			extattr.stFrameRate.s32SrcFrameRate = phychan->framerate();
 			extattr.stFrameRate.s32DstFrameRate = _framerate;
-		} else {
+		}
+		else
+		{
 			extattr.stFrameRate.s32SrcFrameRate = -1;
 			extattr.stFrameRate.s32DstFrameRate = -1;
 		}
@@ -557,14 +607,16 @@ void HimppViChan::doEnableElement()
 		extattr.enDynamicRange = DYNAMIC_RANGE_SDR8;
 		extattr.enCompressMode = COMPRESS_MODE_NONE;
 		extattr.u32Depth = 0;
-		if ((s32Ret = HI_MPI_VI_SetExtChnAttr(0, _chnid, &extattr)) != HI_SUCCESS) {
+		if ((s32Ret = HI_MPI_VI_SetExtChnAttr(0, _chnid, &extattr)) != HI_SUCCESS)
+		{
 			HIMPP_PRINT("HI_MPI_VI_SetExtChnAttr %d failed [%#x]\n",
-			            _chnid, s32Ret);
+						_chnid, s32Ret);
 			throw IpcamError("HI_MPI_VI_SetExtChnAttr() failed");
 		}
 	}
 
-	if ((s32Ret = HI_MPI_VI_EnableChn(0, _chnid)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VI_EnableChn(0, _chnid)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_VI_EnableChn %d failed [%#x]\n",
 					_chnid, s32Ret);
 		throw IpcamError("Failed to enable vichn");
@@ -574,13 +626,14 @@ void HimppViChan::doEnableElement()
 void HimppViChan::doDisableElement()
 {
 	HI_S32 s32Ret;
-	if ((s32Ret = HI_MPI_VI_DisableChn(0, _chnid)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VI_DisableChn(0, _chnid)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_VI_DisableChn %d failed [%#x]\n",
 					_chnid, s32Ret);
 	}
 }
 
-VideoSource::Imaging& HimppViChan::imaging()
+VideoSource::Imaging &HimppViChan::imaging()
 {
-	return dynamic_cast<VideoSource::Imaging&>(_imaging);
+	return dynamic_cast<VideoSource::Imaging &>(_imaging);
 }
