@@ -73,6 +73,12 @@ live_streamer_LDFLAGS += $(HI3516EV200_LDFLAGS)
 live_streamer_LDADD += $(builddir)/platform/hi3516ev200/libhi3516ev200.la
 endif
 
+if ENABLE_HI3516CV500
+live_streamer_CPPFLAGS += $(HI3516CV500_CPPFLAGS) -I$(srcdir)/platform/hi3516cv500
+live_streamer_LDFLAGS += $(HI3516CV500_LDFLAGS)
+live_streamer_LDADD += $(builddir)/platform/hi3516cv500/libhi3516cv500.la
+endif
+
 if ENABLE_HI3520V100
 live_streamer_CPPFLAGS += $(HI3520V100_CPPFLAGS) -I$(srcdir)/platform/hi3520v100
 live_streamer_LDFLAGS += $(HI3520V100_LDFLAGS)

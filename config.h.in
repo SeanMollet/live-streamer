@@ -12,6 +12,9 @@
 /* support Hi3516cv300 MPP */
 #undef HAVE_HI3516CV300_SUPPORT
 
+/* support Hi3516cv500 MPP */
+#undef HAVE_HI3516CV500_SUPPORT
+
 /* support Hi3516ev200 MPP */
 #undef HAVE_HI3516EV200_SUPPORT
 

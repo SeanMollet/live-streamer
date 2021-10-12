@@ -288,7 +288,7 @@ if test "x$with_hi3516cv500" != xno; then
   hi3516cv500inc="-I$hi3516cv500pfx/include/hi3516cv500mpp"
   hi3516cv500lib="-L$hi3516cv500pfx/lib \
     -lmpi -ldnvqe -lhive_RES -lhive_AEC -lupvqe -lhive_ANR -lVoiceEngine \
-    -lisp -l_hiae -l_hiawb -l_hiaf -l_hidefog -lpthread"
+    -lisp -l_hiae -l_hiawb -l_hildci -l_hidrc -l_hicalcflicker -l_hidehaze -lpthread"
   AC_CHECK_LIBRARY([${hi3516cv500inc}], $[{hi3516cv500lib}],
     [AC_LANG_PROGRAM(
       [#include <hi_comm_sys.h>
@@ -298,17 +298,17 @@ if test "x$with_hi3516cv500" != xno; then
     ], [have_hi3516cv500=yes], [have_hi3516cv500=no]
   )
   if test x$have_hi3516cv500 = xyes; then
-    hi3516cv500_CPPFLAGS=$hi3516cv500inc
-    hi3516cv500_LDFLAGS=$hi3516cv500lib
-    AC_DEFINE(HAVE_hi3516cv500_SUPPORT, 1, [support hi3516cv500 MPP])
-    AC_SUBST(hi3516cv500_CPPFLAGS)
-    AC_SUBST(hi3516cv500_LDFLAGS)
+    HI3516CV500_CPPFLAGS=$hi3516cv500inc
+    HI3516CV500_LDFLAGS=$hi3516cv500lib
+    AC_DEFINE(HAVE_HI3516CV500_SUPPORT, 1, [support Hi3516cv500 MPP])
+    AC_SUBST(HI3516CV500_CPPFLAGS)
+    AC_SUBST(HI3516CV500_LDFLAGS)
   fi
 else
   have_hi3516cv500=no
 fi
 AC_MSG_RESULT([$have_hi3516cv500])
-AM_CONDITIONAL([ENABLE_hi3516cv500], [test x$have_hi3516cv500 = xyes])
+AM_CONDITIONAL([ENABLE_HI3516CV500], [test x$have_hi3516cv500 = xyes])
 
 dnl check for hi3516ev200 mpp library
 AC_ARG_WITH(hi3516ev200,
@@ -469,4 +469,5 @@ src/common/Makefile
 src/platform/hi3518v200/Makefile
 src/platform/hi3516cv300/Makefile
 src/platform/hi3516ev200/Makefile
+src/platform/hi3516cv500/Makefile
 ])
