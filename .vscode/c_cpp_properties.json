@@ -1,0 +1,34 @@
+{
+    "env": {
+        "myDefaultIncludePath": [
+            "${workspaceFolder}",
+            "${workspaceFolder}/src",
+            "${workspaceFolder}/src/common",
+        ],
+        "myCompilerPath": "/usr/local/bin/arm-none-eabi-gcc"
+    },
+    "configurations": [
+        {
+            "name": "Mac",
+            "intelliSenseMode": "gcc-arm",
+            "includePath": [
+                "${myDefaultIncludePath}"
+            ],
+            "compilerPath": "/data/hi35xx-buildroot/output/host/bin/arm-buildroot-linux-gnueabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "defines": [
+                "HAVE_HI3516CV500_SUPPORT",
+                "HAVE_JSONCPP_SUPPORT"
+            ]
+        }
+    ],
+    "version": 4
+}
