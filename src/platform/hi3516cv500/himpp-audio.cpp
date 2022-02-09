@@ -47,6 +47,7 @@ HimppAudioCodec::HimppAudioCodec(AUDIO_SAMPLE_RATE_E sample_rate)
 	: AudioElement(NULL), HimppAudioElement(NULL), _sample_rate(sample_rate),
 	  _input_vol(56), _output_vol(0)
 {
+    fprintf(stderr, "Setting sample rate to: %d\n", sample_rate);
 }
 
 HimppAudioCodec::~HimppAudioCodec()
@@ -129,6 +130,8 @@ void HimppAudioCodec::doEnableElement()
 		throw IpcamError("Cannot reset audio codec");
 	}
 
+	fprintf(stderr, "Setting sample rate to: %d\n", _sample_rate);
+ 
 	unsigned int i2s_fs_sel = 0;
 	switch (_sample_rate)
 	{
@@ -180,19 +183,18 @@ void HimppAudioCodec::doEnableElement()
 		close(fd);
 		throw IpcamError("Cannot set input mode");
 	}
-
-#if 0
-	unsigned int gain_mic = 0x0A;
+//#if 1
+	unsigned int gain_mic = 0x08;
 	if (ioctl(fd, ACODEC_SET_GAIN_MICL, &gain_mic)) {
 		fprintf(stderr, "set acodec micin volume failed\n");
 	}
 	if (ioctl(fd, ACODEC_SET_GAIN_MICR, &gain_mic)) {
 		fprintf(stderr, "set acodec micin volume failed\n");
 	}
-
+#if 0
 	ACODEC_VOL_CTRL vol_ctrl;
 	vol_ctrl.vol_ctrl_mute = 0;
-	vol_ctrl.vol_ctrl = 0x40;
+	vol_ctrl.vol_ctrl = 0x20;
 	if (ioctl(fd, ACODEC_SET_ADCL_VOL, &vol_ctrl)) {
 		fprintf(stderr, "set acodec adc volume failed\n");
 	}
