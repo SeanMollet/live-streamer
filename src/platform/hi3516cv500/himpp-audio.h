@@ -45,7 +45,7 @@ class HimppAencChan;
 class HimppAudioCodec : public HimppAudioElement, public AudioSource 
 {
 public:
-	HimppAudioCodec(AUDIO_SAMPLE_RATE_E sample_rate = AUDIO_SAMPLE_RATE_48000);
+	HimppAudioCodec(AUDIO_SAMPLE_RATE_E sample_rate = AUDIO_SAMPLE_RATE_44100);
 	~HimppAudioCodec();
 
 	// implementation of AudioSource
