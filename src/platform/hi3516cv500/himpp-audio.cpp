@@ -45,7 +45,7 @@
 
 HimppAudioCodec::HimppAudioCodec(AUDIO_SAMPLE_RATE_E sample_rate)
 	: AudioElement(NULL), HimppAudioElement(NULL), _sample_rate(sample_rate),
-	  _input_vol(56), _output_vol(0)
+	  _input_vol(32), _output_vol(0)
 {
 	fprintf(stderr, "Setting sample rate to: %d\n", sample_rate);
 }
@@ -184,7 +184,7 @@ void HimppAudioCodec::doEnableElement()
 		throw IpcamError("Cannot set input mode");
 	}
 	//#if 1
-	unsigned int gain_mic = 0x04;
+	unsigned int gain_mic = 0x01;
 	if (ioctl(fd, ACODEC_SET_GAIN_MICL, &gain_mic))
 	{
 		fprintf(stderr, "set acodec micin volume failed\n");
