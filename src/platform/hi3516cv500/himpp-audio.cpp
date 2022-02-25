@@ -7,12 +7,12 @@
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * live-streamer is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -26,7 +26,7 @@
 #include <mpi_audio.h>
 #include <acodec.h>
 
-#include <himpp-common.h>
+#include "himpp-common.h"
 #include "himpp-audio.h"
 
 //////////////////////////////////////////////////////////////////////////////
@@ -35,7 +35,7 @@
 
 #define ACODEC_FILE "/dev/acodec"
 
-#define AUDIO_PTNUMPERFRM 320
+#define AUDIO_PTNUMPERFRM 160
 #define AUDIO_ADPCM_TYPE ADPCM_TYPE_DVI4 // ADPCM_TYPE_IMA, ADPCM_TYPE_DVI4
 #define G726_BPS MEDIA_G726_40K			 // MEDIA_G726_16K, MEDIA_G726_24K ...
 
@@ -47,7 +47,7 @@ HimppAudioCodec::HimppAudioCodec(AUDIO_SAMPLE_RATE_E sample_rate)
 	: AudioElement(NULL), HimppAudioElement(NULL), _sample_rate(sample_rate),
 	  _input_vol(56), _output_vol(0)
 {
-    fprintf(stderr, "Setting sample rate to: %d\n", sample_rate);
+	fprintf(stderr, "Setting sample rate to: %d\n", sample_rate);
 }
 
 HimppAudioCodec::~HimppAudioCodec()
@@ -131,7 +131,7 @@ void HimppAudioCodec::doEnableElement()
 	}
 
 	fprintf(stderr, "Setting sample rate to: %d\n", _sample_rate);
- 
+
 	unsigned int i2s_fs_sel = 0;
 	switch (_sample_rate)
 	{
@@ -183,12 +183,14 @@ void HimppAudioCodec::doEnableElement()
 		close(fd);
 		throw IpcamError("Cannot set input mode");
 	}
-//#if 1
-	unsigned int gain_mic = 0x08;
-	if (ioctl(fd, ACODEC_SET_GAIN_MICL, &gain_mic)) {
+	//#if 1
+	unsigned int gain_mic = 0x04;
+	if (ioctl(fd, ACODEC_SET_GAIN_MICL, &gain_mic))
+	{
 		fprintf(stderr, "set acodec micin volume failed\n");
 	}
-	if (ioctl(fd, ACODEC_SET_GAIN_MICR, &gain_mic)) {
+	if (ioctl(fd, ACODEC_SET_GAIN_MICR, &gain_mic))
+	{
 		fprintf(stderr, "set acodec micin volume failed\n");
 	}
 #if 0
@@ -328,7 +330,7 @@ void HimppAiChan::doEnableElement()
 	}
 #endif
 
-#if 1
+#if 0
 	AI_TALKVQE_CONFIG_S attr;
 	memset(&attr, 0, sizeof(attr));
 	attr.u32OpenMask =
@@ -336,18 +338,29 @@ void HimppAiChan::doEnableElement()
 		AI_TALKVQE_MASK_AGC | /*AI_TALKVQE_MASK_HDR |*/
 		AI_TALKVQE_MASK_AGC | AI_TALKVQE_MASK_EQ |
 		AI_TALKVQE_MASK_ANR;
+
 	attr.s32WorkSampleRate = samplerate();
 	attr.s32FrameSample = AUDIO_PTNUMPERFRM;
-	attr.enWorkstate = VQE_WORKSTATE_COMMON;
+	attr.enWorkstate = VQE_WORKSTATE_NOISY;
 	attr.stAgcCfg.bUsrMode = HI_FALSE;
+	attr.stAgcCfg.s8ImproveSNR = 2;
+	attr.stAgcCfg.s8UseHighPassFilt = 3;
 	attr.stAnrCfg.bUsrMode = HI_FALSE;
 	attr.stHpfCfg.bUsrMode = HI_FALSE;
+	attr.stHpfCfg.enHpfFreq = AUDIO_HPF_FREQ_150;
+
+	// EQ the low frequencies
+	attr.stEqCfg.s8GaindB[0] = -20; // 100hz
+	attr.stEqCfg.s8GaindB[1] = -20; // 200hz
+	attr.stEqCfg.s8GaindB[2] = -10; // 250hz
+
 	s32Ret = HI_MPI_AI_SetTalkVqeAttr(_mpp_chn.s32DevId, _chnid, 0, 0, &attr);
 	if (s32Ret != HI_SUCCESS)
 	{
 		fprintf(stderr, "HI_MPI_AI_SetVqeAttr(%d,%d) failed [%#x]\n",
 				_mpp_chn.s32DevId, _chnid, s32Ret);
 	}
+	fprintf(stderr, "Configured audio input filters\n");
 
 	s32Ret = HI_MPI_AI_EnableVqe(_mpp_chn.s32DevId, _chnid);
 	if (s32Ret != HI_SUCCESS)
@@ -687,6 +700,8 @@ void HimppAoChan::doEnableElement()
 		throw IpcamError("Failed to enable aochn");
 	}
 
+	fprintf(stderr, "AO channel enabled\n");
+
 #if 0
 	s32Ret = HI_MPI_AO_EnableReSmp(_mpp_chn.s32DevId, _chnid, AUDIO_SAMPLE_RATE_8000);
 	if (s32Ret) {
@@ -698,27 +713,30 @@ void HimppAoChan::doEnableElement()
 #if 0
 	AI_TALKVQE_CONFIG_S attr;
 	memset(&attr, 0, sizeof(attr));
-	attr.u32OpenMask = \
-		AI_TALKVQE_MASK_HPF | AI_TALKVQE_MASK_AEC | \
-		AI_TALKVQE_MASK_AGC | /*AI_TALKVQE_MASK_HDR |*/ \
-		AI_TALKVQE_MASK_AGC | AI_TALKVQE_MASK_EQ | \
+	attr.u32OpenMask =
+		AI_TALKVQE_MASK_HPF | AI_TALKVQE_MASK_AEC |
+		AI_TALKVQE_MASK_AGC | /*AI_TALKVQE_MASK_HDR |*/
+		AI_TALKVQE_MASK_AGC | AI_TALKVQE_MASK_EQ |
 		AI_TALKVQE_MASK_ANR;
-	attr.s32WorkSampleRate    = samplerate();
-	attr.s32FrameSample       = AUDIO_PTNUMPERFRM;
-	attr.enWorkstate          = VQE_WORKSTATE_COMMON;
-	attr.stAgcCfg.bUsrMode    = HI_FALSE;
-	attr.stAnrCfg.bUsrMode    = HI_FALSE;
-	attr.stHpfCfg.bUsrMode    = HI_FALSE;
+	attr.s32WorkSampleRate = samplerate();
+	attr.s32FrameSample = AUDIO_PTNUMPERFRM;
+	attr.enWorkstate = VQE_WORKSTATE_COMMON;
+	attr.stAgcCfg.bUsrMode = HI_FALSE;
+	attr.stAnrCfg.bUsrMode = HI_FALSE;
+	attr.stHpfCfg.bUsrMode = HI_FALSE;
+
 	s32Ret = HI_MPI_AI_SetTalkVqeAttr(_mpp_chn.s32DevId, _chnid, 0, 0, &attr);
-	if (s32Ret != HI_SUCCESS) {
+	if (s32Ret != HI_SUCCESS)
+	{
 		fprintf(stderr, "HI_MPI_AI_SetVqeAttr(%d,%d) failed [%#x]\n",
-		        _mpp_chn.s32DevId, _chnid, s32Ret);
+				_mpp_chn.s32DevId, _chnid, s32Ret);
 	}
 
 	s32Ret = HI_MPI_AO_EnableVqe(_mpp_chn.s32DevId, _chnid);
-	if (s32Ret != HI_SUCCESS) {
+	if (s32Ret != HI_SUCCESS)
+	{
 		fprintf(stderr, "HI_MPI_AI_EnableVqe(%d,%d) failed [%#x]\n",
-		        _mpp_chn.s32DevId, _chnid, s32Ret);
+				_mpp_chn.s32DevId, _chnid, s32Ret);
 	}
 #endif
 }
@@ -794,6 +812,7 @@ void HimppAdecChan::doEnableElement()
 		attr.enType = PT_G726;
 		dec_attr.g726.enG726bps = G726_BPS;
 		break;
+	case AAC:
 	case LPCM:
 		attr.enType = PT_LPCM;
 		attr.enMode = ADEC_MODE_PACK;
