@@ -1,0 +1,337 @@
+{
+    "capture_controls": {
+        "audio": {
+            "audio_input_gain": {
+                "default": 7,
+                "description": "ratio of output power to input power in decibals (10*log)",
+                "max": 11,
+                "min": 0,
+                "type": "float",
+                "unit": "decibels"
+            },
+            "audio_input_volume": {
+                "default": 0.8,
+                "description": "",
+                "max": 1.0,
+                "min": 0.0,
+                "type": "float"
+            }
+        },
+        "video": {
+            "brightness": {
+                "default": 50,
+                "description": "Image brightness",
+                "max": 100,
+                "min": 0,
+                "type": "int"
+            },
+            "contrast": {
+                "default": 50,
+                "description": "Image contrast",
+                "max": 100,
+                "min": 0,
+                "type": "int"
+            },
+            "chroma": {
+                "default": 50,
+                "description": "Image chroma",
+                "max": 100,
+                "min": 0,
+                "type": "int"
+            },
+            "saturation": {
+                "default": 50,
+                "description": "Image saturation",
+                "max": 100,
+                "min": 0,
+                "type": "int"
+            },
+            "mirror": {
+                "default": false,
+                "value": false,
+                "description": "Mirror image",
+                "type": "boolean"
+            },
+            "flip": {
+                "default": false,
+                "value": false,
+                "description": "Flip image",
+                "type": "boolean"
+            },
+            "antiflickermode": {
+                "default": "2",
+                "value": "2",
+                "description": "Anti flicker mode",
+                "options": [
+                    "0",
+                    "1",
+                    "2"
+                ],
+                "type": "option"
+            },
+            "antiflickerfreq": {
+                "default": 50,
+                "value": 50,
+                "description": "Anti flicker frequency",
+                "max": 100,
+                "min": 0,
+                "type": "int"
+            },
+            "exposurepriority": {
+                "default": "1",
+                "value": "1",
+                "description": "Exposure priority",
+                "options": [
+                    "0",
+                    "1",
+                    "2"
+                ],
+                "type": "option"
+            },
+            "exposuremaxgain": {
+                "default": 16000,
+                "value": 16000,
+                "description": "Exposure max gain",
+                "max": 32768,
+                "min": 0,
+                "type": "int"
+            },
+            "exposuremaxtime": {
+                "default": 80000,
+                "value": 80000,
+                "description": "Exposure max time",
+                "max": 200000,
+                "min": 0,
+                "type": "int"
+            },
+            "exposurecompensation": {
+                "default": 56,
+                "value": 56,
+                "description": "Exposure compensation",
+                "max": 100,
+                "min": 0,
+                "type": "int"
+            },
+            "widedynamicrangemode": {
+                "default": "1",
+                "value": "1",
+                "description": "Wide dynamic range mode",
+                "options": [
+                    "0",
+                    "1"
+                ],
+                "type": "option"
+            },
+            "widedynamicrangelevel": {
+                "default": 60,
+                "value": 60,
+                "description": "Wide dynamic range level",
+                "max": 100,
+                "min": 0,
+                "type": "int"
+            },
+            "whitebalancemode": {
+                "default": "1",
+                "value": "1",
+                "description": "White balance mode",
+                "options": [
+                    "0",
+                    "1"
+                ],
+                "type": "option"
+            },
+            "whitebalancecr": {
+                "default": 180,
+                "value": 180,
+                "description": "White balance red difference",
+                "max": 255,
+                "min": 0,
+                "type": "int"
+            },
+            "whitebalancecb": {
+                "default": 100,
+                "value": 100,
+                "description": "White balance blue difference",
+                "max": 255,
+                "min": 0,
+                "type": "int"
+            },
+            "whitebalanceredgain": {
+                "default": 255,
+                "value": 255,
+                "description": "White balance red gain",
+                "max": 255,
+                "min": 0,
+                "type": "int"
+            },
+            "whitebalancegreengain": {
+                "default": 255,
+                "value": 255,
+                "description": "White balance green gain",
+                "max": 255,
+                "min": 0,
+                "type": "int"
+            },
+            "whitebalancebluegain": {
+                "default": 255,
+                "value": 255,
+                "description": "White balance blue gain",
+                "max": 255,
+                "min": 0,
+                "type": "int"
+            },
+        },
+        "streams": [
+            {
+                "name": {
+                    "default": "Stream 1",
+                    "value": "Stream 1",
+                    "description": "Stream name",
+                    "type": "text"
+                },
+                "enabled": {
+                    "default": true,
+                    "value": true,
+                    "description": "Stream enabled",
+                    "type": "boolean"
+                },
+                "audio": {
+                    "default": true,
+                    "value": true,
+                    "description": "Stream includes audio",
+                    "type": "boolean"
+                },
+                "bitrate": {
+                    "default": 4096,
+                    "value": true,
+                    "description": "Stream bitrate",
+                    "max": 8192,
+                    "min": 512,
+                    "type": "int",
+                    "unit": "Kbps"
+                },
+                "encoding": {
+                    "default": "h264",
+                    "value": "h264",
+                    "description": "Stream encoding format",
+                    "options": [
+                        "h264",
+                        "h265"
+                    ],
+                    "type": "option"
+                },
+                "resolution": {
+                    "default": "1920x1080@25",
+                    "value": "1920x1080@25",
+                    "description": "Stream video resolution",
+                    "options": [
+                        "1920x1080@25",
+                        "1280x720@25",
+                        "640x360@10"
+                    ],
+                    "type": "option"
+                }
+            },
+            {
+                "name": {
+                    "default": "Stream 2",
+                    "value": "Stream 2",
+                    "description": "Stream name",
+                    "type": "text"
+                },
+                "enabled": {
+                    "default": true,
+                    "value": true,
+                    "description": "Stream enabled",
+                    "type": "boolean"
+                },
+                "audio": {
+                    "default": true,
+                    "value": true,
+                    "description": "Stream includes audio",
+                    "type": "boolean"
+                },
+                "bitrate": {
+                    "default": 2048,
+                    "value": true,
+                    "description": "Stream bitrate",
+                    "max": 8192,
+                    "min": 512,
+                    "type": "int",
+                    "unit": "Kbps"
+                },
+                "encoding": {
+                    "default": "h264",
+                    "value": "h264",
+                    "description": "Stream encoding format",
+                    "options": [
+                        "h264",
+                        "h265"
+                    ],
+                    "type": "option"
+                },
+                "resolution": {
+                    "default": "1280x720@25",
+                    "value": "1280x720@25",
+                    "description": "Stream video resolution",
+                    "options": [
+                        "1920x1080@25",
+                        "1280x720@25",
+                        "640x360@10"
+                    ],
+                    "type": "option"
+                }
+            },
+            {
+                "name": {
+                    "default": "Stream 3",
+                    "value": "Stream 3",
+                    "description": "Stream name",
+                    "type": "text"
+                },
+                "enabled": {
+                    "default": true,
+                    "value": true,
+                    "description": "Stream enabled",
+                    "type": "boolean"
+                },
+                "audio": {
+                    "default": true,
+                    "value": true,
+                    "description": "Stream includes audio",
+                    "type": "boolean"
+                },
+                "bitrate": {
+                    "default": 2048,
+                    "value": true,
+                    "description": "Stream bitrate",
+                    "max": 8192,
+                    "min": 512,
+                    "type": "int",
+                    "unit": "Kbps"
+                },
+                "encoding": {
+                    "default": "h264",
+                    "value": "h264",
+                    "description": "Stream encoding format",
+                    "options": [
+                        "h264",
+                        "h265"
+                    ],
+                    "type": "option"
+                },
+                "resolution": {
+                    "default": "640x360@10",
+                    "value": "640x360@10",
+                    "description": "Stream video resolution",
+                    "options": [
+                        "1920x1080@25",
+                        "1280x720@25",
+                        "640x360@10"
+                    ],
+                    "type": "option"
+                }
+            }
+        ]
+    }
+}
