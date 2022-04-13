@@ -1,20 +1,50 @@
 {
     "capture_controls": {
         "audio": {
-            "audio_input_gain": {
+            "audioinputgain": {
                 "default": 7,
-                "description": "ratio of output power to input power in decibals (10*log)",
-                "max": 11,
+                "description": "Gain on audio input",
+                "max": 20,
                 "min": 0,
-                "type": "float",
-                "unit": "decibels"
+                "type": "int"
             },
-            "audio_input_volume": {
-                "default": 0.8,
+            "audioinputvolume": {
+                "default": 60,
                 "description": "",
-                "max": 1.0,
-                "min": 0.0,
-                "type": "float"
+                "max": 100,
+                "min": 0,
+                "type": "int"
+            },
+            "audiosamplerate": {
+                "default": "16000",
+                "value": "16000",
+                "description": "Recording samplerate",
+                "options": [
+                    "8000",
+                    "16000",
+                    "24000",
+                    "44100",
+                    "48000"
+                ],
+                "type": "option"
+            },
+            "audiobitrate": {
+                "default": 64,
+                "value": 64,
+                "description": "Audior encoding bitrate Kbps",
+                "max": 256,
+                "min": 32,
+                "type": "int"
+            },
+            "audioencoding": {
+                "default": "AAC",
+                "value": "AAC",
+                "description": "Audio encoding codec",
+                "options": [
+                    "AAC",
+                    "PCM"
+                ],
+                "type": "option"
             }
         },
         "video": {
