@@ -7,12 +7,12 @@
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * live-streamer is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -21,6 +21,7 @@
 #include <config.h>
 #endif
 
+#include <iostream>
 #include <fstream>
 #include <RTSPServer.hh>
 #include <ServerMediaSession.hh>
@@ -41,17 +42,19 @@ const char *VIDEO_ENCODER_SERVER_PATH = "/ipcam/Media/VideoEncoder";
 const char *AUDIO_SOURCE_SERVER_PATH = "/ipcam/Media/AudioSource";
 const char *AUDIO_ENCODER_SERVER_PATH = "/ipcam/Media/AudioEncoder";
 
-IpcamRuntime::IpcamRuntime
-(std::string config_name, ev::default_loop &loop, RTSPServer *rtspServer, DBus::Connection *conn)
-  : _loop(loop), _rtsp_server(rtspServer), _dbus_connection(conn)
+IpcamRuntime::IpcamRuntime(std::string config_name, ev::default_loop &loop, RTSPServer *rtspServer, DBus::Connection *conn)
+	: _loop(loop), _rtsp_server(rtspServer), _dbus_connection(conn)
 #ifdef HAVE_JSONCPP_SUPPORT
-    , _config_name(config_name), _config_dirty(false), _config_timer(loop)
+	  ,
+	  _config_name(config_name), _config_dirty(false), _config_timer(loop)
 #endif
 {
 #ifdef HAVE_JSONCPP_SUPPORT
-	if (_config_name.size() > 0) {
+	if (_config_name.size() > 0)
+	{
 		std::ifstream ifs(config_name.c_str());
-		if (ifs.is_open()) {
+		if (ifs.is_open())
+		{
 			Json::CharReaderBuilder rbuilder;
 			rbuilder["collectComments"] = true;
 			std::string errs;
@@ -65,9 +68,11 @@ IpcamRuntime::IpcamRuntime
 IpcamRuntime::~IpcamRuntime()
 {
 #ifdef HAVE_JSONCPP_SUPPORT
-	if (_config_dirty && _config_name.size() > 0) {
+	if (_config_dirty && _config_name.size() > 0)
+	{
 		std::ofstream ofs(_config_name.c_str());
-		if (ofs.is_open()) {
+		if (ofs.is_open())
+		{
 			Json::StreamWriterBuilder wbuilder;
 			wbuilder["commentStyle"] = "All";
 			wbuilder["indentation"] = "  ";
@@ -79,46 +84,46 @@ IpcamRuntime::~IpcamRuntime()
 #endif
 }
 
-RTSPStream IpcamRuntime::addRTSPStream
-(const std::string& path, VideoStreamSource* video, AudioStreamSource* audio)
+RTSPStream IpcamRuntime::addRTSPStream(const std::string &path, VideoStreamSource *video, AudioStreamSource *audio)
 {
-	char const* description = "RTSP/RTP stream from live-streamer";
+	char const *description = "RTSP/RTP stream from live-streamer";
 	ServerMediaSession *sms;
 	sms = ServerMediaSession::createNew(_rtsp_server->envir(),
-	                                    path.c_str(),
-	                                    path.c_str(),
-	                                    description);
-	if (sms) {
-		if (video) {
-			ServerMediaSubsession* vsmss = NULL;
-			switch (video->encoding()) {
+										path.c_str(),
+										path.c_str(),
+										description);
+	if (sms)
+	{
+		if (video)
+		{
+			ServerMediaSubsession *vsmss = NULL;
+			switch (video->encoding())
+			{
 			case H265:
-				vsmss = LiveH265VideoServerMediaSubsession
-					::createNew(_rtsp_server->envir(),
-					            H264_VIDEO_STREAM_SOURCE(video));
+				vsmss = LiveH265VideoServerMediaSubsession ::createNew(_rtsp_server->envir(),
+																	   H264_VIDEO_STREAM_SOURCE(video));
 				break;
 			case H264:
-				vsmss = LiveH264VideoServerMediaSubsession
-					::createNew(_rtsp_server->envir(), 
-					            H264_VIDEO_STREAM_SOURCE(video));
+				vsmss = LiveH264VideoServerMediaSubsession ::createNew(_rtsp_server->envir(),
+																	   H264_VIDEO_STREAM_SOURCE(video));
 				break;
 			case JPEG:
 			case MJPEG:
-				vsmss = LiveJPEGVideoServerMediaSubsession
-					::createNew(_rtsp_server->envir(),
-					            JPEG_VIDEO_STREAM_SOURCE(video));
+				vsmss = LiveJPEGVideoServerMediaSubsession ::createNew(_rtsp_server->envir(),
+																	   JPEG_VIDEO_STREAM_SOURCE(video));
 				break;
 			default:
 				break;
 			}
-			if (vsmss) {
+			if (vsmss)
+			{
 				sms->addSubsession(vsmss);
 			}
 		}
-		if (audio) {
-			LiveAudioServerMediaSubsession* asmss;
-			asmss = LiveAudioServerMediaSubsession
-				::createNew(_rtsp_server->envir(), audio);
+		if (audio)
+		{
+			LiveAudioServerMediaSubsession *asmss;
+			asmss = LiveAudioServerMediaSubsession ::createNew(_rtsp_server->envir(), audio);
 			sms->addSubsession(asmss);
 		}
 
@@ -130,37 +135,34 @@ RTSPStream IpcamRuntime::addRTSPStream
 	return sms;
 }
 
-void IpcamRuntime::addAudioSource(AudioSource* audio_source)
+void IpcamRuntime::addAudioSource(AudioSource *audio_source)
 {
 	int index = _audio_source_list.size();
-	std::string obj_path = std::string(AUDIO_SOURCE_SERVER_PATH)
-		+ std::to_string(index);
+	std::string obj_path = std::string(AUDIO_SOURCE_SERVER_PATH) + std::to_string(index);
 	_audio_source_list.emplace_back(new DBus::AudioSource(*this, obj_path, audio_source));
 }
 
-void IpcamRuntime::addAudioEncoder(AudioEncoder* audio_encoder)
+void IpcamRuntime::addAudioEncoder(AudioEncoder *audio_encoder)
 {
 	int index = _audio_encoder_list.size();
-	std::string obj_path = std::string(AUDIO_ENCODER_SERVER_PATH)
-		+ std::to_string(index);
+	std::string obj_path = std::string(AUDIO_ENCODER_SERVER_PATH) + std::to_string(index);
 	_audio_encoder_list.emplace_back(new DBus::AudioEncoder(*this, obj_path, audio_encoder));
 }
 
-void IpcamRuntime::addVideoSource(VideoSource* video_source)
+void IpcamRuntime::addVideoSource(VideoSource *video_source)
 {
 	int index = _video_source_list.size();
-	std::string obj_path = std::string(VIDEO_SOURCE_SERVER_PATH)
-		+ std::to_string(index);
+	std::string obj_path = std::string(VIDEO_SOURCE_SERVER_PATH) + std::to_string(index);
 	_video_source_list.emplace_back(new DBus::VideoSource(*this, obj_path, video_source));
 }
 
-void IpcamRuntime::addVideoEncoder(VideoEncoder* video_encoder)
+void IpcamRuntime::addVideoEncoder(VideoEncoder *video_encoder)
 {
 	int index = _video_encoder_list.size();
-	std::string obj_path = std::string(VIDEO_ENCODER_SERVER_PATH)
-		+ std::to_string(index);
+	std::string obj_path = std::string(VIDEO_ENCODER_SERVER_PATH) + std::to_string(index);
 
-	switch (video_encoder->getEncoding()) {
+	switch (video_encoder->getEncoding())
+	{
 	case H264:
 		_video_encoder_list.emplace_back(new DBus::H264VideoEncoder(*this, obj_path, H264_VIDEO_ENCODER(video_encoder)));
 		break;
@@ -170,7 +172,7 @@ void IpcamRuntime::addVideoEncoder(VideoEncoder* video_encoder)
 	}
 }
 
-void IpcamRuntime::addAudioOutputStream(in_addr addr, uint16_t portNum, AudioStreamSink* streamSink)
+void IpcamRuntime::addAudioOutputStream(in_addr addr, uint16_t portNum, AudioStreamSink *streamSink)
 {
 	UsageEnvironment &envir = _rtsp_server->envir();
 
@@ -192,9 +194,11 @@ void IpcamRuntime::LoadConfig()
 
 void IpcamRuntime::config_timer_handler(ev::timer &w, int revents)
 {
-	if (_config_dirty && _config_name.size() > 0) {
+	if (_config_dirty && _config_name.size() > 0)
+	{
 		std::ofstream ofs(_config_name.c_str());
-		if (ofs.is_open()) {
+		if (ofs.is_open())
+		{
 			Json::StreamWriterBuilder wbuilder;
 			wbuilder["commentStyle"] = "All";
 			wbuilder["indentation"] = "  ";
