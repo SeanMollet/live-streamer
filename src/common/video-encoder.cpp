@@ -146,7 +146,7 @@ void H264VideoEncoder::setFrameRefMode(FrameRefMode value)
 	throw IpcamError(property_not_implemented);
 }
 
-H264VideoEncoder::FrameRefMode H264VideoEncoder::getFrameRefMode()
+FrameRefMode H264VideoEncoder::getFrameRefMode()
 {
 	throw IpcamError(property_not_implemented);
 }
@@ -156,7 +156,80 @@ void H264VideoEncoder::setIntraRefresh(IntraRefreshParam value)
 	throw IpcamError(property_not_implemented);
 }
 
-H264VideoEncoder::IntraRefreshParam H264VideoEncoder::getIntraRefresh()
+IntraRefreshParam H264VideoEncoder::getIntraRefresh()
+{
+	throw IpcamError(property_not_implemented);
+}
+
+
+//////////////////////////////////////////////////////////////////////////////
+// H265VideoEncoder
+//////////////////////////////////////////////////////////////////////////////
+
+H265VideoEncoder::H265VideoEncoder()
+{
+}
+
+H265VideoEncoder::~H265VideoEncoder()
+{
+}
+
+H265Profile H265VideoEncoder::getH265Profile()
+{
+	throw IpcamError(property_not_implemented);
+}
+
+void H265VideoEncoder::setH265Profile(H265Profile value)
+{
+	throw IpcamError(property_not_implemented);
+}
+
+uint32_t H265VideoEncoder::getGovLength()
+{
+	throw IpcamError(property_not_implemented);
+}
+
+void H265VideoEncoder::setGovLength(uint32_t value)
+{
+	throw IpcamError(property_not_implemented);
+}
+
+void H265VideoEncoder::setMinQP(uint32_t value)
+{
+	throw IpcamError(property_not_implemented);
+}
+
+uint32_t H265VideoEncoder::getMinQP()
+{
+	throw IpcamError(property_not_implemented);
+}
+
+void H265VideoEncoder::setMaxQP(uint32_t value)
+{
+	throw IpcamError(property_not_implemented);
+}
+
+uint32_t H265VideoEncoder::getMaxQP()
+{
+	throw IpcamError(property_not_implemented);
+}
+
+void H265VideoEncoder::setFrameRefMode(FrameRefMode value)
+{
+	throw IpcamError(property_not_implemented);
+}
+
+FrameRefMode H265VideoEncoder::getFrameRefMode()
+{
+	throw IpcamError(property_not_implemented);
+}
+
+void H265VideoEncoder::setIntraRefresh(IntraRefreshParam value)
+{
+	throw IpcamError(property_not_implemented);
+}
+
+IntraRefreshParam H265VideoEncoder::getIntraRefresh()
 {
 	throw IpcamError(property_not_implemented);
 }

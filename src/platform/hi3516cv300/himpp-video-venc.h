@@ -35,8 +35,10 @@ class HimppVencChan;
 class HimppVencChan :
 	public HimppVideoElement,
 	public H264VideoEncoder,
+	public H265VideoEncoder,
 	public JPEGVideoEncoder,
 	public H264VideoStreamSource,
+	public H265VideoStreamSource,
 	public JPEGVideoStreamSource
 {
 public:
@@ -73,6 +75,8 @@ public:
 	// implentation of H264VideoEncoder
 	void				setH264Profile(H264Profile value);
 	H264Profile			getH264Profile();
+	void				setH265Profile(H265Profile value);
+	H265Profile			getH265Profile();	
 	void				setGovLength(uint32_t value);
 	uint32_t			getGovLength();
 	void				setMinQP(uint32_t value);
@@ -102,6 +106,7 @@ private:
 	VENC_CHN					_chnid;
 	VideoEncodingType			_encoding;
 	H264Profile					_h264profile;
+	H265Profile                 _h265profile;
 	RateCtrlMode				_rcmode;
 	Resolution					_resolution;
 	uint32_t					_framerate;

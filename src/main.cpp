@@ -45,7 +45,7 @@
 #include <ipcam-runtime.h>
 
 #if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) \
-	|| defined(HAVE_HI3516CV300_SUPPORT) || defined(HAVE_HI3516EV200_SUPPORT) \
+	|| defined(HAVE_HI3516CV300_SUPPORT) \
 	|| defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT)
 #include <himpp-media.h>
 #endif
@@ -78,7 +78,8 @@ static void display_usage(char *cmd)
 	std::cout << usage;
 	std::cout << "Platform Options:\n";
 #if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) \
-	|| defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT)
+	|| defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT) \
+	|| defined(HAVE_HI3516CV300_SUPPORT)	
 	const char *plat_options = \
 		"  -pipe PIPE-STRING           Add media pipe\n"
 		"  -vsrc VIDEOSOURCE           Add video source\n"
@@ -108,8 +109,8 @@ static const struct option longopts[] = {
 	{ "port",        required_argument,  NULL,   'p' },
 	{ "syslog",      no_argument,        NULL,   'S' },
 #if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) \
-	|| defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3516EV200_SUPPORT) \
-	|| defined(HAVE_HI3520DV200_SUPPORT) || defined(HAVE_HI3516CV300_SUPPORT)
+	|| defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT) \
+	|| defined(HAVE_HI3516CV300_SUPPORT)
 	{ "pipe",        required_argument,  NULL,    0  },
 	{ "vsrc",        required_argument,  NULL,    0  },
 	{ "venc",        required_argument,  NULL,    0  },
@@ -258,7 +259,7 @@ int main(int argc, char *argv[])
 	IpcamRuntime *runtime = new IpcamRuntime(config_file, mainloop, rtspServer, &conn);
 
 #if defined(HAVE_HI3518V100_SUPPORT) || defined(HAVE_HI3518V200_SUPPORT) \
-	|| defined(HAVE_HI3516CV300_SUPPORT) || defined(HAVE_HI3516EV200_SUPPORT) \
+	|| defined(HAVE_HI3516CV300_SUPPORT) \
 	|| defined(HAVE_HI3520V100_SUPPORT) || defined(HAVE_HI3520DV200_SUPPORT)
 	HimppMedia himpp_media(runtime, plat_args);
 #endif

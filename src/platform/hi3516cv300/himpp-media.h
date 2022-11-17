@@ -41,9 +41,7 @@ public:
 private:
 	typedef std::unique_ptr<MediaElement>	MediaElementUPtr;
 	typedef std::unordered_map<std::string, MediaElementUPtr> MediaElementMap;
-	typedef std::list<AudioStreamSink*> AudioStreamSinkList;
 	MediaElementMap				_elements;
-	AudioStreamSinkList			_audiosinks;
 	IpcamRuntime*				_runtime;
 	HimppSysctl					_sysctl;
 

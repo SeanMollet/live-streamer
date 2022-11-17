@@ -73,7 +73,7 @@ class LiveH265VideoServerMediaSubsession: public OnDemandServerMediaSubsession
 {
 public:
 	static LiveH265VideoServerMediaSubsession*
-		createNew(UsageEnvironment& env, H264VideoStreamSource* stream);
+		createNew(UsageEnvironment& env, H265VideoStreamSource* stream);
 
 	// Used to implement "getAuxSDPLine()":
 	void checkForAuxSDPLine1();
@@ -89,7 +89,7 @@ public:
 	void pauseStream(unsigned clientSessionId, void* streamToken);
 
 protected:
-	LiveH265VideoServerMediaSubsession(UsageEnvironment& env, H264VideoStreamSource* stream);
+	LiveH265VideoServerMediaSubsession(UsageEnvironment& env, H265VideoStreamSource* stream);
 	// called only by createNew();
 	virtual ~LiveH265VideoServerMediaSubsession();
 
@@ -106,7 +106,7 @@ protected: // redefined virtual functions
 	                                  FramedSource* inputSource);
 
 private:
-	H264VideoStreamSource* fVideoStreamSource;
+	H265VideoStreamSource* fVideoStreamSource;
 	char* fAuxSDPLine;
 	char fDoneFlag; // used when setting up "fAuxSDPLine"
 	RTPSink* fDummyRTPSink; // ditto

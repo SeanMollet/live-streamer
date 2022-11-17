@@ -282,13 +282,14 @@ MediaElement* HimppMedia::buildElementPipe(const std::string& description)
 					}
 				}
 
-				if ((pit = params.find("offset")) != params.end() ||
-				    (pit = params.find("off")) != params.end()) {
-					int32_t xoff = 0, yoff = 0;
-					std::string l;
-					std::stringstream ss(pit->second);
-					if (getline(ss, l, ',')) xoff = std::stoi(l);
-					if (getline(ss, l))      yoff = std::stoi(l);
+				int32_t xoff = -1, yoff = -1;
+				if ((pit = params.find("xoff")) != params.end()) {
+					xoff = std::stoi(pit->second);
+				}
+				if ((pit = params.find("yoff")) != params.end()) {
+					yoff = std::stoi(pit->second);
+				}
+				if ((xoff != -1) || (yoff != -1)) {
 					HIMPP_VI_DEV(last_element)->setCropOffset(xoff, yoff);
 				}
 

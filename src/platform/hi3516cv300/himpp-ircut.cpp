@@ -240,6 +240,13 @@ HimppIrCut::HimppIrCut(HimppVideoElement* source, std::unordered_map<std::string
 			fprintf(stderr, "Open IRLED-BRIGHT device '%s' failed\n", value.c_str());
 		}
 	}
+
+	//If we have at least a sensor and a cutp/cutn, enable auto mode
+	if(_sensor_dev.is_open() && _ircutn_dev.is_open() && _ircutp_dev.is_open())
+	{
+		ircut_off();
+		enable();
+	}
 }
 
 HimppIrCut::~HimppIrCut()
@@ -338,14 +345,16 @@ void HimppIrCut::sensor_timer_handler(ev::timer& w, int revents)
 	int retval, inval;
 
 	if ((retval = _sensor_dev.getValue(inval)) > 0) {
-		if (_status == IRCUT_ON && inval > _threshold + (int)_hysteresis) {
-			if (++_debounce_count >= 3) {
+		//I converted this to work with a digital sensor. inval gives us the state of the LEDs
+
+		if (_status == IRCUT_ON && inval ==0){
+			if (++_debounce_count >= DIGITAL_DEBOUNCE) {
 				ircut_off();
 				_debounce_count = 0;
 			}
 		}
-		else if (_status == IRCUT_OFF && inval < _threshold - (int)_hysteresis) {
-			if (++_debounce_count >= 3) {
+		else if (_status == IRCUT_OFF && inval ==1){
+			if (++_debounce_count >= DIGITAL_DEBOUNCE) {
 				ircut_on();
 				_debounce_count = 0;
 			}

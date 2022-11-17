@@ -26,6 +26,7 @@
 
 class HimppIrCut;
 
+#define DIGITAL_DEBOUNCE 1
 #define HIMPP_IRCUT(o)		dynamic_cast<HimppIrCut*>(o)
 
 class IODevice

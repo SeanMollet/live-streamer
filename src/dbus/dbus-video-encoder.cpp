@@ -31,6 +31,7 @@ namespace DBus {
 #define VIDEOENCODER_INTERFACE		"ipcam.Media.VideoEncoder"
 #define RATECONTROL_INTERFACE		"ipcam.Media.VideoEncoder.RateControl"
 #define H264_INTERFACE				"ipcam.Media.VideoEncoder.H264"
+#define H265_INTERFACE				"ipcam.Media.VideoEncoder.H265"
 
 #define DEFINE_PROP(prop, get, set) \
 	_prop_handler.emplace(std::piecewise_construct, \
@@ -245,7 +246,7 @@ H264VideoEncoder::H264VideoEncoder
 		   const std::string &property, DBus::Variant &value)
 		{
 			Ipcam::Media::H264VideoEncoder* h264venc = H264_VIDEO_ENCODER(_video_encoder);
-			Ipcam::Media::H264VideoEncoder::FrameRefMode refmode = h264venc->getFrameRefMode();
+			Ipcam::Media::FrameRefMode refmode = h264venc->getFrameRefMode();
 			DBus::Struct<uint32_t, uint32_t, bool> s;
 			s._1 = refmode.Base;
 			s._2 = refmode.Enhanced;
@@ -258,7 +259,7 @@ H264VideoEncoder::H264VideoEncoder
 		{
 			Ipcam::Media::H264VideoEncoder* h264venc = H264_VIDEO_ENCODER(_video_encoder);
 			DBus::Struct<uint32_t, uint32_t, bool> s = value;
-			Ipcam::Media::H264VideoEncoder::FrameRefMode refmode(s._1, s._2, s._3);
+			Ipcam::Media::FrameRefMode refmode(s._1, s._2, s._3);
 			h264venc->setFrameRefMode(refmode);
 		}));
 	DEFINE_PROP(H264_INTERFACE ".IntraRefresh",
@@ -266,7 +267,7 @@ H264VideoEncoder::H264VideoEncoder
 		   const std::string &property, DBus::Variant &value)
 		{
 			Ipcam::Media::H264VideoEncoder* h264venc = H264_VIDEO_ENCODER(_video_encoder);
-			Ipcam::Media::H264VideoEncoder::IntraRefreshParam param = h264venc->getIntraRefresh();
+			Ipcam::Media::IntraRefreshParam param = h264venc->getIntraRefresh();
 			DBus::Struct<bool, bool, uint32_t, uint32_t> s;
 			s._1 = param.EnableRefresh;
 			s._2 = param.EnableISlice;
@@ -280,8 +281,113 @@ H264VideoEncoder::H264VideoEncoder
 		{
 			Ipcam::Media::H264VideoEncoder* h264venc = H264_VIDEO_ENCODER(_video_encoder);
 			DBus::Struct<bool, bool, uint32_t, uint32_t> s = value;
-			Ipcam::Media::H264VideoEncoder::IntraRefreshParam param(s._1, s._2, s._3, s._4);
+			Ipcam::Media::IntraRefreshParam param(s._1, s._2, s._3, s._4);
 			h264venc->setIntraRefresh(param);
+		}));
+}
+
+
+H265VideoEncoder::H265VideoEncoder
+(IpcamRuntime &runtime, std::string obj_path, Ipcam::Media::H265VideoEncoder* encoder)
+  : DBus::VideoEncoder(runtime, obj_path, VIDEO_ENCODER(encoder))
+{
+	assert(encoder != NULL);
+
+	// Handler of ipcam.Media.VideoEncoder
+	DEFINE_PROP(H265_INTERFACE ".H265Profile",
+		[this](DBus::InterfaceAdaptor &interface,
+		   const std::string &property, DBus::Variant &value)
+		{
+			Ipcam::Media::H265VideoEncoder* h265venc = H265_VIDEO_ENCODER(_video_encoder);
+			value.writer().append_uint32((uint32_t)h265venc->getH265Profile());
+		},
+		[this](DBus::InterfaceAdaptor &interface,
+		   const std::string &property, const DBus::Variant &value)
+		{
+			Ipcam::Media::H265VideoEncoder* h265venc = H265_VIDEO_ENCODER(_video_encoder);
+			h265venc->setH265Profile((Ipcam::Media::H265Profile)(uint32_t)value);
+		});
+	DEFINE_PROP(H265_INTERFACE ".GovLength",
+		[this](DBus::InterfaceAdaptor &interface,
+		   const std::string &property, DBus::Variant &value)
+		{
+			Ipcam::Media::H265VideoEncoder* h265venc = H265_VIDEO_ENCODER(_video_encoder);
+			value.writer().append_uint32((uint32_t)h265venc->getGovLength());
+		},
+		[this](DBus::InterfaceAdaptor &interface,
+		   const std::string &property, const DBus::Variant &value)
+		{
+			Ipcam::Media::H265VideoEncoder* h265venc = H265_VIDEO_ENCODER(_video_encoder);
+			h265venc->setGovLength((uint32_t)value);
+		});
+	DEFINE_PROP(H265_INTERFACE ".MinQP",
+		[this](DBus::InterfaceAdaptor &interface,
+		   const std::string &property, DBus::Variant &value)
+		{
+			Ipcam::Media::H265VideoEncoder* h265venc = H265_VIDEO_ENCODER(_video_encoder);
+			value.writer().append_uint32((uint32_t)h265venc->getMinQP());
+		},
+		[this](DBus::InterfaceAdaptor &interface,
+		   const std::string &property, const DBus::Variant &value)
+		{
+			Ipcam::Media::H265VideoEncoder* h265venc = H265_VIDEO_ENCODER(_video_encoder);
+			h265venc->setMinQP((uint32_t)value);
+		});
+	DEFINE_PROP(H265_INTERFACE ".MaxQP",
+		[this](DBus::InterfaceAdaptor &interface,
+		   const std::string &property, DBus::Variant &value)
+		{
+			Ipcam::Media::H265VideoEncoder* h265venc = H265_VIDEO_ENCODER(_video_encoder);
+			value.writer().append_uint32((uint32_t)h265venc->getMaxQP());
+		},
+		[this](DBus::InterfaceAdaptor &interface,
+		   const std::string &property, const DBus::Variant &value)
+		{
+			Ipcam::Media::H265VideoEncoder* h265venc = H265_VIDEO_ENCODER(_video_encoder);
+			h265venc->setMaxQP((uint32_t)value);
+		});
+	DEFINE_PROP(H265_INTERFACE ".FrameRefMode",
+		([this](DBus::InterfaceAdaptor &interface,
+		   const std::string &property, DBus::Variant &value)
+		{
+			Ipcam::Media::H265VideoEncoder* h265venc = H265_VIDEO_ENCODER(_video_encoder);
+			Ipcam::Media::FrameRefMode refmode = h265venc->getFrameRefMode();
+			DBus::Struct<uint32_t, uint32_t, bool> s;
+			s._1 = refmode.Base;
+			s._2 = refmode.Enhanced;
+			s._3 = refmode.EnablePred;
+			DBus::MessageIter mi = value.writer();
+			mi << s;
+		}),
+		([this](DBus::InterfaceAdaptor &interface,
+		   const std::string &property, const DBus::Variant &value)
+		{
+			Ipcam::Media::H265VideoEncoder* h265venc = H265_VIDEO_ENCODER(_video_encoder);
+			DBus::Struct<uint32_t, uint32_t, bool> s = value;
+			Ipcam::Media::FrameRefMode refmode(s._1, s._2, s._3);
+			h265venc->setFrameRefMode(refmode);
+		}));
+	DEFINE_PROP(H265_INTERFACE ".IntraRefresh",
+		([this](DBus::InterfaceAdaptor &interface,
+		   const std::string &property, DBus::Variant &value)
+		{
+			Ipcam::Media::H265VideoEncoder* h265venc = H265_VIDEO_ENCODER(_video_encoder);
+			Ipcam::Media::IntraRefreshParam param = h265venc->getIntraRefresh();
+			DBus::Struct<bool, bool, uint32_t, uint32_t> s;
+			s._1 = param.EnableRefresh;
+			s._2 = param.EnableISlice;
+			s._3 = param.RefreshLineNum;
+			s._4 = param.ReqIQp;
+			DBus::MessageIter mi = value.writer();
+			mi << s;
+		}),
+		([this](DBus::InterfaceAdaptor &interface,
+		   const std::string &property, const DBus::Variant &value)
+		{
+			Ipcam::Media::H265VideoEncoder* h265venc = H265_VIDEO_ENCODER(_video_encoder);
+			DBus::Struct<bool, bool, uint32_t, uint32_t> s = value;
+			Ipcam::Media::IntraRefreshParam param(s._1, s._2, s._3, s._4);
+			h265venc->setIntraRefresh(param);
 		}));
 }
 

@@ -18,6 +18,14 @@
     <property name="FrameRefMode" type="(uub)" access="readwrite"/>
     <property name="IntraRefresh" type="(bbuu)" access="readwrite"/>
   </interface>
+  <interface name="ipcam.Media.VideoEncoder.H265">
+    <property name="H265Profile" type="u" access="readwrite"/>
+    <property name="GovLength" type="u" access="readwrite"/>
+    <property name="MinQP" type="u" access="readwrite"/>
+    <property name="MaxQP" type="u" access="readwrite"/>
+    <property name="FrameRefMode" type="(uub)" access="readwrite"/>
+    <property name="IntraRefresh" type="(bbuu)" access="readwrite"/>
+  </interface>
   <interface name="ipcam.Media.VideoEncoder.OSD">
     <method name="CreateOSD">
       <arg name="index" type="u" direction="out"/>

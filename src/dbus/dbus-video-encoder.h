@@ -66,6 +66,14 @@ public:
 	H264VideoEncoder(IpcamRuntime &runtime, std::string obj_path, Ipcam::Media::H264VideoEncoder* encoder);
 };
 
+class H265VideoEncoder : 
+	public VideoEncoder,
+	public ipcam::Media::VideoEncoder::H265_adaptor
+{
+public:
+	H265VideoEncoder(IpcamRuntime &runtime, std::string obj_path, Ipcam::Media::H265VideoEncoder* encoder);
+};
+
 } // namespace DBus
 
 #endif // _DBUS_VIDEO_ENCODER_H_

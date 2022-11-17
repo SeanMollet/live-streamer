@@ -27,16 +27,18 @@
 namespace Ipcam {
 namespace Media {
 
-enum VideoEncodingType { H265, H264, MJPEG, JPEG, MPEG4 };
+enum VideoEncodingType { H264, MJPEG, JPEG, MPEG4, H265 };
 enum AudioEncodingType { ADPCM, LPCM, G711A, G711U, G726, AAC };
 
 class StreamBuffer;
 class H264StreamBuffer;
+class H265StreamBuffer;
 class JPEGStreamBuffer;
 
 class StreamSource;
 class VideoStreamSource;
 class H264VideoStreamSource;
+class H265VideoStreamSource;
 class JPEGVideoStreamSource;
 class AudioStreamSource;
 class StreamSink;
@@ -44,6 +46,7 @@ class StreamSink;
 #define STREAM_SOURCE(o)			dynamic_cast<Ipcam::Media::StreamSource*>(o)
 #define VIDEO_STREAM_SOURCE(o)		dynamic_cast<Ipcam::Media::VideoStreamSource*>(o)
 #define H264_VIDEO_STREAM_SOURCE(o)	dynamic_cast<Ipcam::Media::H264VideoStreamSource*>(o)
+#define H265_VIDEO_STREAM_SOURCE(o)	dynamic_cast<Ipcam::Media::H265VideoStreamSource*>(o)
 #define JPEG_VIDEO_STREAM_SOURCE(o)	dynamic_cast<Ipcam::Media::JPEGVideoStreamSource*>(o)
 #define AUDIO_STREAM_SOURCE(o)		dynamic_cast<Ipcam::Media::AudioStreamSource*>(o)
 
@@ -61,6 +64,11 @@ struct StreamBuffer
 };
 
 struct H264StreamBuffer : public StreamBuffer
+{
+	bool keyframe;
+};
+
+struct H265StreamBuffer : public StreamBuffer
 {
 	bool keyframe;
 };
@@ -121,6 +129,15 @@ public:
 
 	virtual void requestIDR() = 0;
 };
+
+class H265VideoStreamSource : virtual public VideoStreamSource
+{
+public:
+	virtual ~H265VideoStreamSource();
+
+	virtual void requestIDR() = 0;
+};
+
 
 class JPEGVideoStreamSource : virtual public VideoStreamSource
 {

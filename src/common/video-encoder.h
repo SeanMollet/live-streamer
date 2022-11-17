@@ -30,13 +30,16 @@ namespace Media {
 
 enum RateCtrlMode { CBR, VBR, FIXQP };
 enum H264Profile { BASELINE, MAIN, HIGH, SVC_T };
+enum H265Profile { HEVC_MAIN };
 
 class VideoEncoder;
 class H264VideoEncoder;
+class H265VideoEncoder;
 class JPEGVideoEncoder;
 
 #define VIDEO_ENCODER(o)		dynamic_cast<Ipcam::Media::VideoEncoder*>(o)
 #define H264_VIDEO_ENCODER(o)	dynamic_cast<Ipcam::Media::H264VideoEncoder*>(o)
+#define H265_VIDEO_ENCODER(o)	dynamic_cast<Ipcam::Media::H265VideoEncoder*>(o)
 #define JPEG_VIDEO_ENCODER(o)	dynamic_cast<Ipcam::Media::JPEGVideoEncoder*>(o)
 
 // control interface for video encoder
@@ -62,24 +65,25 @@ protected:
 	VideoEncoder();
 };
 
+struct FrameRefMode {
+	uint32_t				Base;
+	uint32_t				Enhanced;
+	bool					EnablePred;
+	FrameRefMode(uint32_t base, uint32_t enhanced, bool enablepred)
+		: Base(base), Enhanced(enhanced), EnablePred(enablepred) {}
+};
+
+struct IntraRefreshParam {
+	bool					EnableRefresh;
+	bool					EnableISlice;
+	uint32_t				RefreshLineNum;
+	uint32_t				ReqIQp;
+	IntraRefreshParam(bool refresh_en, bool islice_en, uint32_t linenum, uint32_t reqiqp)
+		: EnableRefresh(refresh_en), EnableISlice(islice_en), RefreshLineNum(linenum), ReqIQp(reqiqp) {}
+};
+
 class H264VideoEncoder : public virtual VideoEncoder
 {
-public:
-	struct FrameRefMode {
-		uint32_t				Base;
-		uint32_t				Enhanced;
-		bool					EnablePred;
-		FrameRefMode(uint32_t base, uint32_t enhanced, bool enablepred)
-			: Base(base), Enhanced(enhanced), EnablePred(enablepred) {}
-	};
-	struct IntraRefreshParam {
-		bool					EnableRefresh;
-		bool					EnableISlice;
-		uint32_t				RefreshLineNum;
-		uint32_t				ReqIQp;
-		IntraRefreshParam(bool refresh_en, bool islice_en, uint32_t linenum, uint32_t reqiqp)
-			: EnableRefresh(refresh_en), EnableISlice(islice_en), RefreshLineNum(linenum), ReqIQp(reqiqp) {}
-	};
 public:
 	virtual ~H264VideoEncoder();
 
@@ -99,6 +103,29 @@ public:
 
 protected:
 	H264VideoEncoder();
+};
+
+class H265VideoEncoder : public virtual VideoEncoder
+{
+public:
+	virtual ~H265VideoEncoder();
+
+	virtual H265Profile			getH265Profile();
+	virtual void				setH265Profile(H265Profile value);
+	virtual uint32_t			getGovLength();
+	virtual void				setGovLength(uint32_t value);
+	virtual uint32_t			getMinQP();
+	virtual void				setMinQP(uint32_t value);
+	virtual uint32_t			getMaxQP();
+	virtual void				setMaxQP(uint32_t value);
+
+	virtual void				setFrameRefMode(FrameRefMode value);
+	virtual FrameRefMode		getFrameRefMode();
+	virtual void				setIntraRefresh(IntraRefreshParam value);
+	virtual IntraRefreshParam	getIntraRefresh();
+
+protected:
+	H265VideoEncoder();
 };
 
 class JPEGVideoEncoder : virtual public VideoEncoder
