@@ -1,0 +1,139 @@
+imx323_cmos.lo: imx323_cmos.c \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdio.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/features.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h \
+ /buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stddef.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_stdio.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/wchar.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/endian.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/endian.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-16.h \
+ /buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stdarg.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/stdio_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/string.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/assert.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_comm_sns.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_type.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_common.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_math.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/time.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/time.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_clk_tck.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_defines.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_comm_video.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_comm_isp.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_errno.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_debug.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_isp_debug.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_comm_video.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_sns_ctrl.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/mpi_isp.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_comm_sns.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_comm_3a.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/mpi_ae.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_ae_comm.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/mpi_awb.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_awb_comm.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/mpi_af.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_af_comm.h
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdio.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/features.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h:
+
+/buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stddef.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_stdio.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/wchar.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/endian.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/endian.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-16.h:
+
+/buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stdarg.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/stdio_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/string.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/assert.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_comm_sns.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_type.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_common.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_math.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/time.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/time.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_clk_tck.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_defines.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_comm_video.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_comm_isp.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_errno.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_debug.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_isp_debug.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_comm_video.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_sns_ctrl.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/mpi_isp.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_comm_sns.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_comm_3a.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/mpi_ae.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_ae_comm.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/mpi_awb.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_awb_comm.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/mpi_af.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp/hi_af_comm.h:

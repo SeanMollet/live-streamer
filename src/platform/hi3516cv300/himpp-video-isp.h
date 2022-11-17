@@ -78,6 +78,7 @@ public:
 				uint32_t DGain;
 				uint32_t ISPDGain;
 				uint32_t Exposure;
+				int16_t Error;
 				uint32_t Histogram5[5];
 				uint32_t AverageLuminance;
 				uint32_t FrameRate;

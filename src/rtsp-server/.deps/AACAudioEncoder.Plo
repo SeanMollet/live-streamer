@@ -1,0 +1,297 @@
+AACAudioEncoder.lo: AACAudioEncoder.cpp AACAudioEncoder.hh \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/liveMedia/FramedFilter.hh \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/liveMedia/FramedSource.hh \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/groupsock/NetCommon.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/types.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/features.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/time.h \
+ /buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stddef.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/endian.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/endian.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-16.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/select.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/select.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sigset.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/time.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/sysmacros.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/socket.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/uio.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uio.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/socket.h \
+ /buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include-fixed/limits.h \
+ /buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include-fixed/syslimits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/limits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/posix1_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/local_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/linux/limits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_local_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/posix2_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/xopen_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/stdio_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/socket_type.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sockaddr.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/socket.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/socket.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/sockios.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/sockios.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/time.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/netinet/in.h \
+ /buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stdint.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdint.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/in.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/arpa/inet.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/netdb.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/siginfo.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/netdb.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/unistd.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/posix_opt.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_posix_opt.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/environments.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/confname.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/getopt.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/string.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/stdlib.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cstdlib \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/c++config.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/os_defines.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/cpu_defines.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdlib.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/waitflags.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/waitstatus.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/alloca.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/std_abs.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/errno.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/errno.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/linux/errno.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/errno.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/errno.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/errno-base.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/strings.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/ctype.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_touplow.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/liveMedia/MediaSource.hh \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/liveMedia/Media.hh \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/liveMedia/liveMedia_version.hh \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/UsageEnvironment/HashTable.hh \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/UsageEnvironment/Boolean.hh \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/UsageEnvironment/UsageEnvironment.hh \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/UsageEnvironment/UsageEnvironment_version.hh \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/UsageEnvironment/strDup.hh \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdio.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_stdio.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/wchar.h \
+ /buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stdarg.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/vo-aacenc/voAAC.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/vo-aacenc/voAudio.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/vo-aacenc/voIndex.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/vo-aacenc/voType.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/vo-aacenc/voMem.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/vo-aacenc/cmnMemory.h
+
+AACAudioEncoder.hh:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/liveMedia/FramedFilter.hh:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/liveMedia/FramedSource.hh:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/groupsock/NetCommon.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/types.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/features.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/time.h:
+
+/buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stddef.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/endian.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/endian.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-16.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/select.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/select.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sigset.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/time.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/sysmacros.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/socket.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/uio.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uio.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/socket.h:
+
+/buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include-fixed/limits.h:
+
+/buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include-fixed/syslimits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/limits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/posix1_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/local_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/linux/limits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_local_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/posix2_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/xopen_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/stdio_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/socket_type.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sockaddr.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/socket.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/socket.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/sockios.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/sockios.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/time.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/netinet/in.h:
+
+/buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stdint.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdint.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/in.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/arpa/inet.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/netdb.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/siginfo.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/netdb.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/unistd.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/posix_opt.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_posix_opt.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/environments.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/confname.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/getopt.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/string.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/stdlib.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cstdlib:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/c++config.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/os_defines.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/cpu_defines.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdlib.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/waitflags.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/waitstatus.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/alloca.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/std_abs.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/errno.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/errno.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/linux/errno.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/errno.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/errno.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/errno-base.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/strings.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/ctype.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_touplow.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/liveMedia/MediaSource.hh:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/liveMedia/Media.hh:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/liveMedia/liveMedia_version.hh:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/UsageEnvironment/HashTable.hh:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/UsageEnvironment/Boolean.hh:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/UsageEnvironment/UsageEnvironment.hh:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/UsageEnvironment/UsageEnvironment_version.hh:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/UsageEnvironment/strDup.hh:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdio.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_stdio.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/wchar.h:
+
+/buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stdarg.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/vo-aacenc/voAAC.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/vo-aacenc/voAudio.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/vo-aacenc/voIndex.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/vo-aacenc/voType.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/vo-aacenc/voMem.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/vo-aacenc/cmnMemory.h:

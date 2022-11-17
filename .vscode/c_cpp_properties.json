@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/../../buildroot_outputs/hi3516cv300/host/arm-buildroot-linux-gnueabi/sysroot/usr/include/**",
+                "${workspaceFolder}/src/common/**",
+                "${workspaceFolder}/src/dbus/**",
+                "${workspaceFolder}/src/platform/**",
+                "${workspaceFolder}"
+            ],
+            "defines": [
+                // "PLATFORM_INGENIC"
+                "PLATFORM_HI3516V500"
+                // "PLATFORM_HI3516V300"
+            ],
+            "macFrameworkPath": [],
+            "cStandard": "gnu17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x86",
+            "compilerPath": "/opt/homebrew/bin/x86_64-unknown-linux-gnu-gcc"
+        }
+    ],
+    "version": 4
+}

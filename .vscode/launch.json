@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // "logging": {
+            //     "trace": true,
+            //     "traceResponse": true,
+            //     "engineLogging": true
+            // },
+            "type": "cppdbg",
+            "request": "launch",
+            "name": "Attach to gdbserver ARM",
+            "program": "src/live-streamer",
+            // "miDebuggerServerAddress": "192.168.200.138:1234",
+            "miDebuggerServerAddress": "10.24.0.69:1234",
+            "cwd": "${workspaceRoot}",
+            "miDebuggerPath": "/opt/homebrew/Cellar/gdb/11.2/bin/arm-linux-gnueabi-gdb",
+            "stopAtEntry": true,
+            "targetArchitecture": "mips",
+            "sourceFileMap": {
+                "/tools/live-streamer": "${workspaceRoot}",
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

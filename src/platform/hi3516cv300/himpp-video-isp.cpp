@@ -39,6 +39,13 @@
 
 #include "himpp-video-isp.h"
 
+extern "C"
+{
+	void sensor_init(HI_VOID);
+	int sensor_register_callback(void);
+	int sensor_unregister_callback(void);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // HimppVideoISP
 //////////////////////////////////////////////////////////////////////////////
@@ -63,6 +70,26 @@ HimppVideoISP::~HimppVideoISP()
 {
 }
 
+static void printExposure(ISP_EXPOSURE_ATTR_S *exp)
+{
+	std::cout << "[     EXP] bByPass: " << exp->bByPass << "\r\n";
+	std::cout << "[     EXP] enOpType: " << exp->enOpType << "\r\n";
+	std::cout << "[     EXP] u8AERunInterval: " << (int)exp->u8AERunInterval << "\r\n";
+	std::cout << "[     EXP] bHistStatAdjust: " << exp->bHistStatAdjust << "\r\n";
+	std::cout << "[     EXP] bAERouteExValid: " << exp->bAERouteExValid << "\r\n";
+	std::cout << "[     EXP] stAuto.enAEMode: " << exp->stAuto.enAEMode << "\r\n";
+	std::cout << "[     EXP] stAuto.stExpTimeRange.u32Min: " << exp->stAuto.stExpTimeRange.u32Min << "\r\n";
+	std::cout << "[     EXP] stAuto.stExpTimeRange.u32Max: " << exp->stAuto.stExpTimeRange.u32Max << "\r\n";
+	std::cout << "[     EXP] stAuto.stSysGainRange.u32Min: " << exp->stAuto.stSysGainRange.u32Min << "\r\n";
+	std::cout << "[     EXP] stAuto.stSysGainRange.u32Max: " << exp->stAuto.stSysGainRange.u32Max << "\r\n";
+	std::cout << "[     EXP] stAuto.u8Compensation: " << (int)exp->stAuto.u8Compensation << "\r\n";
+	std::cout << "[     EXP] stAuto.stAntiflicker.bEnable: " << exp->stAuto.stAntiflicker.bEnable << "\r\n";
+	std::cout << "[     EXP] stAuto.stAntiflicker.enMode: " << exp->stAuto.stAntiflicker.enMode << "\r\n";
+	std::cout << "[     EXP] stAuto.stAntiflicker.u8Frequency: " << (int)exp->stAuto.stAntiflicker.u8Frequency << "\r\n";
+	std::cout << "[     EXP] stManual.u32ExpTime: " << exp->stManual.u32ExpTime << "\r\n";
+	std::cout << "[     EXP] stManual.u32ISPDGain: " << exp->stManual.u32ISPDGain << "\r\n";
+}
+
 void HimppVideoISP::timeout_handler(ev::timer &w, int revents)
 {
 	VideoSource::Imaging::Exposure &vs_exp = _imaging.exposure();
@@ -70,21 +97,31 @@ void HimppVideoISP::timeout_handler(ev::timer &w, int revents)
 	HimppVideoISP::Imaging::Exposure::StateInfo exp_state;
 	isp_exp->getStateInfo(exp_state);
 
+	system("clear");
+
 	char data[500];
 	int pos = 0;
-	pos += sprintf(data + pos, "ExposureTime: %u\r\n", exp_state.ExposureTime);
-	pos += sprintf(data + pos, "AGain: %u\r\n", exp_state.AGain);
-	pos += sprintf(data + pos, "DGain: %u\r\n", exp_state.DGain);
-	pos += sprintf(data + pos, "ISPDGain: %u\r\n", exp_state.ISPDGain);
-	pos += sprintf(data + pos, "Exposure: %u\r\n", exp_state.Exposure);
+	pos += sprintf(data + pos, "[     ISP] ExposureTime: %u\r\n", exp_state.ExposureTime);
+	pos += sprintf(data + pos, "[     ISP] AGain: %u\r\n", exp_state.AGain);
+	pos += sprintf(data + pos, "[     ISP] DGain: %u\r\n", exp_state.DGain);
+	pos += sprintf(data + pos, "[     ISP] ISPDGain: %u\r\n", exp_state.ISPDGain);
+	pos += sprintf(data + pos, "[     ISP] Exposure: %u\r\n", exp_state.Exposure);
+	pos += sprintf(data + pos, "[     ISP] Error: %d\r\n", exp_state.Error);
 	for (int i = 0; i < 5; i++)
 	{
-		pos += sprintf(data + pos, "Histogram[%d]: %u\r\n", i, exp_state.Histogram5[i]);
+		pos += sprintf(data + pos, "[     ISP] Histogram[%d]: %u\r\n", i, exp_state.Histogram5[i]);
 	}
-	pos += sprintf(data + pos, "AverageLuminance: %u\r\n", exp_state.AverageLuminance);
-	pos += sprintf(data + pos, "FrameRate: %u\r\n", exp_state.FrameRate);
-	pos += sprintf(data + pos, "ISO: %u\r\n", exp_state.ISO);
+	pos += sprintf(data + pos, "[     ISP] AverageLuminance: %u\r\n", exp_state.AverageLuminance);
+	pos += sprintf(data + pos, "[     ISP] FrameRate: %u\r\n", exp_state.FrameRate);
+	pos += sprintf(data + pos, "[     ISP] ISO: %u\r\n", exp_state.ISO);
 	std::cout << data;
+
+	ISP_EXPOSURE_ATTR_S exp_attr;
+	if (HI_MPI_ISP_GetExposureAttr(_isp_dev, &exp_attr) == HI_SUCCESS)
+	{
+		printExposure(&exp_attr);
+	}
+	std::cout << "\r\n";
 }
 
 Resolution HimppVideoISP::getResolution()
@@ -129,18 +166,22 @@ bool HimppVideoISP::initializeMipi()
 
 bool HimppVideoISP::loadSensorModule()
 {
-	const std::string &path = _video_sensor->getModulePath();
+	// const std::string &path = _video_sensor->getModulePath();
 
-	_sensor_module.handle = dlopen(path.c_str(), RTLD_LAZY);
-	if (_sensor_module.handle == NULL)
-	{
-		HIMPP_PRINT("Failed to load sensor module '%s'\n", path.c_str());
-		return false;
-	}
+	// _sensor_module.handle = dlopen(path.c_str(), RTLD_LAZY);
+	// if (_sensor_module.handle == NULL)
+	// {
+	// 	HIMPP_PRINT("Failed to load sensor module '%s'\n", path.c_str());
+	// 	return false;
+	// }
 
-	_sensor_module.sensor_init = (SENSOR_INIT_FUNC)dlsym(_sensor_module.handle, "sensor_init");
-	_sensor_module.sensor_register = (SENSOR_REGISTER_FUNC)dlsym(_sensor_module.handle, "sensor_register_callback");
-	_sensor_module.sensor_unregister = (SENSOR_UNREGISTER_FUNC)dlsym(_sensor_module.handle, "sensor_unregister_callback");
+	// _sensor_module.sensor_init = (SENSOR_INIT_FUNC)dlsym(_sensor_module.handle, "sensor_init");
+	// _sensor_module.sensor_register = (SENSOR_REGISTER_FUNC)dlsym(_sensor_module.handle, "sensor_register_callback");
+	// _sensor_module.sensor_unregister = (SENSOR_UNREGISTER_FUNC)dlsym(_sensor_module.handle, "sensor_unregister_callback");
+
+	_sensor_module.sensor_init = &sensor_init;
+	_sensor_module.sensor_register = &sensor_register_callback;
+	_sensor_module.sensor_unregister = &sensor_unregister_callback;
 
 	if (!_sensor_module.sensor_init || !_sensor_module.sensor_register || !_sensor_module.sensor_unregister)
 	{
@@ -157,7 +198,10 @@ bool HimppVideoISP::loadSensorModule()
 	return true;
 
 err_dlclose:
-	dlclose(_sensor_module.handle);
+	if (_sensor_module.handle)
+	{
+		dlclose(_sensor_module.handle);
+	}
 	_sensor_module.handle = NULL;
 	_sensor_module.sensor_init = NULL;
 	_sensor_module.sensor_register = NULL;
@@ -171,7 +215,10 @@ bool HimppVideoISP::unloadSensorModule()
 	if (_sensor_module.handle)
 	{
 		_sensor_module.sensor_unregister();
-		dlclose(_sensor_module.handle);
+		if (_sensor_module.handle)
+		{
+			dlclose(_sensor_module.handle);
+		}
 		_sensor_module.handle = NULL;
 		_sensor_module.sensor_init = NULL;
 		_sensor_module.sensor_register = NULL;
@@ -350,16 +397,20 @@ void HimppVideoISP::doEnableElement()
 	ISP_GAMMA_ATTR_S gamma_attr;
 	if (_imaging.gamma().getCurveData().size() == ARRAY_SIZE(gamma_attr.u16Table))
 	{
+		// std::cout << "Using user gamma curve: ";
 		gamma_attr.bEnable = HI_TRUE;
 		gamma_attr.enCurveType = ISP_GAMMA_CURVE_USER_DEFINE;
 		GammaCurveData &curve_data = _imaging.gamma().getCurveData();
 		for (unsigned i = 0; i < curve_data.size(); i++)
 		{
+			// std::cout << curve_data[i] << " ";
 			gamma_attr.u16Table[i] = curve_data[i];
 		}
+		// std::cout << "\r\n";
 	}
 	else
 	{
+		std::cout << "Using default gamma curve\r\n";
 		gamma_attr.bEnable = HI_TRUE;
 		gamma_attr.enCurveType = ISP_GAMMA_CURVE_DEFAULT;
 		memset(gamma_attr.u16Table, 0, sizeof(gamma_attr.u16Table));
@@ -729,6 +780,7 @@ void HimppVideoISP::Imaging::Exposure::getStateInfo(StateInfo &state)
 	state.DGain = exp_info.u32DGain;
 	state.ISPDGain = exp_info.u32ISPDGain;
 	state.Exposure = exp_info.u32Exposure;
+	state.Error = exp_info.s16HistError;
 	for (int i = 0; i < (int)ARRAY_SIZE(exp_info.u16AE_Hist5Value); i++)
 	{
 		state.Histogram5[i] = exp_info.u16AE_Hist5Value[i];

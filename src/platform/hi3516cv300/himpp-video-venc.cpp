@@ -7,12 +7,12 @@
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * live-streamer is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -28,23 +28,22 @@
 
 extern ev::default_loop mainloop;
 
-HimppVencChan::HimppVencChan
-(HimppVideoElement* source, VideoEncodingType encoding, VENC_CHN chnid)
-  : VideoElement(VIDEO_ELEMENT(source)),
-    HimppVideoElement(source),
-    _chnid(chnid),
-    _encoding(encoding),
-    _h264profile(HIGH),
-    _rcmode(VBR),
-    _resolution(source->resolution()),
-    _framerate(source->framerate()),
-    _bitrate(2048),
-    _gop(_framerate * 2),
-    _min_qp(16),
-    _max_qp(51),
-	_refmode(1, 0, true),
-	_intrarefresh(false, false, 11, 51),
-	_io(mainloop)
+HimppVencChan::HimppVencChan(HimppVideoElement *source, VideoEncodingType encoding, VENC_CHN chnid)
+	: VideoElement(VIDEO_ELEMENT(source)),
+	  HimppVideoElement(source),
+	  _chnid(chnid),
+	  _encoding(encoding),
+	  _h264profile(HIGH),
+	  _rcmode(VBR),
+	  _resolution(source->resolution()),
+	  _framerate(source->framerate()),
+	  _bitrate(2048),
+	  _gop(_framerate * 2),
+	  _min_qp(16),
+	  _max_qp(51),
+	  _refmode(1, 0, true),
+	  _intrarefresh(false, false, 11, 51),
+	  _io(mainloop)
 {
 	_crop_cfg.bEnable = HI_FALSE;
 	_crop_cfg.stRect.u32Width = 0;
@@ -71,12 +70,12 @@ uint32_t HimppVencChan::bitrate()
 	return _bitrate;
 }
 
-void HimppVencChan::attach(StreamSink* sink)
+void HimppVencChan::attach(StreamSink *sink)
 {
 	VideoStreamSource::attach(sink);
 }
 
-void HimppVencChan::detach(StreamSink* sink)
+void HimppVencChan::detach(StreamSink *sink)
 {
 	VideoStreamSource::detach(sink);
 }
@@ -93,7 +92,8 @@ void HimppVencChan::stop()
 
 void HimppVencChan::resume()
 {
-	if (!is_enabled()) return;
+	if (!is_enabled())
+		return;
 
 	_io.set<HimppVencChan, &HimppVencChan::watch_handler>(this);
 	_io.set(HI_MPI_VENC_GetFd(channelId()), ev::READ);
@@ -127,11 +127,11 @@ void HimppVencChan::watch_handler(ev::io &w, int revents)
 	VENC_STREAM_S stStream = {
 		.pstPack = stPack,
 		.u32PackCount = stChnStat.u32CurPacks,
-		.u32Seq = 0
-	};
+		.u32Seq = 0};
 
 	s32Ret = HI_MPI_VENC_GetStream(chnid, &stStream, 0);
-	if (s32Ret != HI_SUCCESS) {
+	if (s32Ret != HI_SUCCESS)
+	{
 		HIMPP_PRINT("Get video stream %d failed [%#x]\n", chnid, s32Ret);
 		return;
 	}
@@ -140,7 +140,8 @@ void HimppVencChan::watch_handler(ev::io &w, int revents)
 	JPEGStreamBuffer jpegbuffer;
 	H264StreamBuffer h264buffer;
 
-	switch (encoding()) {
+	switch (encoding())
+	{
 	case H264:
 		h264buffer.keyframe = (stStream.stH264Info.enRefType == BASE_IDRSLICE);
 		sbuf = &h264buffer;
@@ -157,14 +158,16 @@ void HimppVencChan::watch_handler(ev::io &w, int revents)
 		break;
 	}
 
-	if (sbuf) {
+	if (sbuf)
+	{
 		StreamBuffer::Pack stream_data_pack[stStream.u32PackCount];
 		memset(&stream_data_pack, 0, sizeof(stream_data_pack));
 		sbuf->pack_count = stStream.u32PackCount;
 		sbuf->pack = stream_data_pack;
 		gettimeofday(&sbuf->tstamp, NULL);
 
-		for (int i = 0; i < (int)stStream.u32PackCount; i++) {
+		for (int i = 0; i < (int)stStream.u32PackCount; i++)
+		{
 			VENC_PACK_S *pstPack = &stStream.pstPack[i];
 			sbuf->pack[i].addr = pstPack->pu8Addr + pstPack->u32Offset;
 			sbuf->pack[i].len = pstPack->u32Len - pstPack->u32Offset;
@@ -174,20 +177,25 @@ void HimppVencChan::watch_handler(ev::io &w, int revents)
 	}
 
 	s32Ret = HI_MPI_VENC_ReleaseStream(chnid, &stStream);
-	if (s32Ret != HI_SUCCESS) {
+	if (s32Ret != HI_SUCCESS)
+	{
 		HIMPP_PRINT("Release video stream %d failed [%#x]\n", chnid, s32Ret);
 	}
 }
 
 void HimppVencChan::setH264Profile(H264Profile profile)
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		H264Profile oldval = _h264profile;
 		doDisableElement();
-		try {
+		try
+		{
 			_h264profile = profile;
 			doEnableElement();
-		} catch (IpcamError& e) {
+		}
+		catch (IpcamError &e)
+		{
 			_h264profile = oldval;
 			doEnableElement();
 			throw e;
@@ -203,13 +211,17 @@ H264Profile HimppVencChan::getH264Profile()
 
 void HimppVencChan::setRcMode(RateCtrlMode mode)
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		RateCtrlMode oldval = _rcmode;
 		doDisableElement();
-		try {
+		try
+		{
 			_rcmode = mode;
 			doEnableElement();
-		} catch (IpcamError& e) {
+		}
+		catch (IpcamError &e)
+		{
 			_rcmode = oldval;
 			doEnableElement();
 			throw e;
@@ -225,21 +237,31 @@ RateCtrlMode HimppVencChan::getRcMode()
 
 void HimppVencChan::setBitrate(uint32_t value)
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		VENC_CHN_ATTR_S attr;
 		HI_S32 retval;
 
-		if ((retval = HI_MPI_VENC_GetChnAttr(_chnid, &attr)) != HI_SUCCESS) {
+		if ((retval = HI_MPI_VENC_GetChnAttr(_chnid, &attr)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed to get venc chan attr");
 		}
 
-		switch (_rcmode) {
-		case CBR: attr.stRcAttr.stAttrH264Cbr.u32BitRate = value; break;
-		case VBR: attr.stRcAttr.stAttrH264AVbr.u32MaxBitRate = value; break;
-		default: throw IpcamError("Cannot change Bitrate in current rc mode"); break;
+		switch (_rcmode)
+		{
+		case CBR:
+			attr.stRcAttr.stAttrH264Cbr.u32BitRate = value;
+			break;
+		case VBR:
+			attr.stRcAttr.stAttrH264AVbr.u32MaxBitRate = value;
+			break;
+		default:
+			throw IpcamError("Cannot change Bitrate in current rc mode");
+			break;
 		}
 
-		if ((retval = HI_MPI_VENC_SetChnAttr(_chnid, &attr)) != HI_SUCCESS) {
+		if ((retval = HI_MPI_VENC_SetChnAttr(_chnid, &attr)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed to set Bitrate");
 		}
 	}
@@ -253,22 +275,34 @@ uint32_t HimppVencChan::getBitrate()
 
 void HimppVencChan::setGovLength(uint32_t value)
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		VENC_CHN_ATTR_S attr;
 		HI_S32 retval;
 
-		if ((retval = HI_MPI_VENC_GetChnAttr(_chnid, &attr)) != HI_SUCCESS) {
+		if ((retval = HI_MPI_VENC_GetChnAttr(_chnid, &attr)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed to get venc chan attr");
 		}
 
-		switch (_rcmode) {
-		case CBR: attr.stRcAttr.stAttrH264Cbr.u32Gop = value; break;
-		case VBR: attr.stRcAttr.stAttrH264AVbr.u32Gop = value; break;
-		case FIXQP: attr.stRcAttr.stAttrH264FixQp.u32Gop = value; break;
-		default: throw IpcamError("Cannot change GovLength in current rc mode"); break;
+		switch (_rcmode)
+		{
+		case CBR:
+			attr.stRcAttr.stAttrH264Cbr.u32Gop = value;
+			break;
+		case VBR:
+			attr.stRcAttr.stAttrH264AVbr.u32Gop = value;
+			break;
+		case FIXQP:
+			attr.stRcAttr.stAttrH264FixQp.u32Gop = value;
+			break;
+		default:
+			throw IpcamError("Cannot change GovLength in current rc mode");
+			break;
 		}
 
-		if ((retval = HI_MPI_VENC_SetChnAttr(_chnid, &attr)) != HI_SUCCESS) {
+		if ((retval = HI_MPI_VENC_SetChnAttr(_chnid, &attr)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed to set GovLength");
 		}
 	}
@@ -282,15 +316,18 @@ uint32_t HimppVencChan::getGovLength()
 
 void HimppVencChan::setMinQP(uint32_t value)
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		VENC_RC_PARAM_S param;
 		HI_S32 retval;
 
-		if ((retval = HI_MPI_VENC_GetRcParam(_chnid, &param)) != HI_SUCCESS) {
+		if ((retval = HI_MPI_VENC_GetRcParam(_chnid, &param)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed GetRcParam");
 		}
 
-		switch (_rcmode) {
+		switch (_rcmode)
+		{
 		case CBR:
 			param.stParamH264Cbr.u32MinQp = value;
 			param.stParamH264Cbr.u32MinIQp = value;
@@ -300,10 +337,12 @@ void HimppVencChan::setMinQP(uint32_t value)
 			param.stParamH264AVbr.u32MinIQp = MIN2(value, param.stParamH264AVbr.u32MaxStillQP);
 			break;
 		default:
-			throw IpcamError("Cannot change MinQP in current rc mode"); break;
+			throw IpcamError("Cannot change MinQP in current rc mode");
+			break;
 		}
 
-		if ((retval = HI_MPI_VENC_SetRcParam(_chnid, &param)) != HI_SUCCESS) {
+		if ((retval = HI_MPI_VENC_SetRcParam(_chnid, &param)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed to set MinQP");
 		}
 	}
@@ -317,15 +356,18 @@ uint32_t HimppVencChan::getMinQP()
 
 void HimppVencChan::setMaxQP(uint32_t value)
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		VENC_RC_PARAM_S param;
 		HI_S32 retval;
 
-		if ((retval = HI_MPI_VENC_GetRcParam(_chnid, &param)) != HI_SUCCESS) {
+		if ((retval = HI_MPI_VENC_GetRcParam(_chnid, &param)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed GetRcParam");
 		}
 
-		switch (_rcmode) {
+		switch (_rcmode)
+		{
 		case CBR:
 			param.stParamH264Cbr.u32MaxQp = value;
 			param.stParamH264Cbr.u32MaxIQp = value;
@@ -335,10 +377,12 @@ void HimppVencChan::setMaxQP(uint32_t value)
 			param.stParamH264AVbr.u32MaxIQp = value;
 			break;
 		default:
-			throw IpcamError("Cannot change MaxQP in current rc mode"); break;
+			throw IpcamError("Cannot change MaxQP in current rc mode");
+			break;
 		}
 
-		if ((retval = HI_MPI_VENC_SetRcParam(_chnid, &param)) != HI_SUCCESS) {
+		if ((retval = HI_MPI_VENC_SetRcParam(_chnid, &param)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed to set MaxQP");
 		}
 	}
@@ -352,10 +396,12 @@ uint32_t HimppVencChan::getMaxQP()
 
 void HimppVencChan::setFrameRefMode(FrameRefMode value)
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		VENC_PARAM_REF_S stRefParam;
 		HI_S32 retval;
-		if ((retval = HI_MPI_VENC_GetRefParam(_chnid, &stRefParam)) != HI_SUCCESS) {
+		if ((retval = HI_MPI_VENC_GetRefParam(_chnid, &stRefParam)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed GetRefParam");
 		}
 
@@ -363,7 +409,8 @@ void HimppVencChan::setFrameRefMode(FrameRefMode value)
 		stRefParam.u32Enhance = value.Enhanced;
 		stRefParam.bEnablePred = (HI_BOOL)value.EnablePred;
 
-		if ((retval = HI_MPI_VENC_SetRefParam(_chnid, &stRefParam)) != HI_SUCCESS) {
+		if ((retval = HI_MPI_VENC_SetRefParam(_chnid, &stRefParam)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed SetRefparam");
 		}
 	}
@@ -372,10 +419,12 @@ void HimppVencChan::setFrameRefMode(FrameRefMode value)
 
 H264VideoEncoder::FrameRefMode HimppVencChan::getFrameRefMode()
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		VENC_PARAM_REF_S stRefParam;
 		HI_S32 s32Ret;
-		if ((s32Ret = HI_MPI_VENC_GetRefParam(_chnid, &stRefParam)) == HI_SUCCESS) {
+		if ((s32Ret = HI_MPI_VENC_GetRefParam(_chnid, &stRefParam)) == HI_SUCCESS)
+		{
 			_refmode = FrameRefMode(stRefParam.u32Base, stRefParam.u32Enhance, stRefParam.bEnablePred);
 		}
 	}
@@ -384,10 +433,12 @@ H264VideoEncoder::FrameRefMode HimppVencChan::getFrameRefMode()
 
 void HimppVencChan::setIntraRefresh(IntraRefreshParam value)
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		VENC_PARAM_INTRA_REFRESH_S stIntraRefresh;
 		HI_S32 retval;
-		if ((retval = HI_MPI_VENC_GetIntraRefresh(_chnid, &stIntraRefresh)) != HI_SUCCESS) {
+		if ((retval = HI_MPI_VENC_GetIntraRefresh(_chnid, &stIntraRefresh)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed GetIntraRefresh");
 		}
 
@@ -396,7 +447,8 @@ void HimppVencChan::setIntraRefresh(IntraRefreshParam value)
 		stIntraRefresh.u32RefreshLineNum = value.RefreshLineNum;
 		stIntraRefresh.u32ReqIQp = value.ReqIQp;
 
-		if ((retval = HI_MPI_VENC_SetIntraRefresh(_chnid, &stIntraRefresh)) != HI_SUCCESS) {
+		if ((retval = HI_MPI_VENC_SetIntraRefresh(_chnid, &stIntraRefresh)) != HI_SUCCESS)
+		{
 			throw IpcamError("Failed SetIntraRefresh");
 		}
 	}
@@ -405,11 +457,13 @@ void HimppVencChan::setIntraRefresh(IntraRefreshParam value)
 
 H264VideoEncoder::IntraRefreshParam HimppVencChan::getIntraRefresh()
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		VENC_PARAM_INTRA_REFRESH_S stIntraRefresh;
 		HI_S32 s32Ret;
-		if ((s32Ret = HI_MPI_VENC_GetIntraRefresh(_chnid, &stIntraRefresh)) == HI_SUCCESS) {
-			_intrarefresh = IntraRefreshParam (stIntraRefresh.bRefreshEnable, stIntraRefresh.bISliceEnable, stIntraRefresh.u32RefreshLineNum, stIntraRefresh.u32ReqIQp);
+		if ((s32Ret = HI_MPI_VENC_GetIntraRefresh(_chnid, &stIntraRefresh)) == HI_SUCCESS)
+		{
+			_intrarefresh = IntraRefreshParam(stIntraRefresh.bRefreshEnable, stIntraRefresh.bISliceEnable, stIntraRefresh.u32RefreshLineNum, stIntraRefresh.u32ReqIQp);
 		}
 	}
 	return _intrarefresh;
@@ -417,42 +471,46 @@ H264VideoEncoder::IntraRefreshParam HimppVencChan::getIntraRefresh()
 
 void HimppVencChan::requestIDR()
 {
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		HI_S32 s32Ret = HI_MPI_VENC_RequestIDR(_chnid, HI_TRUE);
-		if (s32Ret != HI_SUCCESS) {
+		if (s32Ret != HI_SUCCESS)
+		{
 			HIMPP_PRINT("HI_MPI_VENC_RequestIDR %d failed [%#x]\n",
-			            _chnid, s32Ret);
+						_chnid, s32Ret);
 		}
 	}
 }
 
-VideoOSD* HimppVencChan::CreateOSD()
+VideoOSD *HimppVencChan::CreateOSD()
 {
 	RGN_HANDLE handle = himpp_region_allocator.allocHandle();
 	if (handle == (RGN_HANDLE)-1)
 		throw IpcamError("Failed to allocate region handle");
 
-	HimppVideoRegion* region(new HimppVideoRegion(this, handle));
-	if (region == nullptr) {
+	HimppVideoRegion *region(new HimppVideoRegion(this, handle));
+	if (region == nullptr)
+	{
 		himpp_region_allocator.freeHandle(handle);
 		throw IpcamError("Failed to create video osd");
 	}
 
 	_osds.insert(SOFT_RENDER_VIDEO_OSD(region));
 
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		region->enable();
 	}
 
 	return region;
 }
 
-void HimppVencChan::DeleteOSD(VideoOSD* osd)
+void HimppVencChan::DeleteOSD(VideoOSD *osd)
 {
 	_osds.erase(SOFT_RENDER_VIDEO_OSD(osd));
 }
 
-MPP_CHN_S* HimppVencChan::bindSource()
+MPP_CHN_S *HimppVencChan::bindSource()
 {
 	return &_mpp_chn;
 }
@@ -468,10 +526,11 @@ uint32_t HimppVencChan::framerate()
 }
 
 // Calculate the crop configuration
-static void calc_crop_cfg(Resolution& in, Resolution& out, VENC_CROP_CFG_S& crop_cfg)
+static void calc_crop_cfg(Resolution &in, Resolution &out, VENC_CROP_CFG_S &crop_cfg)
 {
 	RECT_S &rect = crop_cfg.stRect;
-	if (in.width() * out.height() > out.width() * in.height()) {
+	if (in.width() * out.height() > out.width() * in.height())
+	{
 		// crop width
 		crop_cfg.bEnable = HI_TRUE;
 		rect.u32Height = in.height();
@@ -479,7 +538,8 @@ static void calc_crop_cfg(Resolution& in, Resolution& out, VENC_CROP_CFG_S& crop
 		rect.s32X = ((in.width() - rect.u32Width) / 2) & 0xFFFFFFF0;
 		rect.s32Y = 0;
 	}
-	else if (in.width() * out.height() < out.width() * in.height()) {
+	else if (in.width() * out.height() < out.width() * in.height())
+	{
 		// crop height
 		crop_cfg.bEnable = HI_TRUE;
 		rect.u32Width = in.width();
@@ -487,7 +547,8 @@ static void calc_crop_cfg(Resolution& in, Resolution& out, VENC_CROP_CFG_S& crop
 		rect.s32X = 0;
 		rect.s32Y = (in.height() - rect.u32Height) / 2;
 	}
-	else {
+	else
+	{
 		// crop is not necessary
 		crop_cfg.bEnable = HI_FALSE;
 		rect.u32Width = 0;
@@ -501,17 +562,22 @@ void HimppVencChan::setResolution(Resolution value)
 {
 	Resolution in = HIMPP_VIDEO_ELEMENT(source())->resolution();
 	// Sanity check
-	if ((value.width() > in.width()) || (value.height() > in.height())) {
+	if ((value.width() > in.width()) || (value.height() > in.height()))
+	{
 		throw IpcamError("Resolution must not larger than input");
 	}
 
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		Resolution oldres = _resolution;
 		doDisableElement();
-		try {
+		try
+		{
 			_resolution = value;
 			doEnableElement();
-		} catch (IpcamError& e) {
+		}
+		catch (IpcamError &e)
+		{
 			_resolution = oldres;
 			doEnableElement();
 			throw e;
@@ -528,15 +594,19 @@ Resolution HimppVencChan::getResolution()
 void HimppVencChan::setFramerate(uint32_t value)
 {
 	uint32_t newgop = ((_gop + _framerate / 2) / _framerate) * value;
-	if (is_enabled()) {
+	if (is_enabled())
+	{
 		uint32_t oldval = _framerate;
 		uint32_t oldgop = _gop;
 		doDisableElement();
-		try {
+		try
+		{
 			_framerate = value;
 			_gop = newgop;
 			doEnableElement();
-		} catch (IpcamError& e) {
+		}
+		catch (IpcamError &e)
+		{
 			_framerate = oldval;
 			_gop = oldgop;
 			doEnableElement();
@@ -559,9 +629,11 @@ void HimppVencChan::prepareRcAttr(VENC_RC_ATTR_S &attr)
 	stattime = stattime > 0 ? stattime : 1;
 	uint32_t ifr = VIDEO_ELEMENT(source())->framerate();
 
-	switch (_encoding) {
+	switch (_encoding)
+	{
 	case H264:
-		switch (_rcmode) {
+		switch (_rcmode)
+		{
 		case CBR:
 			attr.enRcMode = VENC_RC_MODE_H264CBR;
 			attr.stAttrH264Cbr.u32Gop = _gop;
@@ -593,7 +665,8 @@ void HimppVencChan::prepareRcAttr(VENC_RC_ATTR_S &attr)
 		}
 		break;
 	case MJPEG:
-		switch (_rcmode) {
+		switch (_rcmode)
+		{
 		case CBR:
 			attr.enRcMode = VENC_RC_MODE_MJPEGCBR;
 			attr.stAttrMjpegeCbr.u32StatTime = 1;
@@ -635,8 +708,9 @@ void HimppVencChan::prepareChnAttr(VENC_CHN_ATTR_S &attr)
 	HI_U32 stattime;
 	stattime = _gop / _framerate;
 	stattime = stattime > 0 ? stattime : 1;
-	
-	switch (_encoding) {
+
+	switch (_encoding)
+	{
 	case H264:
 		attr.stVeAttr.enType = PT_H264;
 		attr.stVeAttr.stAttrH264e.u32MaxPicWidth = ROUNDUP16(_resolution.width());
@@ -679,65 +753,80 @@ void HimppVencChan::prepareChnAttr(VENC_CHN_ATTR_S &attr)
 void HimppVencChan::doEnableElement()
 {
 	HI_S32 s32Ret;
-	VENC_CROP_CFG_S dis_crop = { .bEnable = HI_FALSE };
+	VENC_CROP_CFG_S dis_crop = {.bEnable = HI_FALSE};
 
 	VENC_CHN_ATTR_S attr;
 	prepareChnAttr(attr);
-	if ((s32Ret = HI_MPI_VENC_CreateChn(_chnid, &attr)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VENC_CreateChn(_chnid, &attr)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_VENC_CreateChn %d faild [%#x]\n",
 					_chnid, s32Ret);
 		throw IpcamError("Failed to create VENC channel");
 	}
 
-	if ((s32Ret = HI_MPI_VENC_SetMaxStreamCnt(_chnid, 2)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VENC_SetMaxStreamCnt(_chnid, 2)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_VENC_SetMaxStreamCnt %d failed [%#x]\n",
 					_chnid, s32Ret);
 	}
 
-	if (_encoding == H264) {
+	if (_encoding == H264)
+	{
 		VENC_PARAM_H264_VUI_S stVui;
-		if ((s32Ret = HI_MPI_VENC_GetH264Vui(_chnid, &stVui)) == HI_SUCCESS) {
+		if ((s32Ret = HI_MPI_VENC_GetH264Vui(_chnid, &stVui)) == HI_SUCCESS)
+		{
 			stVui.stVuiTimeInfo.timing_info_present_flag = 1;
 			stVui.stVuiTimeInfo.num_units_in_tick = 1;
 			stVui.stVuiTimeInfo.time_scale = _framerate * 2;
-			if ((s32Ret = HI_MPI_VENC_SetH264Vui(_chnid, &stVui)) != HI_SUCCESS) {
+			if ((s32Ret = HI_MPI_VENC_SetH264Vui(_chnid, &stVui)) != HI_SUCCESS)
+			{
 				HIMPP_PRINT("HI_MPI_VENC_SetH264Vui(%d) failed [%#x]\n",
 							_chnid, s32Ret);
 			}
 		}
 
 		VENC_PARAM_REF_S stRefParam;
-		if ((s32Ret = HI_MPI_VENC_GetRefParam(_chnid, &stRefParam)) == HI_SUCCESS) {
+		if ((s32Ret = HI_MPI_VENC_GetRefParam(_chnid, &stRefParam)) == HI_SUCCESS)
+		{
 			stRefParam.u32Base = _refmode.Base;
 			stRefParam.u32Enhance = _refmode.Enhanced;
 			stRefParam.bEnablePred = (HI_BOOL)_refmode.EnablePred;
-			if ((s32Ret = HI_MPI_VENC_SetRefParam(_chnid, &stRefParam)) != HI_SUCCESS) {
+			if ((s32Ret = HI_MPI_VENC_SetRefParam(_chnid, &stRefParam)) != HI_SUCCESS)
+			{
 				HIMPP_PRINT("HI_MPI_VENC_SetRefParam(%d) failed [%#x]\n",
-				            _chnid, s32Ret);
+							_chnid, s32Ret);
 			}
-		} else {
+		}
+		else
+		{
 			HIMPP_PRINT("HI_MPI_VENC_GetRefParam(%d) failed [%#x]\n",
-			            _chnid, s32Ret);
+						_chnid, s32Ret);
 		}
 
 		VENC_PARAM_INTRA_REFRESH_S stIntraRefresh;
-		if ((s32Ret = HI_MPI_VENC_GetIntraRefresh(_chnid, &stIntraRefresh)) == HI_SUCCESS) {
+		if ((s32Ret = HI_MPI_VENC_GetIntraRefresh(_chnid, &stIntraRefresh)) == HI_SUCCESS)
+		{
 			stIntraRefresh.bRefreshEnable = (HI_BOOL)_intrarefresh.EnableRefresh;
 			stIntraRefresh.bISliceEnable = (HI_BOOL)_intrarefresh.EnableISlice;
 			stIntraRefresh.u32RefreshLineNum = _intrarefresh.RefreshLineNum;
 			stIntraRefresh.u32ReqIQp = _intrarefresh.ReqIQp;
-			if ((s32Ret = HI_MPI_VENC_SetIntraRefresh(_chnid, &stIntraRefresh)) != HI_SUCCESS) {
+			if ((s32Ret = HI_MPI_VENC_SetIntraRefresh(_chnid, &stIntraRefresh)) != HI_SUCCESS)
+			{
 				HIMPP_PRINT("HI_MPI_VENC_SetIntraRefresh(%d) failed [%#x]\n",
-				            _chnid, s32Ret);
+							_chnid, s32Ret);
 			}
-		} else {
+		}
+		else
+		{
 			HIMPP_PRINT("HI_MPI_VENC_GetIntraRefresh(%d) failed [%#x]\n",
-			            _chnid, s32Ret);
+						_chnid, s32Ret);
 		}
 
 		VENC_RC_PARAM_S param;
-		if ((s32Ret = HI_MPI_VENC_GetRcParam(_chnid, &param)) == HI_SUCCESS) {
-			switch (_rcmode) {
+		if ((s32Ret = HI_MPI_VENC_GetRcParam(_chnid, &param)) == HI_SUCCESS)
+		{
+			switch (_rcmode)
+			{
 			case CBR:
 				param.stParamH264Cbr.u32MinQp = _min_qp;
 				param.stParamH264Cbr.u32MinIQp = _min_qp;
@@ -751,27 +840,33 @@ void HimppVencChan::doEnableElement()
 				param.stParamH264AVbr.u32MaxIQp = _max_qp;
 				break;
 			default:
-				throw IpcamError("Cannot change MinQP in current rc mode"); break;
+				throw IpcamError("Cannot change MinQP in current rc mode");
+				break;
 			}
-			if ((s32Ret = HI_MPI_VENC_SetRcParam(_chnid, &param)) != HI_SUCCESS) {
+			if ((s32Ret = HI_MPI_VENC_SetRcParam(_chnid, &param)) != HI_SUCCESS)
+			{
 				HIMPP_PRINT("HI_MPI_VENC_SetRcParam(%d) failed [%#x]\n",
-				            _chnid, s32Ret);
+							_chnid, s32Ret);
 			}
-		} else {
+		}
+		else
+		{
 			HIMPP_PRINT("HI_MPI_VENC_GetRcParam(%d) failed [%#x]\n",
-			            _chnid, s32Ret);
+						_chnid, s32Ret);
 		}
 	}
 
 	Resolution in = HIMPP_VIDEO_ELEMENT(source())->resolution();
 	calc_crop_cfg(in, _resolution, _crop_cfg);
-	if ((s32Ret = HI_MPI_VENC_SetCrop(_chnid, &_crop_cfg)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VENC_SetCrop(_chnid, &_crop_cfg)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_VENC_SetCrop [%d] faild [%#x]!\n",
-					 _chnid, s32Ret);
+					_chnid, s32Ret);
 		goto err_destroy_chn;
 	}
 
-	if ((s32Ret = HI_MPI_VENC_StartRecvPic(_chnid)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VENC_StartRecvPic(_chnid)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_VENC_StartRecvPic %d failed [%#x]\n",
 					_chnid, s32Ret);
 		goto err_disable_crop;
@@ -781,13 +876,15 @@ void HimppVencChan::doEnableElement()
 	dst_chn.enModId = HI_ID_VENC;
 	dst_chn.s32DevId = 0;
 	dst_chn.s32ChnId = _chnid;
-	if ((s32Ret = HI_MPI_SYS_Bind(HIMPP_VIDEO_ELEMENT(source())->bindSource(), &dst_chn)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_SYS_Bind(HIMPP_VIDEO_ELEMENT(source())->bindSource(), &dst_chn)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_SYS_Bind %d failed [%#x]\n",
 					_chnid, s32Ret);
 		goto err_stop_recv_pic;
 	}
 
-	for (auto it : _osds) {
+	for (auto it : _osds)
+	{
 		it->enable();
 	}
 
@@ -803,13 +900,21 @@ err_destroy_chn:
 	throw IpcamError("Failed to enable VENC streaming");
 }
 
+static void printSrc(MPP_CHN_S *src)
+{
+	HIMPP_PRINT("enModId: %d\n", src->enModId);
+	HIMPP_PRINT("s32DevId: %d\n", src->s32DevId);
+	HIMPP_PRINT("s32ChnId: %d\n", src->s32ChnId);
+}
+
 void HimppVencChan::doDisableElement()
 {
-	HimppVideoElement* src = HIMPP_VIDEO_ELEMENT(source());
+	HimppVideoElement *src = HIMPP_VIDEO_ELEMENT(source());
 	HI_S32 s32Ret;
-	VENC_CROP_CFG_S dis_crop = { .bEnable = HI_FALSE };
+	VENC_CROP_CFG_S dis_crop = {.bEnable = HI_FALSE};
 
-	for (auto it : _osds) {
+	for (auto it : _osds)
+	{
 		if (it->is_enabled())
 			it->disable();
 	}
@@ -817,24 +922,34 @@ void HimppVencChan::doDisableElement()
 	MPP_CHN_S dst_chn = {
 		.enModId = HI_ID_VENC,
 		.s32DevId = 0,
-		.s32ChnId = _chnid
-	};
-	if ((s32Ret = HI_MPI_SYS_UnBind(src->bindSource(), &dst_chn)) != HI_SUCCESS) {
+		.s32ChnId = _chnid};
+
+	MPP_CHN_S *bindsrc = src->bindSource();
+
+	HIMPP_PRINT("Unbind:\n");
+	printSrc(bindsrc);
+	printSrc(&dst_chn);
+
+	if ((s32Ret = HI_MPI_SYS_UnBind(src->bindSource(), &dst_chn)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_SYS_UnBind %d failed [%#x]\n",
 					_chnid, s32Ret);
 	}
 
-	if ((s32Ret = HI_MPI_VENC_StopRecvPic(_chnid)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VENC_StopRecvPic(_chnid)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_VENC_StopRecvPic %d failed [%#x]\n",
 					_chnid, s32Ret);
 	}
 
-	if ((s32Ret = HI_MPI_VENC_SetCrop(_chnid, &dis_crop)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VENC_SetCrop(_chnid, &dis_crop)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_VENC_SetCrop [%d] failed [%#x]!\n",
-					 _chnid, s32Ret);
+					_chnid, s32Ret);
 	}
 
-	if ((s32Ret = HI_MPI_VENC_DestroyChn(_chnid)) != HI_SUCCESS) {
+	if ((s32Ret = HI_MPI_VENC_DestroyChn(_chnid)) != HI_SUCCESS)
+	{
 		HIMPP_PRINT("HI_MPI_VENC_DestroyChn %d failed [%#x]\n",
 					_chnid, s32Ret);
 	}

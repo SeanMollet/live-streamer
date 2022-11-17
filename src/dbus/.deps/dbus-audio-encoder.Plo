@@ -1,0 +1,827 @@
+dbus-audio-encoder.lo: dbus-audio-encoder.cpp ../../config.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/dbus.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/types.h \
+ /buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stdint.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdint.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/features.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/string \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/c++config.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/os_defines.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/cpu_defines.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stringfwd.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/memoryfwd.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/char_traits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_algobase.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/functexcept.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/exception_defines.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/cpp_type_traits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/type_traits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/numeric_traits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_pair.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/move.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/concept_check.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/type_traits \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_iterator_base_types.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_iterator_base_funcs.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/debug/assertions.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_iterator.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/ptr_traits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/debug/debug.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/predefined_ops.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/postypes.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cwchar \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/wchar.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdio.h \
+ /buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stdarg.h \
+ /buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stddef.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cstdint \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/allocator.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/c++allocator.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/new_allocator.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/new \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/exception \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/exception.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/exception_ptr.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/cxxabi_init_exception.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/typeinfo \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/hash_bytes.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/nested_exception.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/localefwd.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/c++locale.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/clocale \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/locale.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_locale.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/iosfwd \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cctype \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/ctype.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_touplow.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/ostream_insert.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/cxxabi_forced.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_function.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/backward/binders.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/range_access.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/initializer_list \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_string.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/atomicity.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/gthr.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/gthr-default.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/pthread.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/endian.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/endian.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-16.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sched.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/time.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sched.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/stdlib.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cstdlib \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdlib.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/waitflags.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/waitstatus.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/types.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/select.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/select.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sigset.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/time.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/sysmacros.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/alloca.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/std_abs.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_clk_tck.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/signal.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/setjmp.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/atomic_word.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/alloc_traits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/alloc_traits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/string_conversions.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cstdio \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_stdio.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/stdio_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cerrno \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/errno.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/errno.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/linux/errno.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/errno.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/errno.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/errno-base.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/functional_hash.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_string.tcc \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/vector \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_construct.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_uninitialized.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_vector.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_bvector.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/vector.tcc \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/map \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_tree.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/aligned_buffer.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_map.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/tuple \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/utility \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_relops.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/array \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/stdexcept \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/uses_allocator.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/invoke.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_multimap.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/api.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/util.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/sstream \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/istream \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ios \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/ios_base.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_classes.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_classes.tcc \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/system_error \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/error_constants.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/streambuf \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/streambuf.tcc \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_ios.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_facets.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cwctype \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/wctype.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/ctype_base.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/streambuf_iterator.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/ctype_inline.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_facets.tcc \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_ios.tcc \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ostream \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/ostream.tcc \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/istream.tcc \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/sstream.tcc \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/iostream \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/iomanip \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/locale \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_facets_nonio.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ctime \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/time_members.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/messages_members.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/codecvt.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_facets_nonio.tcc \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_conv.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stringfwd.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/allocator.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/codecvt.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/unique_ptr.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/quoted_string.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cassert \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/assert.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/debug.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/message.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/error.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/interface.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/object.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/list \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_list.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/allocated_ptr.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/list.tcc \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/connection.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/pendingcall.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/property.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/server.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/dispatcher.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/eventloop.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/eventloop-integration.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/unistd.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/posix_opt.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_posix_opt.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/environments.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/confname.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/getopt.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/introspection.h \
+ /buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/pipe.h \
+ ../../src/ipcam-runtime.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/ev++.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/ev.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/string.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/signum.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/siginfo.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sigaction.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sigcontext.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/sigcontext.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sigstack.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/ucontext.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/procfs.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/time.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/user.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sigthread.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/stat.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/stat.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/netinet/in.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/socket.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/uio.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uio.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/socket.h \
+ /buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include-fixed/limits.h \
+ /buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include-fixed/syslimits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/limits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/posix1_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/local_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/linux/limits.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_local_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/posix2_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/xopen_lim.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/socket_type.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sockaddr.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/socket.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/socket.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/sockios.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/sockios.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/in.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/arpa/inet.h \
+ ../../src/common/media-stream.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/set \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_set.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_multiset.h \
+ ../../src/common/media-common.h ../../src/common/media-element.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/atomic \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/atomic_base.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/atomic_lockfree_defines.h \
+ ../../src/common/video-source.h ../../src/common/video-encoder.h \
+ ../../src/common/video-osd.h ../../src/common/audio-source.h \
+ ../../src/common/audio-encoder.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/json.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/autolink.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/config.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/version.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/value.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/forwards.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/reader.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/features.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/deque \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_deque.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/deque.tcc \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/stack \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_stack.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/writer.h \
+ dbus-audio-encoder.h dbus-ipcam-base.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/functional \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/std_function.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/refwrap.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/unordered_map \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/hashtable.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/hashtable_policy.h \
+ /buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/unordered_map.h \
+ audio-encoder-server-glue.h
+
+../../config.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/dbus.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/types.h:
+
+/buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stdint.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdint.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/features.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/string:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/c++config.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/os_defines.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/cpu_defines.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stringfwd.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/memoryfwd.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/char_traits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_algobase.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/functexcept.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/exception_defines.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/cpp_type_traits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/type_traits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/numeric_traits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_pair.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/move.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/concept_check.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/type_traits:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_iterator_base_types.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_iterator_base_funcs.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/debug/assertions.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_iterator.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/ptr_traits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/debug/debug.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/predefined_ops.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/postypes.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cwchar:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/wchar.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdio.h:
+
+/buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stdarg.h:
+
+/buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include/stddef.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cstdint:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/allocator.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/c++allocator.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/new_allocator.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/new:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/exception:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/exception.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/exception_ptr.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/cxxabi_init_exception.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/typeinfo:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/hash_bytes.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/nested_exception.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/localefwd.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/c++locale.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/clocale:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/locale.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_locale.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/iosfwd:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cctype:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/ctype.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_touplow.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/ostream_insert.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/cxxabi_forced.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_function.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/backward/binders.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/range_access.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/initializer_list:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_string.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/atomicity.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/gthr.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/gthr-default.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/pthread.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/endian.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/endian.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-16.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sched.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/time.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sched.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/stdlib.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cstdlib:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/stdlib.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/waitflags.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/waitstatus.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/types.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/select.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/select.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sigset.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/time.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/sysmacros.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/alloca.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/std_abs.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_clk_tck.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/signal.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/setjmp.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/atomic_word.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/alloc_traits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/alloc_traits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/string_conversions.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cstdio:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_stdio.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/stdio_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cerrno:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/errno.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/errno.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/linux/errno.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/errno.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/errno.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/errno-base.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/functional_hash.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_string.tcc:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/vector:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_construct.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_uninitialized.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_vector.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_bvector.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/vector.tcc:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/map:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_tree.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ext/aligned_buffer.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_map.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/tuple:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/utility:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_relops.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/array:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/stdexcept:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/uses_allocator.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/invoke.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_multimap.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/api.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/util.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/sstream:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/istream:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ios:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/ios_base.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_classes.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_classes.tcc:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/system_error:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/error_constants.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/streambuf:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/streambuf.tcc:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_ios.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_facets.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cwctype:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/wctype.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/ctype_base.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/streambuf_iterator.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/ctype_inline.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_facets.tcc:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_ios.tcc:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ostream:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/ostream.tcc:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/istream.tcc:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/sstream.tcc:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/iostream:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/iomanip:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/locale:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_facets_nonio.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/ctime:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/time_members.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/arm-buildroot-linux-uclibcgnueabi/bits/messages_members.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/codecvt.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_facets_nonio.tcc:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_conv.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stringfwd.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/allocator.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/codecvt.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/unique_ptr.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/quoted_string.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/cassert:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/assert.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/debug.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/message.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/error.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/interface.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/object.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/list:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_list.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/allocated_ptr.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/list.tcc:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/connection.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/pendingcall.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/property.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/server.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/dispatcher.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/eventloop.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/eventloop-integration.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/unistd.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/posix_opt.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_posix_opt.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/environments.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/confname.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/getopt.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/introspection.h:
+
+/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1/dbus-c++/pipe.h:
+
+../../src/ipcam-runtime.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/ev++.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/ev.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/string.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/signum.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/siginfo.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sigaction.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sigcontext.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/sigcontext.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sigstack.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/ucontext.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/procfs.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/time.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/user.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sigthread.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/stat.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/stat.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/netinet/in.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/socket.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/sys/uio.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uio.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/socket.h:
+
+/buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include-fixed/limits.h:
+
+/buildroot/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabi/7.3.0/include-fixed/syslimits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/limits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/posix1_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/local_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/linux/limits.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_local_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/posix2_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/xopen_lim.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/socket_type.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/sockaddr.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/socket.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/socket.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm/sockios.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/sockios.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/bits/in.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/arpa/inet.h:
+
+../../src/common/media-stream.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/set:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_set.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_multiset.h:
+
+../../src/common/media-common.h:
+
+../../src/common/media-element.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/atomic:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/atomic_base.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/atomic_lockfree_defines.h:
+
+../../src/common/video-source.h:
+
+../../src/common/video-encoder.h:
+
+../../src/common/video-osd.h:
+
+../../src/common/audio-source.h:
+
+../../src/common/audio-encoder.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/json.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/autolink.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/config.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/version.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/value.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/forwards.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/reader.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/features.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/deque:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_deque.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/deque.tcc:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/stack:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_stack.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/json/writer.h:
+
+dbus-audio-encoder.h:
+
+dbus-ipcam-base.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/functional:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/std_function.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/refwrap.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/unordered_map:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/hashtable.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/hashtable_policy.h:
+
+/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/include/c++/7.3.0/bits/unordered_map.h:
+
+audio-encoder-server-glue.h:

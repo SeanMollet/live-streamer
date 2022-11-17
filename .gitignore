@@ -4,3 +4,5 @@
 *.anjuta
 .anjuta*
 autom4te.cache/*
+*.lo
+*.o

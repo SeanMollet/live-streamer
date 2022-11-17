@@ -41,7 +41,9 @@ libhi3516cv300_la_SOURCES =  \
 	himpp-media.cpp \
 	himpp-media.h \
 	himpp-ircut.cpp \
-	himpp-ircut.h
+	himpp-ircut.h \
+	imx323_cmos.c \
+	imx323_sensor_ctl.c
 
 libhi3516cv300_la_LIBADD = \
 	$(top_builddir)/src/common/libcommon.la

@@ -35,6 +35,7 @@ HimppVpssGroup::~HimppVpssGroup()
 
 void HimppVpssGroup::timeout_handler(ev::timer &w, int revents)
 {
+	std::cout << "updating NR\n";
 	NrParamTable &nrtable = _imaging.noisereduction().getParamTable();
 	if (nrtable.size() == 0)
 		return;

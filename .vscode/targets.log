@@ -1,0 +1,2636 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+
+# Make data base, printed on Thu Nov 17 16:03:31 2022
+
+# Variables
+
+# makefile (from `Makefile', line 189)
+ETAGS = etags
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 295)
+LIBEV_LDFLAGS = -lev
+# makefile (from `Makefile', line 191)
+CSCOPE = cscope
+# makefile (from `Makefile', line 88)
+POST_UNINSTALL = :
+# makefile (from `Makefile', line 285)
+HI3520V100_LDFLAGS = 
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from `Makefile', line 249)
+CPPFLAGS = -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+# makefile (from `Makefile', line 233)
+DIST_TARGETS = dist-gzip
+# makefile (from `Makefile', line 275)
+HI3516CV300_LDFLAGS = -L/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/lib     -lmpi -ldnvqe -lhive_RES -lhive_AEC -lupvqe -lhive_ANR -lVoiceEngine     -lisp -l_hiae -l_hiawb -l_hiaf -l_hidefog -lpthread
+# makefile (from `Makefile', line 286)
+INSTALL = /usr/bin/install -c
+# makefile (from `Makefile', line 257)
+DEFS = -DHAVE_CONFIG_H
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile (from `Makefile', line 165)
+am__recursive_targets = $(RECURSIVE_TARGETS) $(RECURSIVE_CLEAN_TARGETS) $(am__extra_recursive_targets)
+# makefile
+CURDIR := /Volumes/data-1/tools/live-streamer
+# makefile (from `Makefile', line 329)
+SHELL = /bin/bash
+# makefile (from `Makefile', line 278)
+HI3518V100_CPPFLAGS = 
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from `Makefile', line 355)
+datarootdir = ${prefix}/share
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 248)
+CFLAGS = -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -Os -g2 
+# makefile (from `Makefile', line 139)
+am__strip_dir = f=`echo $$p | sed -e 's|^.*/||'`;
+# makefile (from `Makefile', line 83)
+NORMAL_INSTALL = :
+# makefile (from `Makefile', line 121)
+RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive ctags-recursive dvi-recursive html-recursive info-recursive install-data-recursive install-dvi-recursive install-exec-recursive install-html-recursive install-info-recursive install-pdf-recursive install-ps-recursive install-recursive installcheck-recursive installdirs-recursive pdf-recursive ps-recursive tags-recursive uninstall-recursive
+# makefile (from `Makefile', line 111)
+AM_V_GEN = $(am__v_GEN_$(V))
+# makefile (from `Makefile', line 107)
+AM_V_P = $(am__v_P_$(V))
+# makefile (from `Makefile', line 281)
+HI3518V200_LDFLAGS = 
+# makefile (from `Makefile', line 196)
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+# makefile (from `Makefile', line 283)
+HI3520DV200_LDFLAGS = 
+# makefile (from `Makefile', line 361)
+host_cpu = arm
+# makefile (from `Makefile', line 341)
+ac_ct_DUMPBIN = 
+# makefile (from `Makefile', line 108)
+am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
+# makefile (from `Makefile', line 112)
+am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))
+# makefile (from `Makefile', line 289)
+INSTALL_SCRIPT = ${INSTALL}
+# makefile (from `Makefile', line 162)
+DATA = $(dist_doc_DATA)
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 353)
+builddir = .
+# makefile (from `Makefile', line 206)
+am__relativize = dir0=`pwd`; sed_first='s,^\([^/]*\)/.*$$,\1,'; sed_rest='s,^[^/]*/*,,'; sed_last='s,^.*/\([^/]*\)$$,\1,'; sed_butlast='s,/*[^/]*$$,,'; while test -n "$$dir1"; do first=`echo "$$dir1" | sed -e "$$sed_first"`; if test "$$first" != "."; then if test "$$first" = ".."; then dir2=`echo "$$dir0" | sed -e "$$sed_last"`/"$$dir2"; dir0=`echo "$$dir0" | sed -e "$$sed_butlast"`; else first2=`echo "$$dir2" | sed -e "$$sed_first"`; if test "$$first2" = "$$first"; then dir2=`echo "$$dir2" | sed -e "$$sed_rest"`; else dir2="../$$dir2"; fi; dir0="$$dir0"/"$$first"; fi; fi; dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; done; reldir="$$dir2"
+# makefile (from `Makefile', line 325)
+SDL_CFLAGS = -I/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT  
+# makefile (from `Makefile', line 352)
+build_vendor = pc
+# makefile (from `Makefile', line 152)
+am__base_list = sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
+# makefile (from `Makefile', line 161)
+am__installdirs = "$(DESTDIR)$(docdir)"
+# makefile (from `Makefile', line 299)
+LIPO = 
+# makefile (from `Makefile', line 119)
+SOURCES = 
+# makefile (from `Makefile', line 253)
+CXXFLAGS = -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -Os -g2 
+# makefile (from `Makefile', line 335)
+abs_srcdir = /tools/live-streamer
+# makefile (from `Makefile', line 74)
+pkgincludedir = $(includedir)/live-streamer
+# makefile (from `Makefile', line 79)
+install_sh_PROGRAM = $(install_sh) -c
+# makefile (from `Makefile', line 109)
+am__v_P_0 = false
+# makefile (from `Makefile', line 113)
+am__v_GEN_0 = @echo "  GEN     " $@;
+# makefile (from `Makefile', line 331)
+VERSION = 1.9.5
+# makefile (from `Makefile', line 344)
+am__quote = 
+# makefile (from `Makefile', line 326)
+SDL_LIBS = -L/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/lib -lSDL_ttf -lSDL_image -lSDL  -lpthread  
+# makefile (from `Makefile', line 143)
+am__nobase_strip = for p in $$list; do echo "$$p"; done | sed -e "s|$$srcdirstrip/||"
+# makefile (from `Makefile', line 105)
+CONFIG_CLEAN_FILES = 
+# makefile (from `Makefile', line 321)
+PKG_CONFIG = pkg-config
+# makefile (from `Makefile', line 247)
+CCDEPMODE = depmode=gcc3
+# makefile (from `Makefile', line 101)
+am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log configure.lineno config.status.lineno
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# makefile (from `Makefile', line 245)
+AWK = mawk
+# makefile (from `Makefile', line 356)
+docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
+# makefile (from `Makefile', line 345)
+am__tar = $${TAR-tar} chof - "$$tardir"
+# makefile (from `Makefile', line 292)
+JSONCPP_LIBS = -L/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/lib -ljsoncpp  
+# makefile (from `Makefile', line 327)
+SED = /bin/sed
+# makefile (from `Makefile', line 29)
+am__make_running_with_option = case $${target_option-} in ?) ;; *) echo "am__make_running_with_option: internal error: invalid" "target option '$${target_option-}' specified" >&2; exit 1;; esac; has_opt=no; sane_makeflags=$$MAKEFLAGS; if $(am__is_gnu_make); then sane_makeflags=$$MFLAGS; else case $$MAKEFLAGS in *\\[\ \	]*) bs=\\; sane_makeflags=`printf '%s\n' "$$MAKEFLAGS" | sed "s/$$bs$$bs[$$bs $$bs	]*//g"`;; esac; fi; skip_next=no; strip_trailopt () { flg=`printf '%s\n' "$$flg" | sed "s/$$1.*$$//"`; }; for flg in $$sane_makeflags; do test $$skip_next = yes && { skip_next=no; continue; }; case $$flg in *=*|--*) continue;; -*I) strip_trailopt 'I'; skip_next=yes;; -*I?*) strip_trailopt 'I';; -*O) strip_trailopt 'O'; skip_next=yes;; -*O?*) strip_trailopt 'O';; -*l) strip_trailopt 'l'; skip_next=yes;; -*l?*) strip_trailopt 'l';; -[dEDm]) skip_next=yes;; -[JT]) skip_next=yes;; esac; case $$flg in *$$target_option*) has_opt=yes; break;; esac; done; test $$has_opt = yes
+# environment
+VSCODE_CWD = /
+# makefile (from `Makefile', line 231)
+DIST_ARCHIVES = $(distdir).tar.gz
+# makefile (from `Makefile', line 351)
+build_os = linux-gnu
+# makefile (from `Makefile', line 328)
+SET_MAKE = 
+# makefile (from `Makefile', line 78)
+install_sh_DATA = $(install_sh) -c -m 644
+# makefile (from `Makefile', line 347)
+bindir = ${exec_prefix}/bin
+# environment
+ 
+PATH = /Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/opt/local/bin:/opt/local/sbin:/Users/sean/.local/share/gem/ruby/3.0.0/bin:/opt/homebrew/opt/ruby/bin:/opt/homebrew/Cellar/x86_64-unknown-linux-gnu/bin:/opt/homebrew/Cellar/gcc-arm-none-eabi-10-2021-q2-preview/bin:/opt/homebrew/Cellar/grep/3.6/libexec/gnubin:/opt/homebrew/bin:/usr/local/go/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion Tech Preview.app/Contents/Public:/usr/local/go/bin:/usr/local/MacGPG2/bin:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+# makefile (from `Makefile', line 116)
+am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
+# makefile (from `Makefile', line 134)
+am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+# makefile (from `Makefile', line 296)
+LIBOBJS = 
+# makefile (from `Makefile', line 293)
+LD = arm-buildroot-linux-uclibcgnueabi-ld
+# makefile (from `Makefile', line 184)
+am__define_uniq_tagged_files = list='$(am__tagged_files)'; unique=`for i in $$list; do if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; done | $(am__uniquify_input)`
+# makefile (from `Makefile', line 386)
+top_srcdir = .
+# makefile (from `Makefile', line 259)
+DLLTOOL = false
+# makefile (from `Makefile', line 82)
+transform = $(program_transform_name)
+# makefile (from `Makefile', line 110)
+am__v_P_1 = :
+# makefile (from `Makefile', line 114)
+am__v_GEN_1 = 
+# makefile (from `Makefile', line 319)
+PACKAGE_VERSION = 1.9.5
+# environment
+LSCOLORS = gxBxhxDxfxhxhxhxhxcxcx
+# makefile (from `Makefile', line 288)
+INSTALL_PROGRAM = ${INSTALL}
+# makefile (from `Makefile', line 370)
+localedir = ${datarootdir}/locale
+# makefile (from `Makefile', line 373)
+mkdir_p = $(MKDIR_P)
+# makefile (from `Makefile', line 365)
+includedir = ${prefix}/include
+# makefile (from `Makefile', line 18)
+am__is_gnu_make = { if test -z '$(MAKELEVEL)'; then false; elif test -n '$(MAKE_HOST)'; then true; elif test -n '$(MAKE_VERSION)' && test -n '$(CURDIR)'; then true; else false; fi; }
+# makefile (from `Makefile', line 155)
+am__uninstall_files_from_dir = { test -z "$$files" || { test ! -d "$$dir" && test ! -f "$$dir" && test ! -r "$$dir"; } || { echo " ( cd '$$dir' && rm -f" $$files ")"; $(am__cd) "$$dir" && rm -f $$files; }; }
+# makefile (from `Makefile', line 377)
+program_transform_name = s&^&&
+# makefile (from `Makefile', line 290)
+INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
+# makefile (from `Makefile', line 77)
+am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+# makefile (from `Makefile', line 311)
+OTOOL = 
+# makefile (from `Makefile', line 171)
+am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)config.h.in
+# makefile (from `Makefile', line 193)
+am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in AUTHORS COPYING ChangeLog INSTALL NEWS README compile config.guess config.sub depcomp install-sh ltmain.sh missing
+# makefile (from `Makefile', line 234)
+distuninstallcheck_listfiles = find . -type f -print
+# makefile (from `Makefile', line 310)
+OBJEXT = o
+# makefile (from `Makefile', line 238)
+ACLOCAL = ${SHELL} /tools/live-streamer/missing aclocal-1.15
+# makefile (from `Makefile', line 241)
+AR = arm-buildroot-linux-uclibcgnueabi-ar
+# makefile (from `Makefile', line 316)
+PACKAGE_STRING = live-streamer 1.9.5
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# makefile (from `Makefile', line 294)
+LDFLAGS = 
+# makefile (from `Makefile', line 348)
+build = x86_64-pc-linux-gnu
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# makefile (from `Makefile', line 89)
+build_triplet = x86_64-pc-linux-gnu
+# makefile (from `Makefile', line 332)
+VO_AACENC_CFLAGS = -I/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include  
+# makefile (from `Makefile', line 263)
+ECHO_N = -n
+# environment
+SSH_AUTH_SOCK = /Users/sean/.gnupg/S.gpg-agent.ssh
+# makefile (from `Makefile', line 106)
+CONFIG_CLEAN_VPATH_FILES = 
+# automatic
+%F = $(notdir $%)
+# makefile (from `Makefile', line 262)
+ECHO_C = 
+# makefile (from `Makefile', line 235)
+am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
+# environment
+DISPLAY = /private/tmp/com.apple.launchd.C30BnKLphx/org.xquartz:0
+# makefile (from `Makefile', line 298)
+LIBTOOL = $(SHELL) $(top_builddir)/libtool
+# makefile (from `Makefile', line 374)
+oldincludedir = /usr/include
+# makefile (from `Makefile', line 358)
+exec_prefix = /usr
+# makefile (from `Makefile', line 93)
+am__aclocal_m4_deps = $(top_srcdir)/m4/ax_cxx_compile_stdcxx_11.m4 $(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/configure.ac
+# makefile (from `Makefile', line 91)
+subdir = .
+# makefile (from `Makefile', line 346)
+am__untar = $${TAR-tar} xf -
+# makefile (from `Makefile', line 333)
+VO_AACENC_LIBS = -L/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/lib -lvo-aacenc  
+# makefile (from `Makefile', line 381)
+srcdir = .
+# makefile (from `Makefile', line 366)
+infodir = ${datarootdir}/info
+# makefile (from `Makefile', line 357)
+dvidir = ${docdir}
+# environment
+PWD = /Volumes/data-1/tools/live-streamer
+# makefile (from `Makefile', line 375)
+pdfdir = ${docdir}
+# makefile (from `Makefile', line 80)
+install_sh_SCRIPT = $(install_sh) -c
+# makefile (from `Makefile', line 303)
+LTLIBOBJS = 
+# makefile (from `Makefile', line 336)
+abs_top_builddir = /tools/live-streamer
+# makefile (from `Makefile', line 324)
+RANLIB = arm-buildroot-linux-uclibcgnueabi-ranlib
+# makefile (from `Makefile', line 323)
+PKG_CONFIG_PATH = 
+# makefile (from `Makefile', line 372)
+mandir = ${datarootdir}/man
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# makefile (from `Makefile', line 368)
+libdir = ${exec_prefix}/lib
+# makefile (from `Makefile', line 382)
+sysconfdir = /etc
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/sean
+# makefile (from `Makefile', line 169)
+AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS cscope distdir dist dist-all distcheck
+# makefile (from `Makefile', line 367)
+install_sh = ${SHELL} /tools/live-streamer/install-sh
+# makefile (from `Makefile', line 284)
+HI3520V100_CPPFLAGS = 
+# makefile (from `Makefile', line 301)
+LIVE555_LDFLAGS = -L/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/lib  -lBasicUsageEnvironment -lUsageEnvironment  -lgroupsock -lliveMedia
+# makefile (from `Makefile', line 103)
+mkinstalldirs = $(install_sh) -d
+# makefile (from `Makefile', line 343)
+am__leading_dot = .
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# makefile (from `Makefile', line 270)
+FREETYPE_CFLAGS = -I/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/freetype2  
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/sean/Library/Application Support/Code/CachedData/6261075646f055b99068d3688932416f2346dd3b
+# makefile (from `Makefile', line 369)
+libexecdir = ${exec_prefix}/libexec
+# environment
+LOGNAME = sean
+# makefile (from `Makefile', line 384)
+top_build_prefix = 
+# makefile (from `Makefile', line 274)
+HI3516CV300_CPPFLAGS = -I/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/hi3516cv300mpp
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# makefile (from `Makefile', line 72)
+am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
+# makefile (from `Makefile', line 92)
+ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+# makefile (from `Makefile', line 349)
+build_alias = x86_64-pc-linux-gnu
+# makefile (from `Makefile', line 300)
+ 
+LIVE555_CPPFLAGS = -I/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/BasicUsageEnvironment  -I/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/UsageEnvironment  -I/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/groupsock  -I/buildroot/output/host/arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/liveMedia
+# makefile (from `Makefile', line 380)
+sharedstatedir = ${prefix}/com
+# makefile (from `Makefile', line 84)
+PRE_INSTALL = :
+# makefile (from `Makefile', line 280)
+HI3518V200_CPPFLAGS = 
+# makefile (from `Makefile', line 261)
+DUMPBIN = 
+# makefile (from `Makefile', line 340)
+ac_ct_CXX = 
+# makefile (from `Makefile', line 318)
+PACKAGE_URL = 
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from `Makefile', line 271)
+FREETYPE_LIBS = -L/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/lib -lfreetype  
+# makefile (from `Makefile', line 308)
+NMEDIT = 
+# makefile (from `Makefile', line 198)
+top_distdir = $(distdir)
+# makefile (from `Makefile', line 371)
+localstatedir = /var
+# makefile (from `Makefile', line 320)
+PATH_SEPARATOR = :
+# makefile (from `Makefile', line 364)
+htmldir = ${docdir}
+# makefile (from `Makefile', line 363)
+host_vendor = buildroot
+# makefile (from `Makefile', line 276)
+HI3516EV200_CPPFLAGS = 
+# environment
+XPC_FLAGS = 0x0
+# makefile (from `Makefile', line 85)
+POST_INSTALL = :
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# makefile (from `Makefile', line 338)
+ac_ct_AR = 
+# makefile (from `Makefile', line 71)
+am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+# makefile (from `Makefile', line 86)
+NORMAL_UNINSTALL = :
+# makefile (from `Makefile', line 192)
+DIST_SUBDIRS = $(SUBDIRS)
+# environment
+SHLVL = 2
+# makefile (from `Makefile', line 255)
+DBUSXX_CFLAGS = -I/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-c++-1 -DDBUS_API_SUBJECT_TO_CHANGE -I/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/dbus-1.0 -I/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/lib/dbus-1.0/include  
+# makefile (from `Makefile', line 378)
+psdir = ${docdir}
+# makefile (from `Makefile', line 307)
+NM = arm-buildroot-linux-uclibcgnueabi-nm
+# makefile (from `Makefile', line 246)
+CC = arm-buildroot-linux-uclibcgnueabi-gcc
+# makefile (from `Makefile', line 135)
+am__vpath_adj = case $$p in $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; *) f=$$p;; esac;
+# environment
+JAVA_HOME = /Library/Java/JavaVirtualMachines/microsoft-17.jdk/Contents/Home
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = sean
+# makefile (from `Makefile', line 265)
+EGREP = /bin/grep -E
+# makefile (from `Makefile', line 237)
+distcleancheck_listfiles = find . -type f -print
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from `Makefile', line 256)
+DBUSXX_LIBS = -L/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/lib -ldbus-c++-1 -ldbus-1  
+# makefile (from `Makefile', line 104)
+CONFIG_HEADER = config.h
+# makefile (from `Makefile', line 279)
+HI3518V100_LDFLAGS = 
+# makefile (from `Makefile', line 306)
+MKDIR_P = /bin/mkdir -p
+# makefile (from `Makefile', line 339)
+ac_ct_CC = 
+# makefile (from `Makefile', line 362)
+host_os = linux-uclibcgnueabi
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# makefile (from `Makefile', line 282)
+HI3520DV200_CPPFLAGS = 
+# makefile (from `Makefile', line 251)
+CXXCPP = arm-buildroot-linux-uclibcgnueabi-g++ -E
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# makefile (from `Makefile', line 97)
+am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) $(ACLOCAL_M4)
+# makefile (from `Makefile', line 376)
+prefix = /usr
+# makefile (from `Makefile', line 317)
+PACKAGE_TARNAME = live-streamer
+# makefile (from `Makefile', line 99)
+DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure $(am__configure_deps) $(dist_doc_DATA) $(am__DIST_COMMON)
+# default
+.VARIABLES := 
+# makefile (from `Makefile', line 379)
+sbindir = ${exec_prefix}/sbin
+# environment
+TMPDIR = /var/folders/ft/m04gx3sx5h33q3w3v02xbcyc0000gn/T/
+# automatic
+*F = $(notdir $*)
+# makefile (from `Makefile', line 81)
+INSTALL_HEADER = $(INSTALL_DATA)
+# makefile (from `Makefile', line 273)
+HAVE_CXX11 = 
+# environment
+VSCODE_IPC_HOOK = /Users/sean/Library/Application Support/Code/1.73.1-main.sock
+# makefile (from `Makefile', line 239)
+AMTAR = $${TAR-tar}
+# makefile (from `Makefile', line 350)
+build_cpu = x86_64
+# makefile (from `Makefile', line 76)
+pkglibexecdir = $(libexecdir)/live-streamer
+# environment
+MallocNanoZone = 0
+# makefile (from `Makefile', line 145)
+am__nobase_list = $(am__nobase_strip_setup); for p in $$list; do echo "$$p $$p"; done | sed "s| $$srcdirstrip/| |;"' / .*\//!s/ .*/ ./; s,\( .*\)/[^/]*$$,\1,' | $(AWK) 'BEGIN { files["."] = "" } { files[$$2] = files[$$2] " " $$1; if (++n[$$2] == $(am__install_max)) { print $$2, files[$$2]; n[$$2] = 0; files[$$2] = "" } } END { for (dir in files) print dir, files[dir] }'
+# makefile (from `Makefile', line 268)
+FONTCONFIG_CFLAGS = -I/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include -I/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include/freetype2   
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.39296705.39296711
+# makefile (from `Makefile', line 314)
+PACKAGE_BUGREPORT = 
+# makefile (from `Makefile', line 267)
+FGREP = /bin/grep -F
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from `Makefile', line 309)
+OBJDUMP = arm-buildroot-linux-uclibcgnueabi-objdump
+# makefile (from `Makefile', line 252)
+CXXDEPMODE = depmode=gcc3
+# makefile (from `Makefile', line 291)
+JSONCPP_CFLAGS = -I/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/include  
+# makefile (from `Makefile', line 205)
+am__post_remove_distdir = $(am__remove_distdir)
+# makefile (from `Makefile', line 115)
+AM_V_at = $(am__v_at_$(V))
+# automatic
++F = $(notdir $+)
+# makefile (from `Makefile', line 269)
+FONTCONFIG_LIBS = -L/buildroot/output/host/bin/../arm-buildroot-linux-uclibcgnueabi/sysroot/usr/lib -lfontconfig -lfreetype  
+# makefile (from `Makefile', line 120)
+DIST_SOURCES = 
+# makefile (from `Makefile', line 90)
+host_triplet = arm-buildroot-linux-uclibcgnueabi
+# makefile (from `Makefile', line 330)
+STRIP = arm-buildroot-linux-uclibcgnueabi-strip
+# makefile (from `Makefile', line 359)
+host = arm-buildroot-linux-uclibcgnueabi
+# makefile (from `Makefile', line 117)
+am__v_at_0 = @
+# makefile (from `Makefile', line 315)
+PACKAGE_NAME = live-streamer
+# makefile (from `Makefile', line 342)
+am__include = include
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# makefile (from `Makefile', line 322)
+PKG_CONFIG_LIBDIR = 
+# default
+MAKEFILES := 
+# makefile (from `Makefile', line 258)
+DEPDIR = .deps
+# makefile (from `Makefile', line 385)
+top_builddir = .
+# makefile (from `Makefile', line 176)
+am__uniquify_input = $(AWK) ' BEGIN { nonempty = 0; } { items[$$0] = 1; nonempty = 1; } END { if (nonempty) { for (i in items) print i; }; } '
+# automatic
+<F = $(notdir $<)
+# makefile (from `Makefile', line 302)
+LN_S = ln -s
+# makefile (from `Makefile', line 254)
+CYGPATH_W = echo
+# makefile (from `Makefile', line 388)
+dist_doc_DATA = README COPYING AUTHORS ChangeLog INSTALL NEWS
+# makefile (from `Makefile', line 141)
+am__nobase_strip_setup = srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*|]/\\\\&/g'`
+# makefile (from `Makefile', line 250)
+CXX = arm-buildroot-linux-uclibcgnueabi-g++
+# makefile (from `Makefile', line 240)
+AM_DEFAULT_VERBOSITY = 0
+# makefile (from `Makefile', line 75)
+pkglibdir = $(libdir)/live-streamer
+# makefile (from `Makefile', line 260)
+DSYMUTIL = 
+# makefile (from `Makefile', line 337)
+abs_top_srcdir = /tools/live-streamer
+# environment
+EDITOR = joe
+# makefile (from `Makefile', line 334)
+abs_builddir = /tools/live-streamer
+# makefile (from `Makefile', line 129)
+ 
+am__can_run_installinfo = case $$AM_UPDATE_INFO_DIR in n|no|NO) false;; *) (install-info --version) >/dev/null 2>&1;; esac
+# environment
+LC_ALL = C
+# makefile (from `Makefile', line 264)
+ECHO_T = 
+# makefile (from `Makefile', line 163)
+RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive distclean-recursive maintainer-clean-recursive
+# makefile (from `Makefile', line 266)
+EXEEXT = 
+# makefile (from `Makefile', line 118)
+am__v_at_1 = 
+# makefile (from `Makefile', line 312)
+OTOOL64 = 
+# makefile (from `Makefile', line 297)
+LIBS = 
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# makefile (from `Makefile', line 383)
+target_alias = arm-buildroot-linux-uclibcgnueabi
+# makefile (from `Makefile', line 305)
+MANIFEST_TOOL = :
+# makefile (from `Makefile', line 242)
+AUTOCONF = ${SHELL} /tools/live-streamer/missing autoconf
+# makefile (from `Makefile', line 244)
+AUTOMAKE = ${SHELL} /tools/live-streamer/missing automake-1.15
+# makefile (from `Makefile', line 360)
+host_alias = arm-buildroot-linux-uclibcgnueabi
+# default
+.INCLUDE_DIRS = /usr/local/include
+# makefile (from `Makefile', line 287)
+INSTALL_DATA = ${INSTALL} -m 644
+# makefile (from `Makefile', line 277)
+HI3516EV200_LDFLAGS = 
+# environment
+MAKELEVEL := 0
+# makefile (from `Makefile', line 304)
+MAKEINFO = ${SHELL} /tools/live-streamer/missing makeinfo
+# makefile (from `Makefile', line 197)
+distdir = $(PACKAGE)-$(VERSION)
+# makefile (from `Makefile', line 73)
+pkgdatadir = $(datadir)/live-streamer
+# makefile (from `Makefile', line 140)
+am__install_max = 40
+# makefile (from `Makefile', line 387)
+SUBDIRS = src
+# makefile (from `Makefile', line 313)
+PACKAGE = live-streamer
+# environment
+LANG = C
+# makefile (from `Makefile', line 190)
+CTAGS = ctags
+# makefile (from `Makefile', line 354)
+datadir = ${datarootdir}
+# environment
+VSCODE_PID = 93871
+# makefile (from `Makefile', line 243)
+AUTOHEADER = ${SHELL} /tools/live-streamer/missing autoheader
+# makefile (from `Makefile', line 272)
+GREP = /bin/grep
+# makefile (from `Makefile', line 87)
+PRE_UNINSTALL = :
+# makefile (from `Makefile', line 199)
+am__remove_distdir = if test -d "$(distdir)"; then find "$(distdir)" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "$(distdir)" || { sleep 5 && rm -rf "$(distdir)"; }; else :; fi
+# makefile (from `Makefile', line 232)
+GZIP_ENV = --best
+# variable set hash-table stats:
+# Load=294/1024=29%, Rehash=0, Collisions=78/449=17%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 905969724, inode 103813724): 33 files, no impossibilities.
+
+# 33 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+cscopelist: cscopelist-recursive
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+dist-tarZ: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 666):
+	@echo WARNING: "Support for distribution archives compressed with" \
+	"legacy program 'compress' is deprecated." >&2
+	@echo WARNING: "It will be removed altogether in Automake 2.0" >&2
+	tardir=$(distdir) && $(am__tar) | compress -c >$(distdir).tar.Z
+	$(am__post_remove_distdir)
+	
+
+install-man:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+pdf-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+maintainer-clean: maintainer-clean-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 862):
+	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
+	-rm -rf $(top_srcdir)/autom4te.cache
+	-rm -f Makefile
+	
+
+install-pdf: install-pdf-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-dvi-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+GTAGS:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 556):
+	here=`$(am__cd) $(top_builddir) && pwd` \
+	&& $(am__cd) $(top_srcdir) \
+	&& gtags -i $(GTAGS_ARGS) "$$here"
+	
+
+uninstall-local:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 905):
+	-rm -r $(docdir)
+	
+
+installdirs-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 778):
+	for dir in "$(DESTDIR)$(docdir)"; do \
+	test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+	done
+	
+
+dvi-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+info-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-info-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+install-am: all-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 787):
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+	
+
+# Not a target:
+install-sh:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+cscopelist-am: config.h.in
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 568):
+	list='$(am__tagged_files)'; \
+	case "$(srcdir)" in \
+	[\\/]* | ?:[\\/]*) sdir="$(srcdir)" ;; \
+	*) sdir=$(subdir)/$(srcdir) ;; \
+	esac; \
+	for i in $$list; do \
+	if test -f "$$i"; then \
+	echo "$(subdir)/$$i"; \
+	else \
+	echo "$$sdir/$$i"; \
+	fi; \
+	done >> $(top_builddir)/cscope.files
+	
+
+pdf: pdf-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+all: config.h
+#  Phony target (prerequisite of .PHONY).
+ 
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  commands to execute (from `Makefile', line 397):
+	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+	
+
+maintainer-clean-am: distclean-am maintainer-clean-generic
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-pdf-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.PHONY: all-recursive check-recursive cscopelist-recursive ctags-recursive dvi-recursive html-recursive info-recursive install-data-recursive install-dvi-recursive install-exec-recursive install-html-recursive install-info-recursive install-pdf-recursive install-ps-recursive install-recursive installcheck-recursive installdirs-recursive pdf-recursive ps-recursive tags-recursive uninstall-recursive mostlyclean-recursive clean-recursive distclean-recursive maintainer-clean-recursive CTAGS GTAGS TAGS all all-am am--refresh check check-am clean clean-cscope clean-generic clean-libtool cscope cscopelist-am ctags ctags-am dist dist-all dist-bzip2 dist-gzip dist-lzip dist-shar dist-tarZ dist-xz dist-zip distcheck distclean distclean-generic distclean-hdr distclean-libtool distclean-tags distcleancheck distdir distuninstallcheck dvi dvi-am html html-am info info-am install install-am install-data install-data-am install-dist_docDATA install-dvi install-dvi-am install-exec install-exec-am install-html install-html-am install-info install-info-am install-man install-pdf install-pdf-am install-ps install-ps-am install-strip installcheck installcheck-am installdirs installdirs-am maintainer-clean maintainer-clean-generic mostlyclean mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am tags tags-am uninstall uninstall-am uninstall-dist_docDATA uninstall-local
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+distclean-libtool:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 456):
+	-rm -f libtool config.lt
+	
+
+# Not a target:
+INSTALL:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+distclean-generic:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 805):
+	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
+	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
+	
+
+clean-generic:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.PRECIOUS: Makefile
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-exec: install-exec-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+configure.ac:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 15:08:19
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+README:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all-am: Makefile README COPYING AUTHORS ChangeLog INSTALL NEWS config.h
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+distclean: distclean-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 816):
+	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
+	-rm -f Makefile
+	
+
+ID: config.h.in
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 514):
+	$(am__define_uniq_tagged_files); mkid -fID $$unique
+	
+
+mostlyclean-libtool:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 450):
+	-rm -f *.lo
+	
+
+# Not a target:
+ChangeLog:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+tags: tags-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+uninstall: uninstall-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-exec-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+info: info-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Makefile: Makefile.in config.status
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-01 17:21:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 416):
+	@case '$?' in \
+	*config.status*) \
+	echo ' $(SHELL) ./config.status'; \
+	$(SHELL) ./config.status;; \
+	*) \
+	echo ' cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)'; \
+	cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe);; \
+	esac;
+	
+
+Makefile.in: Makefile.am m4/ax_cxx_compile_stdcxx_11.m4 m4/libtool.m4 m4/ltoptions.m4 m4/ltsugar.m4 m4/ltversion.m4 m4/lt~obsolete.m4 configure.ac aclocal.m4
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 08:19:06
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 403):
+	@for dep in $?; do \
+	case '$(am__configure_deps)' in \
+	*$$dep*) \
+	echo ' cd $(srcdir) && $(AUTOMAKE) --gnu'; \
+	$(am__cd) $(srcdir) && $(AUTOMAKE) --gnu \
+	&& exit 0; \
+	exit 1;; \
+	esac; \
+	done; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu Makefile'; \
+	$(am__cd) $(top_srcdir) && \
+	$(AUTOMAKE) --gnu Makefile
+	
+
+distclean-am: clean-am distclean-generic distclean-hdr distclean-libtool distclean-tags
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean-cscope:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 563):
+	-rm -f cscope.files
+	
+
+# Not a target:
+depcomp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+installcheck-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+ 
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+distuninstallcheck:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 748):
+	@test -n '$(distuninstallcheck_dir)' || { \
+	echo 'ERROR: trying to run $@ with an empty' \
+	'$$(distuninstallcheck_dir)' >&2; \
+	exit 1; \
+	}; \
+	$(am__cd) '$(distuninstallcheck_dir)' || { \
+	echo 'ERROR: cannot chdir into $(distuninstallcheck_dir)' >&2; \
+	exit 1; \
+	}; \
+	test `$(am__distuninstallcheck_listfiles) | wc -l` -eq 0 \
+	|| { echo "ERROR: files left after uninstall:" ; \
+	if test -n "$(DESTDIR)"; then \
+	echo "  (check DESTDIR support)"; \
+	fi ; \
+	$(distuninstallcheck_listfiles) ; \
+	exit 1; } >&2
+	
+
+configure: m4/ax_cxx_compile_stdcxx_11.m4 m4/libtool.m4 m4/ltoptions.m4 m4/ltsugar.m4 m4/ltversion.m4 m4/lt~obsolete.m4 configure.ac aclocal.m4
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 08:19:06
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 429):
+	$(am__cd) $(srcdir) && $(AUTOCONF)
+	
+
+install-data-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+tags-am: config.h.in
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 519):
+	set x; \
+	here=`pwd`; \
+	if ($(ETAGS) --etags-include --version) >/dev/null 2>&1; then \
+	include_option=--etags-include; \
+	empty_fix=.; \
+	else \
+	include_option=--include; \
+	empty_fix=; \
+	fi; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	if test "$$subdir" = .; then :; else \
+	test ! -f $$subdir/TAGS || \
+	set "$$@" "$$include_option=$$here/$$subdir/TAGS"; \
+	fi; \
+	done; \
+	$(am__define_uniq_tagged_files); \
+	shift; \
+	if test -z "$(ETAGS_ARGS)$$*$$unique"; then :; else \
+	test -n "$$unique" || unique=$$empty_fix; \
+	if test $$# -gt 0; then \
+	$(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
+	"$$@" $$unique; \
+	else \
+	$(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
+	$$unique; \
+	fi; \
+	fi
+	
+
+dvi: dvi-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-info: install-info-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+mostlyclean-am: mostlyclean-generic mostlyclean-libtool
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+distclean-tags:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 582):
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+	-rm -f cscope.out cscope.in.out cscope.po.out cscope.files
+	
+
+# Not a target:
+Makefile.am:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 15:08:19
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+cscope: cscope.files
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 560):
+	test ! -s cscope.files \
+	|| $(CSCOPE) -b -q $(AM_CSCOPEFLAGS) $(CSCOPEFLAGS) -i cscope.files $(CSCOPE_ARGS)
+	
+
+dist-bzip2: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 654):
+	tardir=$(distdir) && $(am__tar) | BZIP2=$${BZIP2--9} bzip2 -c >$(distdir).tar.bz2
+	$(am__post_remove_distdir)
+	
+
+clean-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+# Not a target:
+COPYING:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+m4/libtool.m4:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 15:08:19
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+dist-shar: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 673):
+	@echo WARNING: "Support for shar distribution archives is" \
+	"deprecated." >&2
+	@echo WARNING: "It will be removed altogether in Automake 2.0" >&2
+	shar $(distdir) | eval GZIP= gzip $(GZIP_ENV) -c >$(distdir).shar.gz
+	$(am__post_remove_distdir)
+	
+
+distcheck: dist
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 692):
+	case '$(DIST_ARCHIVES)' in \
+	*.tar.gz*) \
+	eval GZIP= gzip $(GZIP_ENV) -dc $(distdir).tar.gz | $(am__untar) ;;\
+	*.tar.bz2*) \
+	bzip2 -dc $(distdir).tar.bz2 | $(am__untar) ;;\
+	*.tar.lz*) \
+	lzip -dc $(distdir).tar.lz | $(am__untar) ;;\
+	*.tar.xz*) \
+	xz -dc $(distdir).tar.xz | $(am__untar) ;;\
+	*.tar.Z*) \
+	uncompress -c $(distdir).tar.Z | $(am__untar) ;;\
+	*.shar.gz*) \
+	eval GZIP= gzip $(GZIP_ENV) -dc $(distdir).shar.gz | unshar ;;\
+	*.zip*) \
+	unzip $(distdir).zip ;;\
+	esac
+	chmod -R a-w $(distdir)
+	chmod u+w $(distdir)
+	mkdir $(distdir)/_build $(distdir)/_build/sub $(distdir)/_inst
+	chmod a-w $(distdir)
+	test -d $(distdir)/_build || exit 0; \
+	dc_install_base=`$(am__cd) $(distdir)/_inst && pwd | sed -e 's,^[^:\\/]:[\\/],/,'` \
+	&& dc_destdir="$${TMPDIR-/tmp}/am-dc-$$$$/" \
+	&& am__cwd=`pwd` \
+	&& $(am__cd) $(distdir)/_build/sub \
+	&& ../../configure \
+	$(AM_DISTCHECK_CONFIGURE_FLAGS) \
+	$(DISTCHECK_CONFIGURE_FLAGS) \
+	--srcdir=../.. --prefix="$$dc_install_base" \
+	&& $(MAKE) $(AM_MAKEFLAGS) \
+	&& $(MAKE) $(AM_MAKEFLAGS) dvi \
+	&& $(MAKE) $(AM_MAKEFLAGS) check \
+	&& $(MAKE) $(AM_MAKEFLAGS) install \
+	&& $(MAKE) $(AM_MAKEFLAGS) installcheck \
+	&& $(MAKE) $(AM_MAKEFLAGS) uninstall \
+	&& $(MAKE) $(AM_MAKEFLAGS) distuninstallcheck_dir="$$dc_install_base" \
+	distuninstallcheck \
+	&& chmod -R a-w "$$dc_install_base" \
+	&& ({ \
+	(cd ../.. && umask 077 && mkdir "$$dc_destdir") \
+ 
+	&& $(MAKE) $(AM_MAKEFLAGS) DESTDIR="$$dc_destdir" install \
+	&& $(MAKE) $(AM_MAKEFLAGS) DESTDIR="$$dc_destdir" uninstall \
+	&& $(MAKE) $(AM_MAKEFLAGS) DESTDIR="$$dc_destdir" \
+	distuninstallcheck_dir="$$dc_destdir" distuninstallcheck; \
+	} || { rm -rf "$$dc_destdir"; exit 1; }) \
+	&& rm -rf "$$dc_destdir" \
+	&& $(MAKE) $(AM_MAKEFLAGS) dist \
+	&& rm -rf $(DIST_ARCHIVES) \
+	&& $(MAKE) $(AM_MAKEFLAGS) distcleancheck \
+	&& cd "$$am__cwd" \
+	|| exit 1
+	$(am__post_remove_distdir)
+	@(echo "$(distdir) archives ready for distribution: "; \
+	list='$(DIST_ARCHIVES)'; for i in $$list; do echo $$i; done) | \
+	sed -e 1h -e 1s/./=/g -e 1p -e 1x -e '$$p' -e '$$x'
+	
+
+# Not a target:
+config.guess:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+cscope.files: clean-cscope cscopelist
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+html-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+dvi-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-info-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+dist-gzip: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 650):
+	tardir=$(distdir) && $(am__tar) | eval GZIP= gzip $(GZIP_ENV) -c >$(distdir).tar.gz
+	$(am__post_remove_distdir)
+	
+
+distclean-hdr:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 447):
+	-rm -f config.h stamp-h1
+	
+
+.NOEXPORT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-dist_docDATA: README COPYING AUTHORS ChangeLog INSTALL NEWS
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 458):
+	@$(NORMAL_INSTALL)
+	@list='$(dist_doc_DATA)'; test -n "$(docdir)" || list=; \
+	if test -n "$$list"; then \
+	echo " $(MKDIR_P) '$(DESTDIR)$(docdir)'"; \
+	$(MKDIR_P) "$(DESTDIR)$(docdir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(docdir)'"; \
+	$(INSTALL_DATA) $$files "$(DESTDIR)$(docdir)" || exit $$?; \
+	done
+	
+
+# Not a target:
+config.sub:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+maintainer-clean-generic:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 809):
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
+	
+
+ctags-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+pdf-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+config.status: configure
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-01 17:21:26
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 426):
+	$(SHELL) ./config.status --recheck
+	
+
+.MAKE: all-recursive check-recursive cscopelist-recursive ctags-recursive dvi-recursive html-recursive info-recursive install-data-recursive install-dvi-recursive install-exec-recursive install-html-recursive install-info-recursive install-pdf-recursive install-ps-recursive install-recursive installcheck-recursive installdirs-recursive pdf-recursive ps-recursive tags-recursive uninstall-recursive mostlyclean-recursive clean-recursive distclean-recursive maintainer-clean-recursive all install-am install-strip
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+missing:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+aclocal.m4: m4/ax_cxx_compile_stdcxx_11.m4 m4/libtool.m4 m4/ltoptions.m4 m4/ltsugar.m4 m4/ltversion.m4 m4/lt~obsolete.m4 configure.ac
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 08:19:06
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 431):
+	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+	
+
+install-html-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+# Not a target:
+compile:
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+config.h: stamp-h1
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  Last modified 2022-08-01 09:36:58
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := config.h
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := stamp-h1
+# automatic
+# | := 
+# automatic
+# < := stamp-h1
+# automatic
+# ^ := stamp-h1
+# automatic
+# ? := stamp-h1
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
+#  commands to execute (from `Makefile', line 435):
+	@test -f $@ || rm -f stamp-h1
+	@test -f $@ || $(MAKE) $(AM_MAKEFLAGS) stamp-h1
+	
+
+check-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+config.h.in: m4/ax_cxx_compile_stdcxx_11.m4 m4/libtool.m4 m4/ltoptions.m4 m4/ltsugar.m4 m4/ltversion.m4 m4/lt~obsolete.m4 configure.ac aclocal.m4
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 08:19:08
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 442):
+	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
+	rm -f stamp-h1
+	touch $@
+	
+
+# Not a target:
+ltmain.sh:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-data: install-data-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean-libtool:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 453):
+	-rm -rf .libs _libs
+	
+
+installcheck: installcheck-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+stamp-h1: config.h.in config.status
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-01 17:21:26
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 439):
+	@rm -f stamp-h1
+	cd $(top_builddir) && $(SHELL) ./config.status config.h
+	
+
+am--refresh: Makefile
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 401):
+	@:
+	
+
+install-dvi-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+m4/ax_cxx_compile_stdcxx_11.m4:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 15:08:19
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+clean: clean-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+installdirs-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+info-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+install-strip:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 791):
+	if test -z '$(STRIP)'; then \
+	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	install_sh_PROGRAM="$(INSTALL_STRIP_PROGRAM)" INSTALL_STRIP_FLAG=-s \
+	install; \
+	else \
+	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	install_sh_PROGRAM="$(INSTALL_STRIP_PROGRAM)" INSTALL_STRIP_FLAG=-s \
+	"INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'" install; \
+	fi
+	
+
+install-ps-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+install-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+ 
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+ps-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+installcheck-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+cscopelist-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+install-data-am: install-dist_docDATA
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+dist:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 685):
+	$(MAKE) $(AM_MAKEFLAGS) $(DIST_TARGETS) am__post_remove_distdir='@:'
+	$(am__post_remove_distdir)
+	
+
+maintainer-clean-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+install-pdf-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+ps-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean-am: clean-generic clean-libtool mostlyclean-am
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+mostlyclean-generic:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+html: html-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+uninstall-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+dist-all:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 685):
+	$(MAKE) $(AM_MAKEFLAGS) $(DIST_TARGETS) am__post_remove_distdir='@:'
+	$(am__post_remove_distdir)
+	
+
+ctags: ctags-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+all-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+uninstall-dist_docDATA:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 474):
+	@$(NORMAL_UNINSTALL)
+	@list='$(dist_doc_DATA)'; test -n "$(docdir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(docdir)'; $(am__uninstall_files_from_dir)
+	
+
+html-am:
+#  Phony target (prerequisite of .PHONY).
+ 
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+NEWS:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+dist-lzip: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 658):
+	tardir=$(distdir) && $(am__tar) | lzip -c $${LZIP_OPT--9} >$(distdir).tar.lz
+	$(am__post_remove_distdir)
+	
+
+mostlyclean: mostlyclean-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+distcleancheck: distclean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 765):
+	@if test '$(srcdir)' = . ; then \
+	echo "ERROR: distcleancheck can only run from a VPATH build" ; \
+	exit 1 ; \
+	fi
+	@test `$(distcleancheck_listfiles) | wc -l` -eq 0 \
+	|| { echo "ERROR: files left in build directory after distclean:" ; \
+	$(distcleancheck_listfiles) ; \
+	exit 1; } >&2
+	
+
+m4/ltsugar.m4:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 15:08:19
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+uninstall-am: uninstall-dist_docDATA uninstall-local
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+AUTHORS:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+m4/ltoptions.m4:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 15:08:19
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+install-html: install-html-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+m4/ltversion.m4:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 15:08:19
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+dist-zip: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 680):
+	-rm -f $(distdir).zip
+	zip -rq $(distdir).zip $(distdir)
+	$(am__post_remove_distdir)
+	
+
+check: check-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-exec-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+ctags-am: config.h.in
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 550):
+	$(am__define_uniq_tagged_files); \
+	test -z "$(CTAGS_ARGS)$$unique" \
+	|| $(CTAGS) $(CTAGSFLAGS) $(AM_CTAGSFLAGS) $(CTAGS_ARGS) \
+	$$unique
+	
+
+distclean-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+install-ps: install-ps-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+m4/lt~obsolete.m4:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 15:08:19
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+TAGS: tags
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+installdirs: installdirs-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-dvi: install-dvi-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+distdir: Makefile.am configure m4/ax_cxx_compile_stdcxx_11.m4 m4/libtool.m4 m4/ltoptions.m4 m4/ltsugar.m4 m4/ltversion.m4 m4/lt~obsolete.m4 configure.ac aclocal.m4 README COPYING AUTHORS ChangeLog INSTALL NEWS Makefile.in config.h.in AUTHORS COPYING ChangeLog INSTALL NEWS README compile config.guess config.sub depcomp install-sh ltmain.sh missing
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 586):
+	$(am__remove_distdir)
+	test -d "$(distdir)" || mkdir "$(distdir)"
+	@srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
+	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
+	list='$(DISTFILES)'; \
+	dist_files=`for file in $$list; do echo $$file; done | \
+	sed -e "s|^$$srcdirstrip/||;t" \
+	-e "s|^$$topsrcdirstrip/|$(top_builddir)/|;t"`; \
+	case $$dist_files in \
+	*/*) $(MKDIR_P) `echo "$$dist_files" | \
+	sed '/\//!d;s|^|$(distdir)/|;s,/[^/]*$$,,' | \
+	sort -u` ;; \
+	esac; \
+	for file in $$dist_files; do \
+	if test -f $$file || test -d $$file; then d=.; else d=$(srcdir); fi; \
+	if test -d $$d/$$file; then \
+	dir=`echo "/$$file" | sed -e 's,/[^/]*$$,,'`; \
+	if test -d "$(distdir)/$$file"; then \
+	find "$(distdir)/$$file" -type d ! -perm -700 -exec chmod u+rwx {} \;; \
+	fi; \
+	if test -d $(srcdir)/$$file && test $$d != $(srcdir); then \
+	cp -fpR $(srcdir)/$$file "$(distdir)$$dir" || exit 1; \
+	find "$(distdir)/$$file" -type d ! -perm -700 -exec chmod u+rwx {} \;; \
+	fi; \
+	cp -fpR $$d/$$file "$(distdir)$$dir" || exit 1; \
+	else \
+	test -f "$(distdir)/$$file" \
+	|| cp -p $$d/$$file "$(distdir)/$$file" \
+	|| exit 1; \
+	fi; \
+	done
+	@list='$(DIST_SUBDIRS)'; for subdir in $$list; do \
+	if test "$$subdir" = .; then :; else \
+	$(am__make_dryrun) \
+	|| test -d "$(distdir)/$$subdir" \
+	|| $(MKDIR_P) "$(distdir)/$$subdir" \
+	|| exit 1; \
+	dir1=$$subdir; dir2="$(distdir)/$$subdir"; \
+	$(am__relativize); \
+	new_distdir=$$reldir; \
+	dir1=$$subdir; dir2="$(top_distdir)"; \
+	$(am__relativize); \
+	new_top_distdir=$$reldir; \
+	echo " (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) top_distdir="$$new_top_distdir" distdir="$$new_distdir" \\"; \
+ 
+	echo "     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)"; \
+	($(am__cd) $$subdir && \
+	$(MAKE) $(AM_MAKEFLAGS) \
+	top_distdir="$$new_top_distdir" \
+	distdir="$$new_distdir" \
+	am__remove_distdir=: \
+	am__skip_length_check=: \
+	am__skip_mode_fix=: \
+	distdir) \
+	|| exit 1; \
+	fi; \
+	done
+	-test -n "$(am__skip_mode_fix)" \
+	|| find "$(distdir)" -type d ! -perm -755 \
+	-exec chmod u+rwx,go+rx {} \; -o \
+	! -type d ! -perm -444 -links 1 -exec chmod a+r {} \; -o \
+	! -type d ! -perm -400 -exec chmod a+r {} \; -o \
+	! -type d ! -perm -444 -exec $(install_sh) -c -m a+r {} {} \; \
+	|| chmod -R a+r "$(distdir)"
+	
+
+install-html-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+CTAGS: ctags
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+tags-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+check-am: all-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+dist-xz: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 662):
+	tardir=$(distdir) && $(am__tar) | XZ_OPT=$${XZ_OPT--e} xz -c >$(distdir).tar.xz
+	$(am__post_remove_distdir)
+	
+
+ps: ps-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install: install-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-ps-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+mostlyclean-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 486):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	failcom='fail=yes'; \
+	else \
+	failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	*) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	if test "$$subdir" = "."; then \
+	dot_seen=yes; \
+	local_target="$$target-am"; \
+	else \
+	local_target="$$target"; \
+	fi; \
+	($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	|| eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	$(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+	
+
+# files hash-table stats:
+# Load=145/1024=14%, Rehash=0, Collisions=59/437=14%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Thu Nov 17 16:03:31 2022
+
+ 
